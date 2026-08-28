@@ -26,6 +26,9 @@ namespace NakeDev.Player
         public int MaxExtraJumps = 1;
         [Tooltip("Força vertical do(s) pulo(s) extra(s) no ar. Pode ser diferente do pulo do chão.")]
         public float ExtraJumpForce = 6f;
+        [Tooltip("Intervalo mínimo entre um salto e a liberação do próximo pulo extra. 0 permite o pulo extra imediatamente.")]
+        [Min(0f)]
+        public float ExtraJumpCooldown = 0.15f;
 
         [Header("Jump Assist (funcional, não estético — Regra 6)")]
         [Tooltip("Tempo (s) após sair da borda em que ainda é possível pular.")]
@@ -52,5 +55,11 @@ namespace NakeDev.Player
         public float WallJumpForceY = 10f;
         [Tooltip("Tempo (s) após o wall jump em que o input horizontal normal fica suspenso, pra não cancelar o impulso na hora.")]
         public float WallJumpControlLockTime = 0.15f;
+        [Tooltip("Quantidade máxima de wall jumps antes de tocar o chão novamente. 0 desliga o wall jump.")]
+        [Min(0)]
+        public int MaxWallJumps = 1;
+
+        [Tooltip("Se habilitado, um wall jump restaura todos os pulos extras no ar.")]
+        public bool ResetExtraJumpsOnWallJump = true;
     }
 }

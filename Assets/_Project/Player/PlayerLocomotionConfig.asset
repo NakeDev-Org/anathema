@@ -15,9 +15,9 @@ MonoBehaviour:
   MoveSpeed: 6
   Acceleration: 60
   Deceleration: 80
-  JumpForce: 7
-  FallGravityMultiplier: 2.5
-  MaxExtraJumps: 1
+  JumpForce: 5
+  FallGravityMultiplier: 3.5
+  MaxExtraJumps: 5
   ExtraJumpForce: 6
   CoyoteTime: 0.1
   JumpBufferTime: 0.1
@@ -25,8 +25,10 @@ MonoBehaviour:
   GroundLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  WallCheckDistance: 0.15
+  WallCheckDistance: 1.5
   WallSlideSpeed: 2
   WallJumpForceX: 8
   WallJumpForceY: 10
   WallJumpControlLockTime: 0.15
+  MaxWallJumps: 2
+  ResetExtraJumpsOnWallJump: 1

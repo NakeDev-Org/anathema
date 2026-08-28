@@ -486,7 +486,7 @@ MonoBehaviour:
   _idleState: PlayerIdle
   _runState: PlayerWalk
   _jumpState: PlayerJump
-  _fallState: Fall
+  _fallState: PlayerFall
   _crossfadeTime: 0.1
   _runSpeedThreshold: 0.1
 --- !u!114 &738072799

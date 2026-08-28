@@ -1,7 +1,10 @@
 using UnityEngine;
+using System;
 
 namespace NakeDev.Player
 {
+    public enum JumpType { Ground, Extra, Wall } //servirá para manipular a animação correta de pulo
+
     /// <summary>
     /// Locomoção 2D completa (andar, pular, double jump, wall slide, wall jump) num só
     /// componente, controlada por um único LocomotionConfigSO. Decisão de projeto (Regra 9 —
@@ -25,6 +28,7 @@ namespace NakeDev.Player
         private float _coyoteTimer;
         private float _jumpBufferTimer;
         private float _wallJumpControlLockTimer;
+        private int _wallJumpsRemaining;
         private int _extraJumpsRemaining;
 
         // -1 = parede à esquerda, +1 = parede à direita, 0 = nenhuma.
@@ -34,6 +38,11 @@ namespace NakeDev.Player
         public bool IsJumping { get; private set; }
         public bool IsWallSliding { get; private set; }
         public Vector2 Velocity => _rb.linearVelocity;
+        public event Action<JumpType> OnJumpPerformed;
+        public event Action<float> OnLanded;
+
+        private float _extraJumpCooldownTimer;
+        private bool _groundStateInitialized;
 
         private void Awake()
         {
@@ -47,6 +56,8 @@ namespace NakeDev.Player
                 Debug.LogWarning($"{name}: PlayerLocomotion2D sem LocomotionConfigSO atribuído. Usando um asset temporário em memória com os valores default.", this);
                 _config = ScriptableObject.CreateInstance<LocomotionConfigSO>();
             }
+
+            _wallJumpsRemaining = _config.MaxWallJumps;
         }
 
         private void OnEnable()
@@ -80,19 +91,32 @@ namespace NakeDev.Player
             WallCheck();
             ApplyHorizontalMovement();
             ApplyFallGravity();
-            Debug.Log($"WallSliding: {IsWallSliding}, " + $"WallDirection: {_wallDirection}, " + $"ExtraJumps: {_extraJumpsRemaining}");
             TryConsumeJump();
         }
 
         private void GroundCheck()
         {
+            bool wasGrounded = IsGrounded;
+            float landingSpeed = Mathf.Max(0f, -_rb.linearVelocity.y);
+
             Vector2 origin = _groundCheckPoint != null ? (Vector2)_groundCheckPoint.position : (Vector2)transform.position;
             IsGrounded = Physics2D.OverlapCircle(origin, _config.GroundCheckRadius, _config.GroundLayerMask);
+
+            // Evita disparar Landing no primeiro frame caso o player já comece no chão.
+            if (_groundStateInitialized &&
+                !wasGrounded &&
+                IsGrounded)
+            {
+                OnLanded?.Invoke(landingSpeed);
+            }
+
+            _groundStateInitialized = true;
 
             if (IsGrounded)
             {
                 _coyoteTimer = _config.CoyoteTime;
                 _extraJumpsRemaining = _config.MaxExtraJumps;
+                _wallJumpsRemaining = _config.MaxWallJumps;
                 IsJumping = false;
             }
         }
@@ -160,6 +184,9 @@ namespace NakeDev.Player
 
             if (_wallJumpControlLockTimer > 0f)
                 _wallJumpControlLockTimer -= Time.deltaTime;
+
+            if (_extraJumpCooldownTimer > 0f)
+                _extraJumpCooldownTimer -= Time.deltaTime;
         }
 
         private void ApplyHorizontalMovement()
@@ -197,13 +224,20 @@ namespace NakeDev.Player
         {
             if (_jumpBufferTimer <= 0f) return;
 
-            if (IsWallSliding)
+            if (IsWallSliding && _wallJumpsRemaining > 0)
             {
                 // Pulo saindo da parede, na direção oposta a ela.
                 float pushDirection = -_wallDirection;
                 _rb.linearVelocity = new Vector2(pushDirection * _config.WallJumpForceX, _config.WallJumpForceY);
+                OnJumpPerformed?.Invoke(JumpType.Wall);
+
+                _wallJumpsRemaining--;
+
+                if (_config.ResetExtraJumpsOnWallJump)
+                    _extraJumpsRemaining = _config.MaxExtraJumps;
+
+                _extraJumpCooldownTimer = _config.ExtraJumpCooldown;
                 _wallJumpControlLockTimer = _config.WallJumpControlLockTime;
-                _extraJumpsRemaining = _config.MaxExtraJumps; // wall jump recarrega o double jump (combo comum do gênero)
                 _coyoteTimer = 0f;
                 IsWallSliding = false;
                 _wallDirection = 0;
@@ -218,6 +252,10 @@ namespace NakeDev.Player
             if (canPrimaryJump)
             {
                 _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, _config.JumpForce);
+                OnJumpPerformed?.Invoke(JumpType.Ground); //dispara uma notificação do evento, informando o tipo de pulo
+
+                _extraJumpCooldownTimer = _config.ExtraJumpCooldown;
+
                 _coyoteTimer = 0f;
                 // Marca como não-grounded na hora: a física só vai afastar o collider do chão
                 // no próximo passo, então sem isso o GroundCheck deste mesmo frame rearmaria
@@ -225,10 +263,12 @@ namespace NakeDev.Player
                 IsGrounded = false;
                 IsJumping = true;
             }
-            else if (_extraJumpsRemaining > 0)
+            else if (_extraJumpsRemaining > 0 && _extraJumpCooldownTimer <= 0f)
             {
                 _extraJumpsRemaining--;
                 _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, _config.ExtraJumpForce);
+                OnJumpPerformed?.Invoke(JumpType.Extra);
+                _extraJumpCooldownTimer = _config.ExtraJumpCooldown;
                 IsJumping = true;
             }
             else

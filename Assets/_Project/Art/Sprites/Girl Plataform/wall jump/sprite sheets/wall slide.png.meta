@@ -43,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -57,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -81,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -123,12 +123,12 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 10
-        width: 45
-        height: 63
+        y: 0
+        width: 44
+        height: 73
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 3, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -144,13 +144,13 @@ TextureImporter:
       name: wall slide_1
       rect:
         serializedVersion: 2
-        x: 43
-        y: 5
-        width: 46
-        height: 67
+        x: 44
+        y: 2
+        width: 44
+        height: 69
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 2}
       customData: 
       outline: []
       physicsShape: []
@@ -166,13 +166,13 @@ TextureImporter:
       name: wall slide_2
       rect:
         serializedVersion: 2
-        x: 87
+        x: 88
         y: 0
-        width: 45
-        height: 70
+        width: 44
+        height: 69
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 1, z: 0, w: 4}
       customData: 
       outline: []
       physicsShape: []
@@ -188,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 83407239b625b89419a70a048d15a21b
     internalID: 0
     vertices: []
     indices: 
@@ -196,7 +196,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":44.0,"y":73.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       wall slide_0: 134770245705420833
       wall slide_1: 6971452479351588281

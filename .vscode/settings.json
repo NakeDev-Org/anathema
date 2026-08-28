@@ -67,5 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "Projeto2D.slnx"
+    "dotnet.defaultSolution": "projeto2D.slnx"
 }
