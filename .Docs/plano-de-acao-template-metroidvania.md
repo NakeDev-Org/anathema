@@ -3,6 +3,14 @@
 Base: [relatorio-pesquisa-template-metroidvania.md](./relatorio-pesquisa-template-metroidvania.md)
 Princípio geral: **1 fase = 1 sistema pequeno e coeso. Sem avançar de fase sem revisão sua.** Isso não é burocracia — é a mitigação direta ao risco de "loop de geração carregada" levantado na pesquisa (§5 do relatório).
 
+## Visão (atualizada — 2026-08-28)
+
+Este projeto **não é só o template**: é o jogo metroidvania real (MVP), construído *ao mesmo tempo* que o template nasce dele.
+
+- **Entregável primário**: um MVP jogável do metroidvania — escopo pequeno, mas fim-a-fim (anda, pula, combate básico, 1 habilidade de gate, 2-3 salas conectadas, 1 save).
+- **Entregável secundário, extraído do primeiro**: `Assets/_Project` continua desenhado para sair como `.unitypackage` e virar o próximo template — mas ele só é "promovido" a template depois de provar que funciona dentro de um jogo real, não antes. Código genérico (Core, Player, SceneManagement) fica desacoplado de conteúdo específico do MVP (sprites da "Girl Plataform", salas específicas, balanceamento); conteúdo específico do jogo fica fora de `_Project` ou claramente isolado dentro dele.
+- Cada fase abaixo ainda vale como unidade de trabalho, mas agora é dupla: "isso resolve um passo do MVP" **e** "isso fica genérico o bastante pra ir pro template". Quando as duas coisas conflitarem, o MVP jogável vence — o template se ajusta depois, não o contrário.
+
 Convenção de cada fase abaixo:
 - **Objetivo** — o que existe ao final que não existia antes.
 - **Reaproveita de** — o que vem pronto (ou quase) dos seus repositórios `Template-CoreSystem`/`Template-FirstPersonController`.
@@ -12,118 +20,137 @@ Convenção de cada fase abaixo:
 
 ---
 
-## Fase 0 — Fundação do projeto
+## Fase 0 — Fundação do projeto ✅ Parcialmente concluída
 
 **Objetivo**: esqueleto de pastas e convenções documentadas, antes de qualquer gameplay. **Sem asmdef, sem package UPM/DLL** — tudo como scripts soltos em `Assets`, pensado para exportar depois como `.unitypackage` e importar em qualquer projeto novo com duplo-clique.
 
-**Reaproveita de**: estrutura de namespace `nakatimat.*`, convenção de `InspectorLineAttribute`, referência a "Regras" nos comentários do Core.
+**Reaproveita de**: estrutura de namespace (`NakeDev.*`), convenção de `InspectorLineAttribute`, referência a "Regras" nos comentários do Core.
 
 **Criado do zero**:
-- Estrutura de pastas por feature (não por tipo): `Assets/_Project/Core`, `Player`, `Interaction`, `Inventory`, `Combat`, `Abilities`, `SceneManagement`, `SaveSystem`, `UI`, `Editor`. A separação continua existindo pela organização de pastas/namespace — só não é imposta por compilação separada.
-- `CONVENTIONS.md` na raiz do template: formaliza as "Regras" que hoje só existem como comentário solto (naming, SRP por componente, quando usar SO vs interface, quando usar evento estático vs Event Channel SO).
-- `GameStateSO` portado do Core (praticamente 1:1, trocando estados específicos de FPS por `Playing/Paused/Menu/Cutscene`).
+- Estrutura de pastas por feature: `Assets/_Project/Core`, `Player` — **feito**. `Interaction`, `Inventory`, `Combat`, `Abilities`, `SceneManagement`, `SaveSystem`, `UI`, `Editor` — **ainda não criadas** (chegam junto com as fases que as usam).
+- `CONVENTIONS.md` na raiz do template — **pendente**. Os comentários no código já citam "Regra 3", "Regra 5", "Regra 6", "Regra 9" como se o arquivo existisse, mas ele não foi criado ainda. **Isso é uma dívida real: as regras estão só na cabeça de quem escreveu os comentários.**
+- `GameStateSO` portado do Core — **feito** ([GameStateSO.cs](../Assets/_Project/Core/GameStateSO.cs)), com `GameStateManager.asset` configurado na cena.
+- Namespace do projeto migrado de `PlanA` para `NakeDev` em todos os scripts e assets serializados — **feito**.
 
-**Critério de pronto**: projeto compila, `CONVENTIONS.md` revisado por você, `GameStateSO` funcional numa cena de teste trocando estado via script de debug, pasta `_Project` exportável via `Assets → Export Package` sem erros de dependência faltando.
+**Critério de pronto**: projeto compila ✅, `CONVENTIONS.md` revisado por você ❌ (não existe ainda), `GameStateSO` funcional numa cena de teste ✅, pasta `_Project` exportável via `Assets → Export Package` sem erros de dependência faltando — não testado ainda.
+
+**Próximo passo concreto desta fase**: escrever `CONVENTIONS.md` transcrevendo as regras já citadas em comentário (Regra 3 = tuning em SO à parte, Regra 5 = animação só via crossfade/nunca `Animator.SetBool`, Regra 6 = "juice" fica fora do core, Regra 9 = habilidades de movimento vivem dentro de `PlayerLocomotion2D`, não em componentes `*Ability` separados) antes de abrirem mais regras implícitas nas próximas fases.
 
 **Guardrail de IA**: gerar só esqueleto (pastas, 1 SO). Nenhuma lógica de gameplay nesta fase. Nenhum asmdef.
 
 ---
 
-## Fase 1 — Player Controller 2D + Animação crossfade-only
+## Fase 1 — Player Controller 2D + Animação crossfade-only ✅ Concluída
 
 **Objetivo**: personagem 2D anda, pula, cai, com animação 100% via crossfade (sem transições no Animator Controller).
 
-**Reaproveita de**: `AnimatorBrain.cs` (praticamente sem alteração — já é crossfade puro e agnóstico de gênero de jogo), padrão de `InputReader` + interface de input (`IInteractionInput` → generalizar/estender para `IMovementInput` se necessário), `PlayerManager` como "Brain" orquestrador.
+**Reaproveita de**: `AnimatorBrain.cs` (praticamente sem alteração — já é crossfade puro e agnóstico de gênero de jogo), padrão de `InputReader` + interface de input (`IMovementInput`), estados via enum simples.
 
-**Decisão de input (confirmada)**: New Input System (`com.unity.inputsystem`) nativo, via `.inputactions` gerado — mesmo padrão dos repos atuais. **Sem InputManager global/singleton.** `InputReader` continua como componente por entidade (fica no GameObject do player), consumido pelos outros sistemas só via interface (`IInteractionInput`/equivalente 2D), nunca por referência direta à classe concreta — consistente com o `GameStateSO`, que já evita singleton pesado por princípio.
+**Decisão de input (confirmada)**: New Input System (`com.unity.inputsystem`) nativo, via `.inputactions` gerado. **Sem InputManager global/singleton.** `InputReader` como componente por entidade, consumido só via interface (`IMovementInput`).
 
-**Criado do zero**:
-- `PlayerLocomotion2D`: `Rigidbody2D`/`CharacterController2D` (raycast-based, seguindo referência Tarodev), com coyote time e jump buffering (funcionais, não estéticos — ver relatório §2).
-- `PlayerAnimationController`: dispara `AnimatorBrain.PlayAnimation(hash, crossfadeTime)` a partir dos estados de movimento (Idle/Run/Jump/Fall), com hashes cacheados como `PlayerLocomotionAnimation` já faz.
-- Estado do player via enum simples (`PlayerState.Locomotion/Jump/Fall/...`) — **não** introduzir HFSM ainda (YAGNI; só migrar quando o switch ficar difícil de ler, conforme relatório §2).
+**Criado do zero** — todos entregues:
+- [`PlayerLocomotion2D.cs`](../Assets/_Project/Player/PlayerLocomotion2D.cs): `Rigidbody2D` + raycast/overlap-based ground e wall check, com coyote time e jump buffering funcionais.
+- [`PlayerAnimationController.cs`](../Assets/_Project/Player/PlayerAnimationController.cs): dispara `AnimatorBrain.PlayAnimation(hash, crossfadeTime)` a partir de Idle/Run/Jump/Fall, hashes cacheados.
+- [`PlayerFacing2D.cs`](../Assets/_Project/Player/PlayerFacing2D.cs): flip de direção do sprite.
+- [`LocomotionConfigSO.cs`](../Assets/_Project/Player/LocomotionConfigSO.cs): tuning centralizado (movimento, pulo, ground/wall check).
+- Estado do player via enum simples — HFSM não introduzida (correto, YAGNI ainda vale).
 
-**Critério de pronto**: cena de teste com 1 sprite, anda/pula/cai suavemente, troca de animação sem nenhuma seta de transição configurada no Animator Controller (só states soltos + crossfade por código).
+**Bônus já adiantado desta fase para a Fase 5** (double jump, wall slide, wall jump já implementados dentro de `PlayerLocomotion2D`/`LocomotionConfigSO`, seguindo a Regra 9 revisada — ver Fase 5).
+
+**Critério de pronto**: ✅ cena `[DEV] Mechanics.unity` com sprite anda/pula/cai suavemente, troca de animação sem seta de transição no Animator Controller (`PlayerAnimator.controller` com states soltos + crossfade por código).
 
 **Guardrail de IA**: gerar controller + animação nessa fase, nada de combate/dano/gate ainda mesmo que "pareça fácil de encaixar".
 
 ---
 
-## Fase 2 — Câmera por sala (Cinemachine 2D, estilo Hollow Knight)
+## Fase 2 — Câmera por sala (Cinemachine 2D, estilo Hollow Knight) ⏳ Não iniciada
 
 **Objetivo**: câmera com follow contínuo e suavizado (não câmera fixa por tela, tipo Mega Man), confinada à geometria real de cada sala, com blend suave na transição — comportamento de referência: **Hollow Knight**.
 
-**Reaproveita de**: nada diretamente (Core é 1ª pessoa) — só o princípio de "trigger ativa comportamento" já visto em `InteractionScanner`.
+**Reaproveita de**: nada diretamente (Core é 1ª pessoa) — só o princípio de "trigger ativa comportamento".
 
 **Criado do zero**:
-- Virtual Camera por sala (Cinemachine) usando `CinemachineFramingTransposer` com **dead zone** (ignora pequenos movimentos verticais — pulinho, queda curta) e **look-ahead** leve na direção horizontal do movimento.
-- `Confiner2D` referenciando um `PolygonCollider2D` desenhado na **forma real da sala** (não uma caixa genérica) — a câmera respeita paredes irregulares e tetos baixos, igual ao jogo de referência.
-- `RoomCameraTrigger`: Collider2D que sobe prioridade da vcam da sala ao entrar; Cinemachine faz o blend sozinho (sem corte brusco). Precisa invalidar o cache de bounding do `Confiner2D` ao trocar de sala (bug documentado da Unity).
-- **Fora de escopo desta fase (e do template)**: screen shake, camera punch/kick em impacto — isso é "juice" de jogo específico, decidido fora do núcleo (Hollow Knight tem, mas fica de fora daqui por decisão sua).
+- Virtual Camera por sala (Cinemachine) usando `CinemachineFramingTransposer` com **dead zone** e **look-ahead** leve na direção horizontal do movimento.
+- `Confiner2D` referenciando um `PolygonCollider2D` desenhado na **forma real da sala**.
+- `RoomCameraTrigger`: Collider2D que sobe prioridade da vcam da sala ao entrar; invalidar cache de bounding do `Confiner2D` ao trocar de sala.
+- **Fora de escopo desta fase (e do template)**: screen shake, camera punch/kick em impacto.
 
-**Critério de pronto**: 2 salas de teste com geometria irregular lado a lado, câmera segue suavizada (sem grudar 1:1 no player), respeita o polígono de cada sala sem mostrar área fora dela, troca de sala com blend suave ao atravessar a divisa.
+**Critério de pronto**: 2 salas de teste com geometria irregular lado a lado, câmera segue suavizada, respeita o polígono de cada sala, troca de sala com blend suave.
 
-**Guardrail de IA**: só câmera. Resistir à tentação de já implementar scene loading aditivo aqui (isso é Fase 3) ou qualquer shake/feedback de impacto.
+**Guardrail de IA**: só câmera. Resistir a implementar scene loading aditivo aqui (Fase 3) ou shake/feedback de impacto.
+
+**Pré-requisito ainda não feito**: pacote `com.unity.cinemachine` não está no `Packages/manifest.json` — instalar como primeiro passo desta fase.
 
 ---
 
-## Fase 3 — Scene management aditivo (salas)
+## Fase 3 — Scene management aditivo (salas) ⏳ Não iniciada
 
 **Objetivo**: mundo dividido em cena persistente + cenas de sala carregadas/descarregadas aditivamente.
 
-**Reaproveita de**: `GameStateSO` (para bloquear input durante carregamento).
+**Reaproveita de**: `GameStateSO` (para bloquear input durante carregamento) — já disponível e pronto pra ser consumido aqui.
 
 **Criado do zero**:
 - `RoomLoader`: carrega/descarrega cena aditiva ao cruzar um `RoomTransitionTrigger`, reposiciona player no ponto de entrada correspondente.
 - Cena persistente com player, câmeras (raiz), managers (GameState, Inventory, Abilities).
 
-**Critério de pronto**: transitar entre 2+ salas descarrega a anterior (validar via Hierarchy/Profiler que a cena antiga saiu de memória), player aparece no ponto de entrada correto.
+**Critério de pronto**: transitar entre 2+ salas descarrega a anterior (validar via Hierarchy/Profiler), player aparece no ponto de entrada correto.
 
-**Guardrail de IA**: não misturar lógica de save aqui ainda — só carregar/descarregar. Persistência de estado é Fase 6.
+**Guardrail de IA**: não misturar lógica de save aqui ainda — só carregar/descarregar. Persistência é Fase 6.
+
+**Nota de alinhamento (MVP)**: as cenas hoje existentes (`Splashscreen.unity`, `[DEV] Mechanics.unity`, `SampleScene.unity`) são de bootstrap/prototipagem, não salas do jogo. Esta fase é onde a estrutura real de salas do MVP nasce — decidir aqui também quantas salas o MVP vai ter (sugestão: 2-3, o mínimo pra provar 1 gate de habilidade).
 
 ---
 
-## Fase 4 — Combate e dano
+## Fase 4 — Combate e dano ⏳ Não iniciada
 
 **Objetivo**: player e inimigos podem causar/receber dano de forma desacoplada.
 
-**Reaproveita de**: padrão Strategy do `InteractionActionSO` (mesma filosofia aplicada a "ações de dano"), `AnimatorBrain` para animação de hit/attack via crossfade.
+**Reaproveita de**: `AnimatorBrain` para animação de hit/attack via crossfade (já disponível).
 
 **Criado do zero**:
-- `IDamageable` (contrato), `HealthComponent` (estado + eventos `OnDamaged`/`OnDeath`), `DamageDealer` (componente simples que localiza `IDamageable` e chama `TakeDamage`).
-- Hook de animação: `HealthComponent.OnDamaged` dispara crossfade de hit via `AnimatorBrain` (sem qualquer sistema de "juice" — sem hit-stop, sem screen shake; isso fica para fase de polish do jogo real, fora do template).
+- `IDamageable` (contrato), `HealthComponent` (estado + eventos `OnDamaged`/`OnDeath`), `DamageDealer` (componente simples).
+- Hook de animação: `HealthComponent.OnDamaged` dispara crossfade de hit via `AnimatorBrain` (sem "juice" — sem hit-stop, sem screen shake).
 
-**Critério de pronto**: player e 1 inimigo de teste trocam dano, ambos usando o mesmo `IDamageable`/`HealthComponent`, morte dispara evento consumível por outros sistemas.
+**Critério de pronto**: player e 1 inimigo de teste trocam dano, ambos usando `IDamageable`/`HealthComponent`, morte dispara evento consumível por outros sistemas.
 
-**Guardrail de IA**: gerar só o contrato + componente + 1 exemplo de uso. Não gerar sistema de armas/combo ainda — isso é conteúdo de jogo, não do template.
+**Guardrail de IA**: gerar só o contrato + componente + 1 exemplo de uso. Sem sistema de armas/combo ainda.
+
+**Nota**: os sprites de ataque/dodge/hit já importados em `Assets/_Project/Art/Sprites/Girl Plataform` (aerial dash, atk, hurt, dodge atk...) dão material de sobra pra essa fase — não precisa gerar arte nova, só ligar o que já existe ao `AnimatorBrain`.
 
 ---
 
-## Fase 5 — Ability-gating + Inventário
+## Fase 5 — Ability-gating + Inventário 🔶 Em andamento
 
 **Objetivo**: progressão via habilidades que desbloqueiam áreas (o "gate" clássico de metroidvania).
 
-**Decisão revisada (Regra 9 — CONVENTIONS.md)**: diferente do desenho original desta fase, as habilidades de movimento (double jump, wall slide, wall jump, dash) **não** viram componentes `*Ability` separados. Toda a lógica de movimento fica dentro de `PlayerLocomotion2D`, e todo o tuning num único `LocomotionConfigSO` — mais fácil de controlar num workflow solo do que caçar valores espalhados em vários assets/componentes. Double jump já foi consolidado assim (ver `Assets/_Project/Player/PlayerLocomotion2D.cs` e `LocomotionConfigSO.cs`).
+**Decisão revisada (Regra 9 — CONVENTIONS.md)**: as habilidades de movimento (double jump, wall slide, wall jump, dash) **não** viram componentes `*Ability` separados. Toda a lógica de movimento fica dentro de `PlayerLocomotion2D`, e todo o tuning num único `LocomotionConfigSO`.
 
-**Reaproveita de**: `InventoryManager`/`InventoryEvents` quase 1:1 (já é "enxuto" e sem UI acoplada). Padrão Strategy do `InteractionActionSO` reaproveitado para `AbilityGateSO`.
+**Progresso real**:
+- ✅ Double jump — implementado (`MaxExtraJumps`/`ExtraJumpForce` em `LocomotionConfigSO`).
+- ✅ Wall slide — implementado (`WallCheckDistance`/`WallSlideSpeed`).
+- ✅ Wall jump — implementado (`WallJumpForceX/Y`, `WallJumpControlLockTime`, recarrega o double jump ao sair da parede).
+- ❌ Dash — ainda não implementado (sem campos de dash em `LocomotionConfigSO` nem lógica em `PlayerLocomotion2D`).
+- ❌ `AbilityFlagsSO` — ainda não criado. Hoje as habilidades acima estão **sempre ligadas**; ainda não há gate consultável (`if (AbilityFlags.DoubleJump)` etc.).
+- ❌ `AbilityGateSO`/obstáculo de mundo — ainda não criado.
 
-**Criado do zero**:
-- `AbilityFlagsSO`: mesmo espírito do `GameStateSO`, mas guardando flags de habilidade (`DoubleJump`, `WallClimb`, `Dash`...). `PlayerLocomotion2D` só **consulta** a flag antes de consumir a habilidade (ex.: não pular duplo se `AbilityFlags.DoubleJump` estiver desligada) — a lógica de movimento em si não se move daqui.
-- `AbilityGateSO` (extends o mesmo padrão de `InteractionActionSO`/nova base de "obstáculo"): obstáculo no mundo consulta a flag e libera passagem.
-- Wall slide + wall jump + dash entram como mais lógica/campos dentro de `PlayerLocomotion2D`/`LocomotionConfigSO`, um de cada vez (não tudo numa sessão só).
+**Criado do zero (restante)**:
+- `AbilityFlagsSO`: guarda flags de habilidade (`DoubleJump`, `WallClimb`, `Dash`...). `PlayerLocomotion2D` passa a **consultar** a flag antes de consumir a habilidade.
+- `AbilityGateSO`: obstáculo no mundo consulta a flag e libera passagem.
+- Dash entra como mais um bloco de lógica/campos dentro de `PlayerLocomotion2D`/`LocomotionConfigSO`.
 
-**Referência de mercado analisada**: o asset `MetroidvaniaController` (importado em `Assets/MetroidvaniaController` para estudo) tem exatamente essas 4 habilidades implementadas, mas como referência de **ideia**, não de código — a implementação dele é uma God Class (`CharacterController2D.cs`) misturando movimento+dash+wall-slide+wall-jump+dano+morte+reload de cena, com campos públicos, Input Manager legado (`Input.GetAxisRaw`/`GetKeyDown`), pulo via `AddForce` inconsistente com velocidade direta, animação via `Animator.SetBool` (contradiz a Regra 5) e screen shake na câmera (contradiz a Regra 6). Nenhum desse código deve ser copiado — só a lista de habilidades e os parâmetros de tuning (força de dash, altura de wall-jump) valem como ponto de partida a recalibrar.
+**Referência de mercado analisada**: asset `MetroidvaniaController`, estudado e depois removido do projeto (não está mais em `Assets/`) — só a lista de habilidades e parâmetros de tuning foram aproveitados como ponto de partida, nenhum código copiado.
 
-**Critério de pronto**: obstáculo de teste bloqueia o player até uma flag de debug ser ativada; ativar a flag libera a passagem sem reiniciar a cena. Desligar uma flag de habilidade remove o comportamento correspondente em `PlayerLocomotion2D` sem quebrar o resto da locomoção.
+**Critério de pronto**: obstáculo de teste bloqueia o player até uma flag de debug ser ativada; ativar a flag libera a passagem sem reiniciar a cena. Desligar uma flag de habilidade remove o comportamento correspondente sem quebrar o resto da locomoção.
 
-**Guardrail de IA**: gerar 1 habilidade de movimento por vez dentro de `PlayerLocomotion2D` (ex.: só wall slide+wall jump nesta sessão, dash em outra) — mesmo sendo um arquivo só, o princípio de "um sistema por vez, revisão antes de avançar" (Regra 8) continua valendo por incremento de lógica, não por arquivo novo. Sem UI de "habilidades desbloqueadas" ainda (isso é Fase 7, UI).
+**Guardrail de IA**: gerar 1 peça por vez — sugestão de ordem: (1) `AbilityFlagsSO` + consulta de flag nas habilidades já existentes, (2) `AbilityGateSO` + 1 obstáculo de teste, (3) dash como habilidade nova já nascendo atrás de flag. Sem UI de "habilidades desbloqueadas" ainda (Fase 7).
 
 ---
 
-## Fase 6 — Save / Checkpoint
+## Fase 6 — Save / Checkpoint ⏳ Não iniciada
 
 **Objetivo**: progresso persiste entre sessões, por sala.
 
-**Reaproveita de**: `GameStateSO` (estado `Loading` durante save/load), estrutura de eventos já estabelecida.
+**Reaproveita de**: `GameStateSO` (estado `Loading` durante save/load).
 
 **Criado do zero**:
 - Interface `ISaveable` (componentes declaram o que persistir).
@@ -131,49 +158,48 @@ Convenção de cada fase abaixo:
 
 **Critério de pronto**: salvar, fechar o jogo (Play Mode stop + restart), carregar — habilidades e itens coletados persistem.
 
-**Guardrail de IA**: escopo mínimo de save (o que já existe: flags, inventário, sala atual). Não generalizar para "sistema de save genérico para qualquer dado" — resolve o problema de hoje, não hipóteses futuras (YAGNI).
+**Guardrail de IA**: escopo mínimo de save (flags, inventário, sala atual). Não generalizar para "sistema de save genérico para qualquer dado" (YAGNI).
 
 ---
 
-## Fase 7 — UI/HUD base
+## Fase 7 — UI/HUD base ⏳ Não iniciada
 
 **Objetivo**: HUD mínimo funcional (vida, ícone de interação, feedback de item coletado).
 
-**Reaproveita de**: padrão de `IconInteraction` (ícone de interação por tipo de dispositivo) adaptado para 2D/UI Toolkit ou uGUI, conforme preferência.
-
-**Criado do zero**: barra/contador de vida ligado a `HealthComponent.OnDamaged`, prompt de interação, toast simples de "item coletado" ligado a `InventoryEvents`.
+**Criado do zero**: barra/contador de vida ligado a `HealthComponent.OnDamaged`, prompt de interação, toast simples de "item coletado" ligado a eventos de inventário.
 
 **Critério de pronto**: HUD reage a dano, coleta de item e interação sem polling (tudo via evento).
 
-**Guardrail de IA**: UI mínima e funcional, sem animação de UI "bonita" (isso é polish de jogo específico, não do template).
+**Guardrail de IA**: UI mínima e funcional, sem animação de UI "bonita".
 
 ---
 
-## Fase 8 — Editor tooling & QoL
+## Fase 8 — Editor tooling & QoL ⏳ Não iniciada
 
 **Objetivo**: portar as ferramentas de produtividade solo do Core.
 
-**Reaproveita de**: `InspectorLineAttribute` + `InspectorLineDrawer`, padrão `Reset()` de auto-configuração (aplicar em componentes 2D: auto-adicionar `Rigidbody2D`/`Collider2D` corretos, auto-setar layers).
+**Reaproveita de**: `InspectorLineAttribute` + `InspectorLineDrawer`, padrão `Reset()` de auto-configuração.
 
-**Criado do zero**: nada estrutural — só adaptar os auto-configs existentes para os novos componentes 2D criados nas fases anteriores.
+**Criado do zero**: nada estrutural — só adaptar os auto-configs existentes para os componentes 2D criados nas fases anteriores.
 
-**Critério de pronto**: arrastar `PlayerLocomotion2D`/`InteractableObject2D` num GameObject novo já configura collider/layer certos sem passo manual.
+**Critério de pronto**: arrastar `PlayerLocomotion2D`/equivalente num GameObject novo já configura collider/layer certos sem passo manual.
 
 **Guardrail de IA**: só tooling de editor, zero gameplay novo.
 
 ---
 
-## Fase 9 — Validação de expansão (checkpoint de arquitetura)
+## Fase 9 — Validação de expansão (checkpoint de arquitetura) ⏳ Não iniciada
 
-**Objetivo**: confirmar que o template realmente "abre espaço" em vez de limitar, antes de declarar v1.0 pronta.
+**Objetivo**: confirmar que o template realmente "abre espaço" em vez de limitar, antes de declarar v1.0 pronta — e, com a visão atualizada, confirmar que ele sobreviveu a ser extraído de um jogo real.
 
 **Como validar** (sem escrever jogo completo, só protótipos de estresse):
 1. Adicionar 1 inimigo com IA simples usando `HealthComponent`/`IDamageable` sem modificar Combat core → confirma desacoplamento.
-2. Adicionar 1 habilidade nova (ex.: dash) e 1 gate novo sem tocar em `AbilityFlagsSO`/`AbilityGateSO` existentes → confirma extensibilidade Strategy.
+2. Adicionar 1 habilidade nova e 1 gate novo sem tocar em `AbilityFlagsSO`/`AbilityGateSO` existentes → confirma extensibilidade.
 3. Adicionar 1 sala nova com sua própria vcam/confiner sem tocar em `RoomLoader` → confirma que scene management escala por conteúdo, não por código.
-4. Revisão de tamanho de arquivo: nenhum script deveria passar de ~150–200 linhas nesse ponto; se passou, é sinal de dividir responsabilidade (SRP).
+4. Revisão de tamanho de arquivo: nenhum script deveria passar de ~150–200 linhas nesse ponto; `PlayerControls.cs` (475 linhas) é gerado pelo Input System e fica de fora dessa contagem — os demais devem ser revisados.
+5. **Novo**: exportar `Assets/_Project` como `.unitypackage` e importar num projeto Unity vazio → confirma que o template realmente separa do conteúdo específico do MVP (sprites, salas, balanceamento do jogo).
 
-**Critério de pronto**: os 4 testes acima passam sem editar código dos sistemas core — só adicionando assets/componentes novos.
+**Critério de pronto**: os 5 testes acima passam sem editar código dos sistemas core.
 
 ---
 
@@ -184,4 +210,22 @@ Convenção de cada fase abaixo:
 3. Se uma fase gerar mais do que ~3-4 arquivos novos ou qualquer arquivo grande (200+ linhas), paramos e dividimos antes de continuar.
 4. Preferir portar/adaptar código dos seus repositórios existentes a gerar do zero, sempre que o padrão já existir lá.
 5. Nenhum sistema de "juice" (screen shake, hit-stop, squash&stretch automático, partículas de feedback) entra no template — isso é decisão de jogo específico, adicionada organicamente depois, fora deste plano.
-6. Sem asmdef, sem package UPM, sem DLL. O template é uma pasta de scripts em `Assets`, exportada como `.unitypackage` e importada em cada projeto novo — decisão explícita porque só você usa o template.
+6. Sem asmdef, sem package UPM, sem DLL. O template é uma pasta de scripts em `Assets`, exportada como `.unitypackage` e importada em cada projeto novo.
+7. **Novo**: ao escrever qualquer sistema, perguntar "isso é regra do gênero (metroidvania) ou regra deste jogo específico?". Regra de gênero → vai pro template (`_Project/Core`, `Player`, etc., sem depender de conteúdo específico). Regra do jogo específico (nome de habilidade, número de salas, balanceamento) → fica isolado em dados/config, nunca hardcoded no sistema genérico.
+
+---
+
+## Status resumido (2026-08-28)
+
+| Fase | Status |
+|---|---|
+| 0 — Fundação | 🔶 Parcial — falta `CONVENTIONS.md` e pastas de features futuras |
+| 1 — Player Controller + Animação | ✅ Concluída |
+| 2 — Câmera por sala | ⏳ Não iniciada (falta instalar Cinemachine) |
+| 3 — Scene management | ⏳ Não iniciada |
+| 4 — Combate e dano | ⏳ Não iniciada (arte já disponível) |
+| 5 — Ability-gating + Inventário | 🔶 Em andamento — double/wall jump/slide prontos; faltam flags, gate e dash |
+| 6 — Save/Checkpoint | ⏳ Não iniciada |
+| 7 — UI/HUD | ⏳ Não iniciada |
+| 8 — Editor tooling | ⏳ Não iniciada |
+| 9 — Validação de expansão | ⏳ Não iniciada |
