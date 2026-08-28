@@ -1,0 +1,14 @@
+"project_id_env": "CROWDIN_PROJECT_ID"
+"api_token_env": "CROWDIN_PERSONAL_TOKEN"
+"base_path": "."
+"preserve_hierarchy": true
+
+files:
+  - source: /Assets/Localization/Tables/*.csv
+    translation: /Assets/Localization/Tables/%original_file_name%
+    type: csv
+    # Ordem das colunas no CSV exportado pela Unity Localization (CSV extension):
+    # Key,Id,Shared Comments,English(en),English(en) Comments,Portuguese(pt),Portuguese(pt) Comments
+    # identifier = Key | source_phrase = coluna de origem (pt) | en = coluna alvo (traduzida in-place)
+    # entradas vazias entre vírgulas = coluna ignorada (Id e as colunas "Comments")
+    scheme: "identifier,,context,en,,source_phrase,"
