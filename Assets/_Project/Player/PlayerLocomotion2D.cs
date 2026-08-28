@@ -80,6 +80,7 @@ namespace NakeDev.Player
             WallCheck();
             ApplyHorizontalMovement();
             ApplyFallGravity();
+            Debug.Log($"WallSliding: {IsWallSliding}, " + $"WallDirection: {_wallDirection}, " + $"ExtraJumps: {_extraJumpsRemaining}");
             TryConsumeJump();
         }
 
@@ -107,12 +108,26 @@ namespace NakeDev.Player
                 return;
             }
 
-            float halfWidth = _collider.bounds.extents.x;
-            float castDistance = halfWidth + _config.WallCheckDistance;
-            Vector2 origin = _rb.position;
+            // Usa os bounds reais do collider porque o Rigidbody pode não estar
+            // exatamente no centro dele, especialmente quando existe Collider Offset.
+            Bounds bounds = _collider.bounds;
 
-            bool touchingRight = Physics2D.Raycast(origin, Vector2.right, castDistance, _config.GroundLayerMask);
-            bool touchingLeft = Physics2D.Raycast(origin, Vector2.left, castDistance, _config.GroundLayerMask);
+            // Pequena margem para garantir que o raycast comece fora do collider
+            // do player, evitando que ele detecte o próprio personagem como parede.
+            const float skin = 0.01f;
+
+            // Cada raycast começa na respectiva borda lateral do collider.
+            // Antes, ambos começavam em _rb.position, dentro do player, o que
+            // poderia causar um falso positivo caso sua layer estivesse no mask.
+            Vector2 rightOrigin = new Vector2(bounds.max.x + skin, bounds.center.y);
+
+            Vector2 leftOrigin = new Vector2(bounds.min.x - skin, bounds.center.y);
+
+            // Como os raios agora começam fora do collider, não precisamos somar
+            // metade da largura do player. Verificamos somente a distância configurada.
+            bool touchingRight = Physics2D.Raycast(rightOrigin, Vector2.right, _config.WallCheckDistance, _config.GroundLayerMask);
+
+            bool touchingLeft = Physics2D.Raycast(leftOrigin, Vector2.left, _config.WallCheckDistance, _config.GroundLayerMask);
 
             float x = _input != null ? _input.MoveInput.x : 0f;
 

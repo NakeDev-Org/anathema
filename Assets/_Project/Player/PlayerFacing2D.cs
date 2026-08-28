@@ -11,9 +11,11 @@ namespace NakeDev.Player
     {
         [Tooltip("Referência opcional; se vazia, gira o próprio transform deste GameObject.")]
         [SerializeField] private Transform _visualRoot;
-
+        
         private IMovementInput _input;
-        private bool _facingRight = true;
+
+        [Tooltip("Posição default.")]
+        [SerializeField] private bool _facingRight = true;
 
         private void Awake()
         {
