@@ -38,13 +38,28 @@ namespace NakeDev.Player
 
         public void OnMove(InputAction.CallbackContext context)
         {
-            if (_gameState != null && !_gameState.IsPlaying())
+            // if (_gameState != null && !_gameState.IsPlaying())
+            // {
+            //     MoveInput = Vector2.zero;
+            //     return;
+            // }
+
+            // MoveInput = context.ReadValue<Vector2>();
+
+            Vector2 input = context.ReadValue<Vector2>();
+
+            if (input.sqrMagnitude < 0.04f)
             {
                 MoveInput = Vector2.zero;
-                return;
             }
-
-            MoveInput = context.ReadValue<Vector2>();
+            else if (Mathf.Abs(input.x) > Mathf.Abs(input.y))
+            {
+                MoveInput = new Vector2(Mathf.Sign(input.x), 0f);
+            }
+            else
+            {
+                MoveInput = new Vector2(0f, Mathf.Sign(input.y));
+            }
         }
 
         public void OnJump(InputAction.CallbackContext context)

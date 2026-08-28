@@ -103,9 +103,7 @@ namespace NakeDev.Player
             IsGrounded = Physics2D.OverlapCircle(origin, _config.GroundCheckRadius, _config.GroundLayerMask);
 
             // Evita disparar Landing no primeiro frame caso o player já comece no chão.
-            if (_groundStateInitialized &&
-                !wasGrounded &&
-                IsGrounded)
+            if (_groundStateInitialized && !wasGrounded && IsGrounded)
             {
                 OnLanded?.Invoke(landingSpeed);
             }
@@ -208,9 +206,7 @@ namespace NakeDev.Player
 
         private void ApplyFallGravity()
         {
-            _rb.gravityScale = _rb.linearVelocity.y < 0f
-                ? _defaultGravityScale * _config.FallGravityMultiplier
-                : _defaultGravityScale;
+            _rb.gravityScale = _rb.linearVelocity.y < 0f ? _defaultGravityScale * _config.FallGravityMultiplier : _defaultGravityScale;
 
             // Limita a velocidade de queda enquanto desliza na parede (só afeta quando já caindo
             // mais rápido que o limite — não interfere num pulo ainda subindo contra a parede).

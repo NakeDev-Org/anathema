@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7ea6073a98609d4ea8223c46eaa0e20, type: 3}
   m_Name: PlayerLocomotionConfig
   m_EditorClassIdentifier: Assembly-CSharp::NakeDev.Player.LocomotionConfigSO
-  MoveSpeed: 6
+  MoveSpeed: 15
   Acceleration: 60
   Deceleration: 80
-  JumpForce: 5
-  FallGravityMultiplier: 3.5
-  MaxExtraJumps: 5
-  ExtraJumpForce: 6
+  JumpForce: 13
+  FallGravityMultiplier: 2.5
+  MaxExtraJumps: 1
+  ExtraJumpForce: 13
+  ExtraJumpCooldown: 0.45
   CoyoteTime: 0.1
   JumpBufferTime: 0.1
   GroundCheckRadius: 0.15
@@ -28,7 +29,7 @@ MonoBehaviour:
   WallCheckDistance: 1.5
   WallSlideSpeed: 2
   WallJumpForceX: 8
-  WallJumpForceY: 10
+  WallJumpForceY: 12
   WallJumpControlLockTime: 0.15
-  MaxWallJumps: 2
+  MaxWallJumps: 3
   ResetExtraJumpsOnWallJump: 1

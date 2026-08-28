@@ -17,6 +17,7 @@ namespace NakeDev.Player
 
         [Header("State Names (devem existir como states soltos no Animator Controller)")]
         [SerializeField] private string _idleState = "Idle";
+        [SerializeField] private string _walkState = "Walk";
         [SerializeField] private string _runState = "Run";
         [SerializeField] private string _jumpState = "Jump";
         [SerializeField] private string _doubleJumpState = "DoubleJump";
@@ -41,6 +42,7 @@ namespace NakeDev.Player
         private float _landingAnimationTimer;
 
         private int _idleHash;
+        private int _walkHash;
         private int _runHash;
         private int _jumpHash;
         private int _doubleJumpHash;
@@ -49,7 +51,7 @@ namespace NakeDev.Player
         private int _wallJumpHash;
         private int _landingHash;
 
-        private enum AnimState { Idle, Run, Jump, DoubleJump, Fall, WallSlide, WallJump, Landing }
+        private enum AnimState { Idle, Run, Walk, Jump, DoubleJump, Fall, WallSlide, WallJump, Landing }
         private AnimState? _currentAnimState;
 
         private void Awake()
@@ -61,6 +63,7 @@ namespace NakeDev.Player
 
             _idleHash = Animator.StringToHash(_idleState);
             _runHash = Animator.StringToHash(_runState);
+            _walkHash = Animator.StringToHash(_walkState);
             _jumpHash = Animator.StringToHash(_jumpState);
             _doubleJumpHash = Animator.StringToHash(_doubleJumpState);
             _fallHash = Animator.StringToHash(_fallState);
@@ -160,15 +163,24 @@ namespace NakeDev.Player
                 return AnimState.Fall;
             }
 
-            return Mathf.Abs(_locomotion.Velocity.x) > _runSpeedThreshold
+            if (Mathf.Abs(_locomotion.Velocity.x) > 0f)
+            {
+                return Mathf.Abs(_locomotion.Velocity.x) > _runSpeedThreshold
                 ? AnimState.Run
-                : AnimState.Idle;
+                : AnimState.Walk;
+            }
+            else
+            {
+                return AnimState.Idle;
+            }
         }
 
         private int HashFor(AnimState state)
         {
             switch (state)
             {
+                case AnimState.Idle: return _idleHash;
+                case AnimState.Walk: return _walkHash;
                 case AnimState.Run: return _runHash;
                 case AnimState.Jump: return _jumpHash;
                 case AnimState.DoubleJump: return _doubleJumpHash;
