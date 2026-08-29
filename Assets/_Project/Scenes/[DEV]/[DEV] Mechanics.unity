@@ -8401,6 +8401,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6393258405721097731, guid: 2ec65a2742da27e4386bb09a14c12662, type: 3}
+      propertyPath: _lineWidth
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393258405721097731, guid: 2ec65a2742da27e4386bb09a14c12662, type: 3}
+      propertyPath: _lineColor.b
+      value: 0.13725491
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393258405721097731, guid: 2ec65a2742da27e4386bb09a14c12662, type: 3}
+      propertyPath: _lineColor.g
+      value: 0.13725491
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393258405721097731, guid: 2ec65a2742da27e4386bb09a14c12662, type: 3}
+      propertyPath: _lineColor.r
+      value: 0.53333336
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393258405721097731, guid: 2ec65a2742da27e4386bb09a14c12662, type: 3}
+      propertyPath: _maximumPoints
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8085865968848586055, guid: 2ec65a2742da27e4386bb09a14c12662, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.1
