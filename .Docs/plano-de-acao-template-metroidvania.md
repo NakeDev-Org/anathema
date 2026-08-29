@@ -20,7 +20,7 @@ Convenção de cada fase abaixo:
 
 ---
 
-## Fase 0 — Fundação do projeto ✅ Parcialmente concluída
+## Fase 0 — Fundação do projeto ✅ Concluída
 
 **Objetivo**: esqueleto de pastas e convenções documentadas, antes de qualquer gameplay. **Sem asmdef, sem package UPM/DLL** — tudo como scripts soltos em `Assets`, pensado para exportar depois como `.unitypackage` e importar em qualquer projeto novo com duplo-clique.
 
@@ -28,13 +28,11 @@ Convenção de cada fase abaixo:
 
 **Criado do zero**:
 - Estrutura de pastas por feature: `Assets/_Project/Core`, `Player` — **feito**. `Interaction`, `Inventory`, `Combat`, `Abilities`, `SceneManagement`, `SaveSystem`, `UI`, `Editor` — **ainda não criadas** (chegam junto com as fases que as usam).
-- `CONVENTIONS.md` na raiz do template — **pendente**. Os comentários no código já citam "Regra 3", "Regra 5", "Regra 6", "Regra 9" como se o arquivo existisse, mas ele não foi criado ainda. **Isso é uma dívida real: as regras estão só na cabeça de quem escreveu os comentários.**
+- `CONVENTIONS.md` na raiz do template — **descartado por decisão sua (2026-08-28)**. Os comentários no código continuam citando "Regra 3", "Regra 5", "Regra 6", "Regra 9" — essas regras seguem valendo e sendo a referência real, só não vão virar um arquivo formal à parte. Se algum dia doer não ter esse documento centralizado, é só reabrir esta fase.
 - `GameStateSO` portado do Core — **feito** ([GameStateSO.cs](../Assets/_Project/Core/GameStateSO.cs)), com `GameStateManager.asset` configurado na cena.
 - Namespace do projeto migrado de `PlanA` para `NakeDev` em todos os scripts e assets serializados — **feito**.
 
-**Critério de pronto**: projeto compila ✅, `CONVENTIONS.md` revisado por você ❌ (não existe ainda), `GameStateSO` funcional numa cena de teste ✅, pasta `_Project` exportável via `Assets → Export Package` sem erros de dependência faltando — não testado ainda.
-
-**Próximo passo concreto desta fase**: escrever `CONVENTIONS.md` transcrevendo as regras já citadas em comentário (Regra 3 = tuning em SO à parte, Regra 5 = animação só via crossfade/nunca `Animator.SetBool`, Regra 6 = "juice" fica fora do core, Regra 9 = habilidades de movimento vivem dentro de `PlayerLocomotion2D`, não em componentes `*Ability` separados) antes de abrirem mais regras implícitas nas próximas fases.
+**Critério de pronto**: projeto compila ✅, `GameStateSO` funcional numa cena de teste ✅, pasta `_Project` exportável via `Assets → Export Package` sem erros de dependência faltando — não testado ainda.
 
 **Guardrail de IA**: gerar só esqueleto (pastas, 1 SO). Nenhuma lógica de gameplay nesta fase. Nenhum asmdef.
 
@@ -57,7 +55,11 @@ Convenção de cada fase abaixo:
 
 **Bônus já adiantado desta fase para a Fase 5** (double jump, wall slide, wall jump já implementados dentro de `PlayerLocomotion2D`/`LocomotionConfigSO`, seguindo a Regra 9 revisada — ver Fase 5).
 
-**Critério de pronto**: ✅ cena `[DEV] Mechanics.unity` com sprite anda/pula/cai suavemente, troca de animação sem seta de transição no Animator Controller (`PlayerAnimator.controller` com states soltos + crossfade por código).
+**Decisão revisada (Regra 5 — 2026-08-28)**: com o combate se aproximando (Fase 4) e o Animator Controller crescendo (16+ estados soltos hoje, mais vindo com Combat), a regra "crossfade-only" deixa de significar "tudo solto numa lista plana" e passa a significar **"nenhuma seta/transição automática configurada no Animator Controller — a mudança de estado é sempre disparada por código via `AnimatorBrain.PlayAnimation`"**. Duas ferramentas passam a ser permitidas por não violarem esse princípio:
+- **Sub-State Machines**: puramente organizacionais (agrupam estados visualmente dentro do Animator Controller). Não adicionam transição nenhuma — o código continua chamando `CrossFade` pelo nome curto do estado, que funciona independente de aninhamento contanto que o nome seja único no controller inteiro. Uso: agrupar por categoria — `Locomotion` (Move + Jump/Fall/Landing), `Abilities` (double jump, wall slide, wall jump, dash — mesmo agrupamento que `AbilityFlagsSO` vai gatear na Fase 5), `Dodge` (slide, crouch), e futuramente `Combat`.
+- **Blend Tree**: permitido **só onde o movimento é um espectro contínuo controlado por 1 parâmetro**, não para ações discretas. Único caso hoje: locomoção no chão (`PlayerIdle → PlayerWalk → PlayerRun`) via um float `Speed`, usando `AnimatorBrain.SetFloat` (já existe no wrapper, sem uso até agora). Crossfada pra dentro do blend tree 1x (ao tocar o chão) e depois só atualiza o float por frame — isso não é uma transição configurada, continua sendo controle 100% via código. Pulo/queda/aterrissagem continuam soltos (não entram no blend tree) porque são disparados por evento, não por um valor contínuo. Ataques, dash, wall jump, slide — mesma lógica: ficam soltos, nunca em blend tree.
+
+**Critério de pronto**: ✅ cena `[DEV] Mechanics.unity` com sprite anda/pula/cai suavemente, troca de animação sem seta de transição no Animator Controller (`PlayerAnimator.controller` com states soltos + crossfade por código). Reorganização em Sub-State Machines + Blend Tree de locomoção fica registrada aqui como próximo passo desta fase, ainda não aplicada.
 
 **Guardrail de IA**: gerar controller + animação nessa fase, nada de combate/dano/gate ainda mesmo que "pareça fácil de encaixar".
 
@@ -219,8 +221,8 @@ Convenção de cada fase abaixo:
 
 | Fase | Status |
 |---|---|
-| 0 — Fundação | 🔶 Parcial — falta `CONVENTIONS.md` e pastas de features futuras |
-| 1 — Player Controller + Animação | ✅ Concluída |
+| 0 — Fundação | ✅ Concluída (`CONVENTIONS.md` descartado por decisão; pastas de features futuras chegam junto com cada fase) |
+| 1 — Player Controller + Animação | ✅ Concluída — reorganização em Sub-State Machines + Blend Tree (Regra 5 revisada) ainda não aplicada |
 | 2 — Câmera por sala | ⏳ Não iniciada (falta instalar Cinemachine) |
 | 3 — Scene management | ⏳ Não iniciada |
 | 4 — Combate e dano | ⏳ Não iniciada (arte já disponível) |
