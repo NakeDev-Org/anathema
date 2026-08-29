@@ -29,7 +29,7 @@ MonoBehaviour:
   GroundSlideStartDuration: 0.27
   GroundSlideMinimumDuration: 0.7
   GroundSlideEndDuration: 0.27
-  GroundSlideDeceleration: 18
+  GroundSlideDeceleration: 5
   GroundSlideMinimumSpeed: 8
   GroundSlideCooldown: 0.2
   GroundSlideColliderHeight: 2.1
@@ -47,10 +47,10 @@ MonoBehaviour:
   WallSlideEnabled: 1
   WallCheckDistance: 0.15
   WallCheckVerticalOffset: 0.5
-  WallSlideSpeed: 2
+  WallSlideSpeed: 20
   WallSlideEntryDuration: 0.08
   WallSlideEntrySpeed: 0.25
-  WallSlideAcceleration: 20
+  WallSlideAcceleration: 10
   WallJumpEnabled: 1
   WallJumpForceX: 8
   WallJumpForceY: 12
@@ -58,3 +58,4 @@ MonoBehaviour:
   WallJumpBufferTime: 0.12
   MaxWallJumps: 3
   ResetExtraJumpsOnWallJump: 1
+  ResetAerialDashesOnWallJump: 1
