@@ -35,9 +35,7 @@ namespace NakeDev.Player
             if (!_config.AerialDashEnabled || _aerialDashesRemaining <= 0)
                 return;
 
-            float directionSource = Mathf.Abs(_input.MoveInput.x) > 0.1f
-                ? _input.MoveInput.x
-                : _rb.linearVelocity.x;
+            float directionSource = Mathf.Abs(_input.MoveInput.x) > 0.1f ? _input.MoveInput.x : _rb.linearVelocity.x;
             if (Mathf.Abs(directionSource) <= 0.1f) return;
 
             float dashDirection = Mathf.Sign(directionSource);
@@ -47,11 +45,9 @@ namespace NakeDev.Player
             _aerialDashTimer = _config.AerialDashDuration;
             _aerialDashesRemaining--;
             IsAerialDashing = true;
-            IsWallSliding = false;
+            StopWallSlide();
             _rb.gravityScale = 0f;
-            _rb.linearVelocity = new Vector2(
-                _aerialDashDirection * _config.AerialDashSpeed,
-                0f);
+            _rb.linearVelocity = new Vector2(_aerialDashDirection * _config.AerialDashSpeed, 0f);
         }
 
         private void UpdateDashState()

@@ -105,6 +105,12 @@ namespace NakeDev.Player
         public float WallCheckVerticalOffset = 0.5f;
         [Tooltip("Velocidade máxima de queda (unidades/s, positivo) enquanto desliza na parede.")]
         public float WallSlideSpeed = 2f;
+        [Tooltip("Tempo inicial do wall slide em que a queda usa WallSlideEntrySpeed.")]
+        [Min(0f)]
+        public float WallSlideEntryDuration = 0.08f;
+        [Tooltip("Velocidade de queda durante a entrada do wall slide. Use um valor positivo.")]
+        [Min(0f)]
+        public float WallSlideEntrySpeed = 0.25f;
         [Tooltip("Aceleração vertical usada para atingir a velocidade de wall slide.")]
         [Min(0f)]
         public float WallSlideAcceleration = 20f;
@@ -127,5 +133,7 @@ namespace NakeDev.Player
 
         [Tooltip("Se habilitado, um wall jump restaura todos os pulos extras no ar.")]
         public bool ResetExtraJumpsOnWallJump = true;
+        [Tooltip("Se habilitado, um wall jump restaura todos os aerial dashes.")]
+        public bool ResetAerialDashesOnWallJump = true;
     }
 }

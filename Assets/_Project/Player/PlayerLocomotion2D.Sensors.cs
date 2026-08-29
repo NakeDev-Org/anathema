@@ -4,6 +4,8 @@ namespace NakeDev.Player
 {
     public partial class PlayerLocomotion2D
     {
+        private float _wallSlideEntryTimer;
+
         private void ApplyCornerCorrection()
         {
             if (_rb.linearVelocity.y <= 0f || _config.CornerCorrectionDistance <= 0f)
@@ -76,10 +78,11 @@ namespace NakeDev.Player
 
         private void WallCheck()
         {
+            bool wasWallSliding = IsWallSliding;
+
             if (IsGrounded || _wallJumpControlLockTimer > 0f)
             {
-                IsWallSliding = false;
-                _wallDirection = 0;
+                StopWallSlide();
                 return;
             }
 
@@ -109,6 +112,23 @@ namespace NakeDev.Player
                 _wallDirection = wallOnRight ? 1 : -1;
                 IsWallSliding = _config.WallSlideEnabled;
 
+                if (IsWallSliding && !wasWallSliding)
+                {
+                    _wallSlideEntryTimer = _config.WallSlideEntryDuration;
+
+                    if (_wallSlideEntryTimer > 0f &&
+                        _rb.linearVelocity.y < -_config.WallSlideEntrySpeed)
+                    {
+                        _rb.linearVelocity = new Vector2(
+                            _rb.linearVelocity.x,
+                        -_config.WallSlideEntrySpeed);
+                    }
+                }
+                else if (!IsWallSliding)
+                {
+                    _wallSlideEntryTimer = 0f;
+                }
+
                 if (_config.WallJumpEnabled)
                 {
                     _lastWallDirection = _wallDirection;
@@ -122,9 +142,15 @@ namespace NakeDev.Player
             }
             else
             {
-                IsWallSliding = false;
-                _wallDirection = 0;
+                StopWallSlide();
             }
+        }
+
+        private void StopWallSlide()
+        {
+            IsWallSliding = false;
+            _wallDirection = 0;
+            _wallSlideEntryTimer = 0f;
         }
 
         private void OnDrawGizmosSelected()

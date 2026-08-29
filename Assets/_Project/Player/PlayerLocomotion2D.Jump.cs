@@ -35,13 +35,15 @@ namespace NakeDev.Player
                 if (_config.ResetExtraJumpsOnWallJump)
                     _extraJumpsRemaining = _config.MaxExtraJumps;
 
+                if (_config.ResetAerialDashesOnWallJump)
+                    _aerialDashesRemaining = _config.MaxAerialDashes;
+
                 _extraJumpCooldownTimer = _config.ExtraJumpCooldown;
                 _wallJumpControlLockTimer = _config.WallJumpControlLockTime;
                 _wallJumpBufferTimer = 0f;
                 _lastWallDirection = 0;
                 _coyoteTimer = 0f;
-                IsWallSliding = false;
-                _wallDirection = 0;
+                StopWallSlide();
                 IsGrounded = false;
                 IsJumping = true;
                 _jumpBufferTimer = 0f;

@@ -48,6 +48,8 @@ MonoBehaviour:
   WallCheckDistance: 0.15
   WallCheckVerticalOffset: 0.5
   WallSlideSpeed: 2
+  WallSlideEntryDuration: 0.08
+  WallSlideEntrySpeed: 0.25
   WallSlideAcceleration: 20
   WallJumpEnabled: 1
   WallJumpForceX: 8

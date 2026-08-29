@@ -28,9 +28,7 @@ namespace NakeDev.Player
             if (!_config.GroundSlideEnabled || _slideCooldownTimer > 0f)
                 return;
 
-            float directionSource = Mathf.Abs(_rb.linearVelocity.x) > 0.1f
-                ? _rb.linearVelocity.x
-                : _input.MoveInput.x;
+            float directionSource = Mathf.Abs(_rb.linearVelocity.x) > 0.1f ? _rb.linearVelocity.x : _input.MoveInput.x;
             if (Mathf.Abs(directionSource) <= 0.1f) return;
 
             _slideDirection = Mathf.Sign(directionSource);

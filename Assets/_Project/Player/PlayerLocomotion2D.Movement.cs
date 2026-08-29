@@ -16,6 +16,8 @@ namespace NakeDev.Player
                 _wallJumpBufferTimer -= Time.deltaTime;
             if (_extraJumpCooldownTimer > 0f)
                 _extraJumpCooldownTimer -= Time.deltaTime;
+            if (IsWallSliding && _rb.linearVelocity.y <= 0f && _wallSlideEntryTimer > 0f)
+                _wallSlideEntryTimer -= Time.deltaTime;
 
             TickDashTimers();
         }
@@ -48,18 +50,24 @@ namespace NakeDev.Player
                 return;
             }
 
-            _rb.gravityScale = _rb.linearVelocity.y < 0f
-                ? _defaultGravityScale * _config.FallGravityMultiplier
-                : _defaultGravityScale;
-
             float verticalSpeed = Mathf.Max(_rb.linearVelocity.y, -_config.MaxFallSpeed);
 
             if (IsWallSliding && verticalSpeed <= 0f)
             {
+                _rb.gravityScale = 0f;
+                float targetSpeed = _wallSlideEntryTimer > 0f
+                    ? -_config.WallSlideEntrySpeed
+                    : -_config.WallSlideSpeed;
                 verticalSpeed = Mathf.MoveTowards(
                     verticalSpeed,
-                    -_config.WallSlideSpeed,
+                    targetSpeed,
                     _config.WallSlideAcceleration * Time.fixedDeltaTime);
+            }
+            else
+            {
+                _rb.gravityScale = verticalSpeed < 0f
+                    ? _defaultGravityScale * _config.FallGravityMultiplier
+                    : _defaultGravityScale;
             }
 
             _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, verticalSpeed);

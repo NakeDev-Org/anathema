@@ -164,10 +164,10 @@ TextureImporter:
       name: slide_merged_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 320
-        width: 144
-        height: 64
+        x: 19
+        y: 321
+        width: 43
+        height: 53
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,10 +186,10 @@ TextureImporter:
       name: slide_merged_1
       rect:
         serializedVersion: 2
-        x: 144
-        y: 320
-        width: 144
-        height: 64
+        x: 163
+        y: 321
+        width: 43
+        height: 51
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,10 +208,10 @@ TextureImporter:
       name: slide_merged_2
       rect:
         serializedVersion: 2
-        x: 288
-        y: 320
-        width: 144
-        height: 64
+        x: 305
+        y: 321
+        width: 46
+        height: 47
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -230,10 +230,10 @@ TextureImporter:
       name: slide_merged_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 256
-        width: 144
-        height: 64
+        x: 15
+        y: 257
+        width: 49
+        height: 42
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,10 +252,10 @@ TextureImporter:
       name: slide_merged_4
       rect:
         serializedVersion: 2
-        x: 144
-        y: 256
-        width: 144
-        height: 64
+        x: 147
+        y: 257
+        width: 92
+        height: 35
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -274,10 +274,10 @@ TextureImporter:
       name: slide_merged_5
       rect:
         serializedVersion: 2
-        x: 288
-        y: 256
-        width: 144
-        height: 64
+        x: 291
+        y: 257
+        width: 92
+        height: 35
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -296,10 +296,10 @@ TextureImporter:
       name: slide_merged_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 192
-        width: 144
-        height: 64
+        x: 3
+        y: 193
+        width: 108
+        height: 35
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -318,10 +318,10 @@ TextureImporter:
       name: slide_merged_7
       rect:
         serializedVersion: 2
-        x: 144
-        y: 192
-        width: 144
-        height: 64
+        x: 147
+        y: 193
+        width: 108
+        height: 35
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -340,10 +340,10 @@ TextureImporter:
       name: slide_merged_8
       rect:
         serializedVersion: 2
-        x: 288
-        y: 192
-        width: 144
-        height: 64
+        x: 291
+        y: 193
+        width: 120
+        height: 35
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -362,10 +362,10 @@ TextureImporter:
       name: slide_merged_9
       rect:
         serializedVersion: 2
-        x: 0
-        y: 128
-        width: 144
-        height: 64
+        x: 3
+        y: 129
+        width: 120
+        height: 35
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -384,10 +384,10 @@ TextureImporter:
       name: slide_merged_10
       rect:
         serializedVersion: 2
-        x: 144
-        y: 128
-        width: 144
-        height: 64
+        x: 153
+        y: 129
+        width: 120
+        height: 36
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -406,10 +406,10 @@ TextureImporter:
       name: slide_merged_11
       rect:
         serializedVersion: 2
-        x: 288
-        y: 128
-        width: 144
-        height: 64
+        x: 297
+        y: 129
+        width: 120
+        height: 36
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -428,10 +428,10 @@ TextureImporter:
       name: slide_merged_12
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
-        width: 144
-        height: 64
+        x: 12
+        y: 65
+        width: 113
+        height: 37
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -450,10 +450,10 @@ TextureImporter:
       name: slide_merged_13
       rect:
         serializedVersion: 2
-        x: 144
-        y: 64
-        width: 144
-        height: 64
+        x: 163
+        y: 65
+        width: 106
+        height: 41
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -472,10 +472,10 @@ TextureImporter:
       name: slide_merged_14
       rect:
         serializedVersion: 2
-        x: 288
-        y: 64
-        width: 144
-        height: 64
+        x: 307
+        y: 65
+        width: 39
+        height: 45
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -494,10 +494,10 @@ TextureImporter:
       name: slide_merged_15
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 144
-        height: 64
+        x: 19
+        y: 1
+        width: 39
+        height: 47
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -516,10 +516,10 @@ TextureImporter:
       name: slide_merged_16
       rect:
         serializedVersion: 2
-        x: 144
-        y: 0
-        width: 144
-        height: 64
+        x: 163
+        y: 1
+        width: 43
+        height: 51
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -548,7 +548,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":144.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       slide_merged_0: 4810136803257382146
       slide_merged_1: 7941012776050456512
