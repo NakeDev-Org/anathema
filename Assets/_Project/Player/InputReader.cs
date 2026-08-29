@@ -29,23 +29,29 @@ namespace NakeDev.Player
                 _controls = new PlayerControls();
                 _controls.Player.SetCallbacks(this);
             }
+
+            if (_gameState != null)
+                _gameState.OnStateChanged += HandleGameStateChanged;
+
             _controls.Enable();
         }
 
         private void OnDisable()
         {
+            if (_gameState != null)
+                _gameState.OnStateChanged -= HandleGameStateChanged;
+
             _controls?.Disable();
+            MoveInput = Vector2.zero;
         }
 
         public void OnMove(InputAction.CallbackContext context)
         {
-            // if (_gameState != null && !_gameState.IsPlaying())
-            // {
-            //     MoveInput = Vector2.zero;
-            //     return;
-            // }
-
-            // MoveInput = context.ReadValue<Vector2>();
+            if (_gameState != null && !_gameState.IsPlaying())
+            {
+                MoveInput = Vector2.zero;
+                return;
+            }
 
             Vector2 input = context.ReadValue<Vector2>();
 
@@ -78,6 +84,12 @@ namespace NakeDev.Player
 
             if (context.started)
                 OnDashPressed?.Invoke();
+        }
+
+        private void HandleGameStateChanged(GameState state)
+        {
+            if (state != GameState.Playing)
+                MoveInput = Vector2.zero;
         }
     }
 }

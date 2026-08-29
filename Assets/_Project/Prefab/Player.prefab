@@ -52,7 +52,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03a80d17a9634f84bae1dfa554a72dac, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlanA.Player.InputReader
+  m_EditorClassIdentifier: Assembly-CSharp::NakeDev.Player.InputReader
   _gameState: {fileID: 11400000, guid: 6eb467790a20fdc4b91719e9d19b9cf1, type: 2}
 --- !u!50 &5207549843044926287
 Rigidbody2D:
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 984330577a2cb744da226ea6b0f407bd, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlanA.Player.PlayerLocomotion2D
+  m_EditorClassIdentifier: Assembly-CSharp::NakeDev.Player.PlayerLocomotion2D
   _config: {fileID: 11400000, guid: a7ac6d51f99910243a1b520e7458500e, type: 2}
   _groundCheckPoint: {fileID: 6093824020180092188}
 --- !u!114 &8071425989621844071
@@ -106,7 +106,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a0f807bdd710ff45863cd4a59850a7b, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlanA.Core.AnimatorBrain
+  m_EditorClassIdentifier: Assembly-CSharp::NakeDev.Core.AnimatorBrain
   _animators:
   - {fileID: 8675468208142420812}
 --- !u!114 &9127772583457592411
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 52c35aaed80964645a47b3420965aba6, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlanA.Player.PlayerAnimationController
+  m_EditorClassIdentifier: Assembly-CSharp::NakeDev.Player.PlayerAnimationController
   _animatorBrain: {fileID: 0}
   _locomotion: {fileID: 0}
   _idleState: PlayerIdle
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6131a05edc74142469f0319429a3ed8f, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlanA.Player.PlayerFacing2D
+  m_EditorClassIdentifier: Assembly-CSharp::NakeDev.Player.PlayerFacing2D
   _visualRoot: {fileID: 4764249206163870995}
   _facingRight: 0
 --- !u!114 &2299506800717273154
