@@ -70,7 +70,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 2
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: d7a4d1590f5947ef96e49c686bf34cf5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -127,13 +127,21 @@ MonoBehaviour:
   _walkState: PlayerWalk
   _runState: PlayerRun
   _jumpState: PlayerJump
+  _jumpLoopState: PlayerJumpLoop
   _doubleJumpState: PlayerDoubleJump
   _fallState: PlayerFall
+  _fallLoopState: PlayerFallLoop
   _wallSlideState: PlayerWallSlide
   _wallJumpState: PlayerDoubleJump
   _landingState: PlayerLanding
+  _slideStartState: PlayerSlideStart
+  _slideLoopState: PlayerSlide
+  _slideEndState: PlayerSlideEnd
+  _aerialDashState: PlayerAerielDash
   _crossfadeTime: 0.1
-  _runSpeedThreshold: 12
+  _jumpIntroDuration: 0.24
+  _fallIntroDuration: 0.52
+  _airLoopCrossfadeTime: 0.25
   _landingAnimationDuration: 0.12
   _minimumLandingSpeed: 1
 --- !u!114 &5826441931753952093
@@ -182,7 +190,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: d7a4d1590f5947ef96e49c686bf34cf5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

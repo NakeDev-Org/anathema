@@ -15,21 +15,44 @@ MonoBehaviour:
   MoveSpeed: 15
   Acceleration: 60
   Deceleration: 80
+  RunSpeedThreshold: 12
   JumpForce: 13
-  FallGravityMultiplier: 2.5
+  FallGravityMultiplier: 3.5
+  MaxFallSpeed: 35
   MaxExtraJumps: 1
   ExtraJumpForce: 13
   ExtraJumpCooldown: 0.45
   CoyoteTime: 0.1
   JumpBufferTime: 0.1
+  GroundSlideEnabled: 1
+  GroundSlideSpeed: 25
+  GroundSlideStartDuration: 0.27
+  GroundSlideMinimumDuration: 0.7
+  GroundSlideEndDuration: 0.27
+  GroundSlideDeceleration: 18
+  GroundSlideMinimumSpeed: 8
+  GroundSlideCooldown: 0.2
+  GroundSlideColliderHeight: 2.1
+  AerialDashEnabled: 1
+  MaxAerialDashes: 1
+  AerialDashSpeed: 30
+  AerialDashDuration: 0.18
   GroundCheckRadius: 0.15
   GroundLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
-  WallCheckDistance: 1.5
+    m_Bits: 64
+  CornerCorrectionDistance: 0.2
+  CornerCorrectionStep: 0.02
+  CornerCheckDistance: 0.05
+  WallSlideEnabled: 1
+  WallCheckDistance: 0.15
+  WallCheckVerticalOffset: 0.5
   WallSlideSpeed: 2
+  WallSlideAcceleration: 20
+  WallJumpEnabled: 1
   WallJumpForceX: 8
   WallJumpForceY: 12
   WallJumpControlLockTime: 0.15
+  WallJumpBufferTime: 0.12
   MaxWallJumps: 3
   ResetExtraJumpsOnWallJump: 1

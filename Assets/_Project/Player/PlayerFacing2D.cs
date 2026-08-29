@@ -13,6 +13,7 @@ namespace NakeDev.Player
         [SerializeField] private Transform _visualRoot;
         
         private IMovementInput _input;
+        private PlayerLocomotion2D _locomotion;
 
         [Tooltip("Posição default.")]
         [SerializeField] private bool _facingRight = true;
@@ -20,6 +21,7 @@ namespace NakeDev.Player
         private void Awake()
         {
             _input = GetComponent<IMovementInput>();
+            _locomotion = GetComponent<PlayerLocomotion2D>();
             if (_visualRoot == null)
                 _visualRoot = transform;
         }
@@ -27,6 +29,7 @@ namespace NakeDev.Player
         private void Update()
         {
             if (_input == null) return;
+            if (_locomotion != null && (_locomotion.IsSliding || _locomotion.IsAerialDashing)) return;
 
             float x = _input.MoveInput.x;
             if (x > 0.01f && !_facingRight)

@@ -20,6 +20,7 @@ namespace NakeDev.Player
         public Vector2 MoveInput { get; private set; }
 
         public event Action OnJumpPressed;
+        public event Action OnDashPressed;
 
         private void OnEnable()
         {
@@ -68,6 +69,15 @@ namespace NakeDev.Player
 
             if (context.performed)
                 OnJumpPressed?.Invoke();
+        }
+
+        public void OnDash(InputAction.CallbackContext context)
+        {
+            if (_gameState != null && !_gameState.IsPlaying())
+                return;
+
+            if (context.started)
+                OnDashPressed?.Invoke();
         }
     }
 }
