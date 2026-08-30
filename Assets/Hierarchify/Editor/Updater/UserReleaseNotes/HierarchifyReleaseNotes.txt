@@ -1,0 +1,35 @@
+<b><size=18><color=#2E7DF5>HIERARCHIFY v1.1.0 (Beta) - NOTAS DE ATUALIZAÇÃO</color></size></b>
+<b><size=18><color=#2E7DF5>Esta versão pode conter bugs! - Relate-os diretamente Discord ou Contactnakemo@gmail.com</color></size></b>
+
+Trazemos novidades importantes de usabilidade, novas opções de atalhos e correções essenciais de layout para a sua hierarquia! Veja as atualizações desta versão:
+
+<b><size=13><color=#e67e22>★ NOVO: Barra do Inspector - Bookmarks & Navegação (Em Fase de Teste)</color></size></b>
+• <b>Fixar Favoritos (Bookmarks):</b> Basta <b>arrastar e soltar (Drag & Drop)</b> os GameObjects da hierarquia para a barra do Inspector. Tenha acesso instantâneo aos seus objetos mais importantes de qualquer lugar.
+• <b>Histórico de Navegação:</b> Volte (◀) ou avance (▶) facilmente pela sua seleção recente de GameObjects diretamente do topo da janela do Inspector.
+• <b>Persistência de Cena:</b> Seus favoritos são salvos de forma independente para cada cena e são restaurados automaticamente ao carregar ou alternar de cena.
+• <b>Gerenciamento Rápido:</b> Clique com o <b>botão direito</b> nos favoritos da barra para ordená-los ou removê-los com facilidade.
+
+<b><size=13><color=#2E7DF5>★ NOVO: Organização Livre de Poluição (Folder Path Dinâmico)</color></size></b>
+• <b>Estrutura Limpa:</b> O arquivo de documentação (<b>Documentation.asset</b>) agora é localizado e gerado dinamicamente relativo à pasta de instalação do plugin.
+• <b>Plugins e Subpastas:</b> Sinta-se livre para mover a pasta "Hierarchify" para locais como `Assets/Plugins/` ou subpastas organizadoras. O sistema não recriará mais arquivos redundantes na raiz de `Assets/`, mantendo seu projeto 100% limpo!
+
+<b><size=13><color=#2E7DF5>★ NOVO: Esquema de Atalhos Reconfigurado (Esquema A)</color></size></b>
+• <b>Ctrl + Alt + H:</b> Abra instantaneamente a central de configurações e predefinições (Control Center) do Hierarchify de qualquer lugar do editor.
+• <b>Ctrl + Alt + C:</b> Abre a janela flutuante de escolha de cores (Color Picker) para a pasta separadora atualmente selecionada.
+
+<b><size=13><color=#2E7DF5>★ NOVO: Guia Completo para Iniciantes e Reestruturação da Documentação</color></size></b>
+• <b>Manual de Documentação Renovado:</b> Layout e estruturação do manual no Inspector completamente reorganizados e embelezados. Todos os caracteres especiais corrompidos foram resolvidos para um português impecável.
+• <b>Seção 'Primeiros Passos':</b> Adicionamos uma nova aba interativa na documentação ensinando a configurar a estrutura padrão de pastas separadoras, alinhar objetos e configurar atalhos.
+
+<b><size=13><color=#2E7DF5>★ NOVO: Visualização de Componentes Otimizada</color></size></b>
+• <b>Visualização Passiva:</b> Removemos o destaque visual (highlights de hover) ao passar o mouse sobre os pequenos ícones de componentes. Agora eles atuam exclusivamente como pré-visualizadores visuais rápidos e limpos.
+• <b>Pop-Up de Componentes com Ícones:</b> Ao dar <b>Ctrl + Clique</b> em uma linha ou clicar no ícone de reticências (<b>...</b>) de overflow, a lista flutuante de componentes agora exibe os ícones corretos de cada componente ao lado do nome, facilitando a identificação.
+
+<b><size=13><color=#E64C33>★ Melhorias e Correções de Erros</color></size></b>
+• <b>Correção de Textos Invisíveis:</b> Corrigido o bug visual no pipeline IMGUI do Unity Hierarchy onde o primeiro GameObject logo após uma categoria tinha seu nome ocultado (renderizado como transparente).
+• <b>Limpeza de Vazamento de Estado (State Leak):</b> O pipeline de desenho agora limpa e redefine perfeitamente os canais de cores do editor ao final de cada repintura de categoria.
+• <b>Visualizador Consolidado:</b> Ícones do editor e guidelines do sentinel redesenhados para maior nitidez e harmonia com o tema dark/light da Unity 6.
+• <b>Correção de Recursos:</b> Resolvido o bug de avisos no console ao carregar ícones da documentação no pipeline IMGUI.
+• <b>Limpeza Geral:</b> Automatização de organização de arquivos redundantes removida, evitando que arquivos de dependências do projeto fossem limpos incorretamente.
+
+<i>Agradecemos por usar o Hierarchify! Divirta-se organizando seus projetos!</i>
