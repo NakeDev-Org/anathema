@@ -286,14 +286,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8085865968848586055}
-  - component: {fileID: 7677224715808026553}
+  - component: {fileID: 1642961144266355276}
   - component: {fileID: 5207549843044926287}
+  - component: {fileID: 7677224715808026553}
   - component: {fileID: 4446107767467445367}
   - component: {fileID: 8071425989621844071}
   - component: {fileID: 9127772583457592411}
   - component: {fileID: 5826441931753952093}
   - component: {fileID: 2299506800717273154}
-  - component: {fileID: 1642961144266355276}
   - component: {fileID: 6393258405721097731}
   m_Layer: 3
   m_Name: Player
@@ -321,19 +321,43 @@ Transform:
   - {fileID: 5798863657038420180}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7677224715808026553
-MonoBehaviour:
+--- !u!70 &1642961144266355276
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1449907688568216045}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03a80d17a9634f84bae1dfa554a72dac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NakeDev.Player.InputReader
-  _gameState: {fileID: 11400000, guid: 6eb467790a20fdc4b91719e9d19b9cf1, type: 2}
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: d7a4d1590f5947ef96e49c686bf34cf5, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.16461873, y: 0.0030111074}
+  m_Size: {x: 1.9613144, y: 3.4518373}
+  m_Direction: 0
 --- !u!50 &5207549843044926287
 Rigidbody2D:
   serializedVersion: 5
@@ -361,6 +385,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &7677224715808026553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449907688568216045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03a80d17a9634f84bae1dfa554a72dac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NakeDev.Player.InputReader
+  _gameState: {fileID: 11400000, guid: 6eb467790a20fdc4b91719e9d19b9cf1, type: 2}
 --- !u!114 &4446107767467445367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -460,43 +497,6 @@ MonoBehaviour:
     m_EventCameras: []
     m_PanelInputRedirection: 0
     m_AutoCreatePanelComponents: 1
---- !u!70 &1642961144266355276
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1449907688568216045}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: d7a4d1590f5947ef96e49c686bf34cf5, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: -0.16461873, y: 0.0030111074}
-  m_Size: {x: 1.9613144, y: 3.4518373}
-  m_Direction: 0
 --- !u!114 &6393258405721097731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -691,7 +691,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 8793639957104055765, guid: a1e9c32d7721f864a8cc1f9c7d3406d1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
