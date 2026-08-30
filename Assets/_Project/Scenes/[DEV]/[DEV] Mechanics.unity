@@ -10059,34 +10059,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 515629371190261080, guid: 2ec65a2742da27e4386bb09a14c12662, type: 3}
-      propertyPath: _smoothTime
-      value: 0.35
+    - target: {fileID: 1417509983815033632, guid: 2ec65a2742da27e4386bb09a14c12662, type: 3}
+      propertyPath: m_Time
+      value: 0.22
       objectReference: {fileID: 0}
-    - target: {fileID: 791704363317788608, guid: 2ec65a2742da27e4386bb09a14c12662, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 999227589052745968, guid: 2ec65a2742da27e4386bb09a14c12662, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2
+    - target: {fileID: 1417509983815033632, guid: 2ec65a2742da27e4386bb09a14c12662, type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.035
       objectReference: {fileID: 0}
     - target: {fileID: 1449907688568216045, guid: 2ec65a2742da27e4386bb09a14c12662, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4984688366526276390, guid: 2ec65a2742da27e4386bb09a14c12662, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
+    - target: {fileID: 5402294229667548469, guid: 2ec65a2742da27e4386bb09a14c12662, type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.2
       objectReference: {fileID: 0}
-    - target: {fileID: 5798863657038420180, guid: 2ec65a2742da27e4386bb09a14c12662, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7705011910042572325, guid: 2ec65a2742da27e4386bb09a14c12662, type: 3}
-      propertyPath: UVModule.sprites.Array.data[0].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 06c2cadf2247d1a4282571920b2babce, type: 3}
     - target: {fileID: 8085865968848586055, guid: 2ec65a2742da27e4386bb09a14c12662, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.1
@@ -10137,6 +10125,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 619394802}
-  - {fileID: 2873641604135294191}
   - {fileID: 579536587}
   - {fileID: 323394010}
+  - {fileID: 2873641604135294191}

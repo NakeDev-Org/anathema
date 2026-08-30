@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 06c2cadf2247d1a4282571920b2babce
+guid: 18a05f7edff5c9a4ea4da070248ed400
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1541591796991896736
-    second: starlight-spark_0
+      213: 367429819941038095
+    second: starlight-spark-compact_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: starlight-spark_0
+      name: starlight-spark-compact_0
       rect:
         serializedVersion: 2
-        x: 211
-        y: 174
-        width: 627
-        height: 1012
+        x: 164
+        y: 0
+        width: 1029
+        height: 1113
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0acab585295d46510800000000000000
-      internalID: 1541591796991896736
+      spriteID: f08a879797f591500800000000000000
+      internalID: 367429819941038095
       vertices: []
       indices: 
       edges: []
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      starlight-spark_0: 1541591796991896736
+      starlight-spark-compact_0: 367429819941038095
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
