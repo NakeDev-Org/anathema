@@ -86,6 +86,23 @@ namespace NakeDev.Player
                 OnDashPressed?.Invoke();
         }
 
+        public void OnPause(InputAction.CallbackContext context)
+        {
+            if (!context.performed || _gameState == null)
+                return;
+
+            switch (_gameState.CurrentState)
+            {
+                case GameState.Playing:
+                    _gameState.ChangeState(GameState.Paused);
+                    break;
+
+                case GameState.Paused:
+                    _gameState.ChangeState(GameState.Playing);
+                    break;
+            }
+        }
+
         private void HandleGameStateChanged(GameState state)
         {
             if (state != GameState.Playing)
