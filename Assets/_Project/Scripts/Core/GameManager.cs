@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
         if (_gameState != null)
             _gameState.OnStateChanged -= HandleGameStateChanged;
     }
-
+    
     private static void HandleGameStateChanged(GameState state)
     {
         bool isPaused = state == GameState.Paused;
