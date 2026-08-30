@@ -126,11 +126,11 @@ namespace NakeDev.Player
         private void TickGroundSlideTimers()
         {
             if (_slidePhaseTimer > 0f)
-                _slidePhaseTimer -= Time.deltaTime;
+                _slidePhaseTimer -= Time.fixedDeltaTime;
             if (_slideMinimumTimer > 0f)
-                _slideMinimumTimer -= Time.deltaTime;
+                _slideMinimumTimer -= Time.fixedDeltaTime;
             if (_slideCooldownTimer > 0f)
-                _slideCooldownTimer -= Time.deltaTime;
+                _slideCooldownTimer -= Time.fixedDeltaTime;
         }
 
         private void ApplySlideCollider()

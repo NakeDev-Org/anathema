@@ -7,17 +7,17 @@ namespace NakeDev.Player
         private void TickTimers()
         {
             if (!IsGrounded)
-                _coyoteTimer -= Time.deltaTime;
+                _coyoteTimer -= Time.fixedDeltaTime;
             if (_jumpBufferTimer > 0f)
-                _jumpBufferTimer -= Time.deltaTime;
+                _jumpBufferTimer -= Time.fixedDeltaTime;
             if (_wallJumpControlLockTimer > 0f)
-                _wallJumpControlLockTimer -= Time.deltaTime;
+                _wallJumpControlLockTimer -= Time.fixedDeltaTime;
             if (_wallJumpBufferTimer > 0f)
-                _wallJumpBufferTimer -= Time.deltaTime;
+                _wallJumpBufferTimer -= Time.fixedDeltaTime;
             if (_extraJumpCooldownTimer > 0f)
-                _extraJumpCooldownTimer -= Time.deltaTime;
+                _extraJumpCooldownTimer -= Time.fixedDeltaTime;
             if (IsWallSliding && _rb.linearVelocity.y <= 0f && _wallSlideEntryTimer > 0f)
-                _wallSlideEntryTimer -= Time.deltaTime;
+                _wallSlideEntryTimer -= Time.fixedDeltaTime;
 
             TickDashTimers();
         }
@@ -51,6 +51,9 @@ namespace NakeDev.Player
             }
 
             float verticalSpeed = Mathf.Max(_rb.linearVelocity.y, -_config.MaxFallSpeed);
+            float x = _input != null ? _input.MoveInput.x : 0f;
+            bool idleOnGround = IsGrounded && !IsWallSliding && !IsSliding && !IsJumping &&
+                Mathf.Abs(x) < 0.01f && Mathf.Abs(verticalSpeed) < 1f && _wallJumpControlLockTimer <= 0f;
 
             if (IsWallSliding && verticalSpeed <= 0f)
             {
@@ -62,6 +65,14 @@ namespace NakeDev.Player
                     verticalSpeed,
                     targetSpeed,
                     _config.WallSlideAcceleration * Time.fixedDeltaTime);
+            }
+            else if (idleOnGround)
+            {
+                // Sem fricção (PlayerNoFriction), gravidade sozinha em piso inclinado
+                // injeta velocidade tangencial a cada passo físico e o player escorrega
+                // mesmo parado. Zerar a gravidade enquanto parado no chão elimina isso.
+                _rb.gravityScale = 0f;
+                verticalSpeed = 0f;
             }
             else
             {

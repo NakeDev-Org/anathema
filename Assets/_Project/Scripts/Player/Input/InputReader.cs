@@ -57,18 +57,9 @@ namespace NakeDev.Player
 
             Vector2 input = context.ReadValue<Vector2>();
 
-            if (input.sqrMagnitude < 0.04f)
-            {
-                MoveInput = Vector2.zero;
-            }
-            else if (Mathf.Abs(input.x) > Mathf.Abs(input.y))
-            {
-                MoveInput = new Vector2(Mathf.Sign(input.x), 0f);
-            }
-            else
-            {
-                MoveInput = new Vector2(0f, Mathf.Sign(input.y));
-            }
+            MoveInput = Mathf.Abs(input.x) < 0.2f
+                ? Vector2.zero
+                : new Vector2(Mathf.Sign(input.x), 0f);
         }
 
         public void OnJump(InputAction.CallbackContext context)

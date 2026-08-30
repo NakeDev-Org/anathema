@@ -57,10 +57,15 @@ namespace NakeDev.Player
                 ? (Vector2)_groundCheckPoint.position
                 : (Vector2)transform.position;
 
-            IsGrounded = Physics2D.OverlapCircle(
+            bool overlapsGround = Physics2D.OverlapCircle(
                 origin,
                 _config.GroundCheckRadius,
                 _config.GroundLayerMask);
+
+            // Ignora o overlap enquanto o player ainda está subindo (ex.: no primeiro
+            // passo físico após o salto, antes de sair do raio do ground check).
+            // Sem isso, IsGrounded oscila por 1 frame e reseta contadores/animação.
+            IsGrounded = overlapsGround && _rb.linearVelocity.y <= 0.01f;
 
             if (_groundStateInitialized && !wasGrounded && IsGrounded)
                 OnLanded?.Invoke(landingSpeed);

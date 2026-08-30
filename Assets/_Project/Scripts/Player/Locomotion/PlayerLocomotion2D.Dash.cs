@@ -76,7 +76,7 @@ namespace NakeDev.Player
         {
             TickGroundSlideTimers();
             if (_aerialDashTimer > 0f)
-                _aerialDashTimer -= Time.deltaTime;
+                _aerialDashTimer -= Time.fixedDeltaTime;
         }
     }
 }

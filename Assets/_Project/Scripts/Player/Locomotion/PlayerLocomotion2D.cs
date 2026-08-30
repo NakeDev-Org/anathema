@@ -82,13 +82,9 @@ namespace NakeDev.Player
             _input.OnDashPressed -= HandleDashPressed;
         }
 
-        private void Update()
-        {
-            TickTimers();
-        }
-
         private void FixedUpdate()
         {
+            TickTimers();
             GroundCheck();
             UpdateDashState();
             WallCheck();
