@@ -24,6 +24,7 @@ namespace NakeDev.Player
         [InspectorLine("Jump")]
         public float JumpForce = 7f;
         public float FallGravityMultiplier = 2.5f;
+        //public float 
 
         [InspectorLine("Fall")]
         [Tooltip("Velocidade vertical máxima de queda, em unidades por segundo. Use um valor positivo.")]
@@ -68,6 +69,7 @@ namespace NakeDev.Player
         [Tooltip("Altura do CapsuleCollider2D durante o ground slide. A largura é respeitada como mínimo.")]
         [Min(0.1f)]
         public float GroundSlideColliderHeight = 2.1f;
+        public float GroundSlideColliderWidth = 2.1f;
 
         [InspectorLine("Aerial Dash")]
         public bool AerialDashEnabled = true;

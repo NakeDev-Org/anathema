@@ -8,6 +8,7 @@ namespace NakeDev.Player
     {
         private Vector2 _standingColliderSize;
         private Vector2 _standingColliderOffset;
+        private CapsuleDirection2D _standingColliderDirection;
         private float _slidePhaseTimer;
         private float _slideMinimumTimer;
         private float _slideCooldownTimer;
@@ -21,6 +22,7 @@ namespace NakeDev.Player
         {
             _standingColliderSize = _capsuleCollider.size;
             _standingColliderOffset = _capsuleCollider.offset;
+            _standingColliderDirection = _capsuleCollider.direction;
         }
 
         private void TryStartGroundSlide()
@@ -109,17 +111,12 @@ namespace NakeDev.Player
 
             if (!IsSliding) return false;
 
-            _rb.linearVelocity = new Vector2(
-                _slideDirection * _slideCurrentSpeed,
-                _rb.linearVelocity.y);
+            _rb.linearVelocity = new Vector2(_slideDirection * _slideCurrentSpeed, _rb.linearVelocity.y);
 
-            float targetSpeed = SlidePhase == GroundSlidePhase.End
-                ? 0f
-                : _config.GroundSlideMinimumSpeed;
-            _slideCurrentSpeed = Mathf.MoveTowards(
-                _slideCurrentSpeed,
-                targetSpeed,
-                _config.GroundSlideDeceleration * Time.fixedDeltaTime);
+            float targetSpeed = SlidePhase == GroundSlidePhase.End ? 0f : _config.GroundSlideMinimumSpeed;
+
+            _slideCurrentSpeed = Mathf.MoveTowards(_slideCurrentSpeed, targetSpeed, _config.GroundSlideDeceleration * Time.fixedDeltaTime);
+
             return true;
         }
 
@@ -135,40 +132,31 @@ namespace NakeDev.Player
 
         private void ApplySlideCollider()
         {
-            float slideHeight = Mathf.Clamp(
-                _config.GroundSlideColliderHeight,
-                _standingColliderSize.x,
-                _standingColliderSize.y);
+            float slideHeight = Mathf.Clamp(_config.GroundSlideColliderHeight, _standingColliderSize.x, _standingColliderSize.y); 
+            float slideWidth = _config.GroundSlideColliderWidth;
+
             float heightDifference = _standingColliderSize.y - slideHeight;
-            _capsuleCollider.size = new Vector2(_standingColliderSize.x, slideHeight);
-            _capsuleCollider.offset = new Vector2(
-                _standingColliderOffset.x,
-                _standingColliderOffset.y - heightDifference * 0.5f);
+            
+            _capsuleCollider.direction = CapsuleDirection2D.Horizontal;
+            _capsuleCollider.size = new Vector2(slideWidth, slideHeight);
+            _capsuleCollider.offset = new Vector2(_standingColliderOffset.x, _standingColliderOffset.y - heightDifference * 0.5f);
         }
 
         private bool CanRestoreStandingCollider()
         {
             const float clearanceSkin = 0.02f;
             Vector3 scale = transform.lossyScale;
-            Vector2 clearanceSize = new Vector2(
-                Mathf.Max(0.01f, _standingColliderSize.x - clearanceSkin * 2f),
-                Mathf.Max(0.01f, _standingColliderSize.y - clearanceSkin * 2f));
-            Vector2 worldSize = new Vector2(
-                clearanceSize.x * Mathf.Abs(scale.x),
-                clearanceSize.y * Mathf.Abs(scale.y));
+            Vector2 clearanceSize = new Vector2(Mathf.Max(0.01f, _standingColliderSize.x - clearanceSkin * 2f), Mathf.Max(0.01f, _standingColliderSize.y - clearanceSkin * 2f));
+            Vector2 worldSize = new Vector2(clearanceSize.x * Mathf.Abs(scale.x), clearanceSize.y * Mathf.Abs(scale.y));
             Vector2 worldCenter = transform.TransformPoint(_standingColliderOffset);
 
-            Collider2D obstruction = Physics2D.OverlapCapsule(
-                worldCenter,
-                worldSize,
-                _capsuleCollider.direction,
-                transform.eulerAngles.z,
-                _config.GroundLayerMask);
+            Collider2D obstruction = Physics2D.OverlapCapsule(worldCenter, worldSize, _standingColliderDirection, transform.eulerAngles.z,_config.GroundLayerMask);
             return obstruction == null;
         }
 
         private void RestoreStandingCollider()
         {
+            _capsuleCollider.direction = _standingColliderDirection;
             _capsuleCollider.size = _standingColliderSize;
             _capsuleCollider.offset = _standingColliderOffset;
         }

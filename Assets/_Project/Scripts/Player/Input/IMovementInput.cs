@@ -11,6 +11,7 @@ namespace NakeDev.Player
     {
         Vector2 MoveInput { get; }
         event Action OnJumpPressed;
+        //event Action OnJumpReleased;
         event Action OnDashPressed;
     }
 }
