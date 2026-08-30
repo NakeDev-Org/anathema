@@ -562,9 +562,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NakeDev.Player.CameraFacingOffset
   _facing: {fileID: 5826441931753952093}
-  _offsetDistance: 3.89
-  _smoothTime: 0.15
-  _maxSpeed: 40
+  _locomotion: {fileID: 4446107767467445367}
+  _offsetDistance: 1.6
+  _smoothTime: 0.6
+  _maxSpeed: 6
+  _directionHoldTime: 0.25
+  _centerWhileAirborne: 1
+  _landingSettleTime: 0.25
 --- !u!1 &3635786368433986217
 GameObject:
   m_ObjectHideFlags: 0
@@ -5633,6 +5637,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NakeDev.VFX.PlayerStarlightTrail
   _locomotion: {fileID: 4446107767467445367}
   _extraJumpBurstCount: 3
+  _wallJumpBurstCount: 3
 --- !u!1 &7130166145529649404
 GameObject:
   m_ObjectHideFlags: 0
