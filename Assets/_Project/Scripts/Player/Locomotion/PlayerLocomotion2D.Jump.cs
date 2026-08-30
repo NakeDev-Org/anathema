@@ -59,7 +59,7 @@ namespace NakeDev.Player
                 IsGrounded = false;
                 IsJumping = true;
             }
-            else if (_extraJumpsRemaining > 0 && _extraJumpCooldownTimer <= 0f)
+            else if (_extraJumpsRemaining > 0 && _extraJumpCooldownTimer <= 0f && !IsWallSliding)
             {
                 _extraJumpsRemaining--;
                 _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, _config.ExtraJumpForce);
