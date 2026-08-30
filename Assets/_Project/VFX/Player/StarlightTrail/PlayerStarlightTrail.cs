@@ -1,55 +1,56 @@
+using NakeDev.Player;
 using UnityEngine;
 
 namespace NakeDev.VFX
 {
     /// <summary>
-    /// Controla a emissão do rastro estrelado conforme a velocidade do player.
-    /// A aparência e a emissão por distância ficam configuradas no ParticleSystem.
+    /// Emite estrelas pontuais em resposta a habilidades do player.
+    /// A aparência do burst fica configurada no ParticleSystem.
     /// </summary>
     [RequireComponent(typeof(ParticleSystem))]
     public sealed class PlayerStarlightTrail : MonoBehaviour
     {
-        [SerializeField] private Rigidbody2D _body;
-        [SerializeField, Min(0f)] private float _minimumSpeed = 2f;
+        [SerializeField] private PlayerLocomotion2D _locomotion;
+        [SerializeField, Min(1)] private int _extraJumpBurstCount = 4;
 
         private ParticleSystem _particles;
-        private ParticleSystem.EmissionModule _emission;
 
         private void Awake()
         {
             _particles = GetComponent<ParticleSystem>();
 
-            if (_body == null)
-                _body = GetComponentInParent<Rigidbody2D>();
-
-            _emission = _particles.emission;
+            if (_locomotion == null)
+                _locomotion = GetComponentInParent<PlayerLocomotion2D>();
         }
 
-        private void LateUpdate()
+        private void OnEnable()
         {
-            if (_body == null)
-            {
-                _emission.enabled = false;
-                return;
-            }
-
-            float minimumSpeedSquared = _minimumSpeed * _minimumSpeed;
-            _emission.enabled = _body.linearVelocity.sqrMagnitude >= minimumSpeedSquared;
+            if (_locomotion != null)
+                _locomotion.OnJumpPerformed += HandleJumpPerformed;
         }
 
         private void OnDisable()
         {
-            if (_particles == null)
-                return;
+            if (_locomotion != null)
+                _locomotion.OnJumpPerformed -= HandleJumpPerformed;
 
-            _particles.Stop(
-                true,
-                ParticleSystemStopBehavior.StopEmittingAndClear);
+            if (_particles != null)
+            {
+                _particles.Stop(
+                    true,
+                    ParticleSystemStopBehavior.StopEmittingAndClear);
+            }
+        }
+
+        private void HandleJumpPerformed(JumpType jumpType)
+        {
+            if (jumpType == JumpType.Extra)
+                _particles.Emit(_extraJumpBurstCount);
         }
 
         private void Reset()
         {
-            _body = GetComponentInParent<Rigidbody2D>();
+            _locomotion = GetComponentInParent<PlayerLocomotion2D>();
         }
     }
 }
