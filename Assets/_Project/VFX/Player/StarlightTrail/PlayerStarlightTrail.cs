@@ -12,6 +12,7 @@ namespace NakeDev.VFX
     {
         [SerializeField] private PlayerLocomotion2D _locomotion;
         [SerializeField, Min(1)] private int _extraJumpBurstCount = 4;
+        [SerializeField, Min(1)] private int _wallJumpBurstCount = 3;
 
         private ParticleSystem _particles;
 
@@ -44,8 +45,16 @@ namespace NakeDev.VFX
 
         private void HandleJumpPerformed(JumpType jumpType)
         {
-            if (jumpType == JumpType.Extra)
-                _particles.Emit(_extraJumpBurstCount);
+            switch (jumpType)
+            {
+                case JumpType.Extra:
+                    _particles.Emit(_extraJumpBurstCount);
+                    break;
+
+                case JumpType.Wall:
+                    _particles.Emit(_wallJumpBurstCount);
+                    break;
+            }
         }
 
         private void Reset()
