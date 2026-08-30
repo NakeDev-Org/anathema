@@ -21,6 +21,8 @@ namespace NakeDev.Player
         [Tooltip("Posição default.")]
         [SerializeField] private bool _facingRight = true;
 
+        public bool IsFacingRight => _facingRight;
+
         private void Awake()
         {
             _input = GetComponent<IMovementInput>();
