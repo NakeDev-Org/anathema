@@ -10257,14 +10257,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1810118411159829840, guid: 2ec65a2742da27e4386bb09a14c12662, type: 3}
-      propertyPath: m_RenderPostProcessing
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3006741676634631629, guid: 2ec65a2742da27e4386bb09a14c12662, type: 3}
-      propertyPath: _extraJumpBurstCount
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 8085865968848586055, guid: 2ec65a2742da27e4386bb09a14c12662, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.1

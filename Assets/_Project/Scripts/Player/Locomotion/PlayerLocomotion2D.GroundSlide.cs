@@ -67,13 +67,17 @@ namespace NakeDev.Player
 
         private void BeginGroundSlideEnd()
         {
-            RestoreStandingCollider();
+            //RestoreStandingCollider();
             SlidePhase = GroundSlidePhase.End;
             _slidePhaseTimer = _config.GroundSlideEndDuration;
         }
 
         private void CompleteGroundSlide()
         {
+            if (!CanRestoreStandingCollider()) return;
+
+            RestoreStandingCollider();
+            
             SlidePhase = GroundSlidePhase.None;
             _slideCooldownTimer = _config.GroundSlideCooldown;
         }

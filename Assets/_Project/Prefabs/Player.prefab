@@ -117,7 +117,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -293,7 +293,6 @@ GameObject:
   - component: {fileID: 8071425989621844071}
   - component: {fileID: 9127772583457592411}
   - component: {fileID: 5826441931753952093}
-  - component: {fileID: 2299506800717273154}
   - component: {fileID: 6393258405721097731}
   m_Layer: 3
   m_Name: Player
@@ -476,28 +475,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NakeDev.Player.PlayerFacing2D
   _visualRoot: {fileID: 4764249206163870995}
   _facingRight: 0
---- !u!114 &2299506800717273154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1449907688568216045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 19106, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.UIElements.PanelInputConfiguration
-  m_Settings:
-    m_ProcessWorldSpaceInput: 1
-    m_InteractionLayers:
-      serializedVersion: 2
-      m_Bits: 123
-    m_MaxInteractionDistance: Infinity
-    m_DefaultEventCameraIsMainCamera: 1
-    m_EventCameras: []
-    m_PanelInputRedirection: 0
-    m_AutoCreatePanelComponents: 1
 --- !u!114 &6393258405721097731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5636,7 +5613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NakeDev.VFX.PlayerStarlightTrail
   _locomotion: {fileID: 4446107767467445367}
-  _extraJumpBurstCount: 3
+  _extraJumpBurstCount: 2
   _wallJumpBurstCount: 3
 --- !u!1 &7130166145529649404
 GameObject:

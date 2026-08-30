@@ -33,6 +33,7 @@ MonoBehaviour:
   GroundSlideMinimumSpeed: 8
   GroundSlideCooldown: 0.2
   GroundSlideColliderHeight: 2.1
+  GroundSlideColliderWidth: 7.3
   AerialDashEnabled: 1
   MaxAerialDashes: 1
   AerialDashSpeed: 30
