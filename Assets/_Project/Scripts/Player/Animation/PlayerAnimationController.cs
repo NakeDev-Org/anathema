@@ -1,3 +1,4 @@
+using NakeDev.Attributes;
 using NakeDev.Core;
 using UnityEngine;
 
@@ -11,10 +12,11 @@ namespace NakeDev.Player
     [RequireComponent(typeof(AnimatorBrain))]
     public partial class PlayerAnimationController : MonoBehaviour
     {
+        [InspectorLine("References")]
         [SerializeField] private AnimatorBrain _animatorBrain;
         [SerializeField] private PlayerLocomotion2D _locomotion;
 
-        [Header("State Names (devem existir como states soltos no Animator Controller)")]
+        [InspectorLine("State Names (devem existir como states soltos no Animator Controller)")]
         [SerializeField] private string _idleState = "Idle";
         [SerializeField] private string _walkState = "Walk";
         [SerializeField] private string _runState = "Run";
@@ -32,7 +34,7 @@ namespace NakeDev.Player
         [SerializeField] private string _aerialDashState = "AerialDash";
         [SerializeField] private float _crossfadeTime = 0.1f;
 
-        [Header("Air Animation Phases")]
+        [InspectorLine("Air Animation Phases")]
         [Tooltip("Tempo da introdução do pulo antes de entrar no loop.")]
         [Min(0f)]
         [SerializeField] private float _jumpIntroDuration = 0.24f;
@@ -45,7 +47,7 @@ namespace NakeDev.Player
         [Min(0f)]
         [SerializeField] private float _airLoopCrossfadeTime = 0.25f;
 
-        [Header("Landing")]
+        [InspectorLine("Landing")]
         [Tooltip("Tempo durante o qual a animação Landing permanece antes de Idle/Run.")]
         [Min(0f)]
         [SerializeField] private float _landingAnimationDuration = 0.12f;

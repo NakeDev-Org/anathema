@@ -1,4 +1,5 @@
 using System;
+using NakeDev.Attributes;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using NakeDev.Core;
@@ -12,6 +13,7 @@ namespace NakeDev.Player
     /// </summary>
     public class InputReader : MonoBehaviour, PlayerControls.IPlayerActions, IMovementInput
     {
+        [InspectorLine("References")]
         [Tooltip("Opcional: se referenciado, o InputReader só lê input de gameplay quando o estado for 'Playing'.")]
         [SerializeField] private GameStateSO _gameState;
 

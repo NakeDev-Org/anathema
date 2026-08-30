@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using NakeDev.Attributes;
 using UnityEngine;
 
 namespace NakeDev.Debugging
@@ -9,7 +10,7 @@ namespace NakeDev.Debugging
     /// </summary>
     public sealed class PlayerPathTrailDebug : MonoBehaviour
     {
-        [Header("Homologation Trail")]
+        [InspectorLine("Homologation Trail")]
         [SerializeField] private bool _trailEnabled = true;
         [SerializeField] private bool _developmentBuildOnly = true;
         [SerializeField, Min(0.01f)] private float _minimumPointDistance = 0.1f;
@@ -74,6 +75,7 @@ namespace NakeDev.Debugging
         }
 
         [ContextMenu("Clear Homologation Trail")]
+        [Button("Clear Trail")]
         public void ClearTrail()
         {
             _points.Clear();

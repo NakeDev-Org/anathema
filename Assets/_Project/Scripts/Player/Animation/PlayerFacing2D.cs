@@ -1,3 +1,4 @@
+using NakeDev.Attributes;
 using UnityEngine;
 
 namespace NakeDev.Player
@@ -9,12 +10,14 @@ namespace NakeDev.Player
     /// </summary>
     public class PlayerFacing2D : MonoBehaviour
     {
+        [InspectorLine("References")]
         [Tooltip("Referência opcional; se vazia, gira o próprio transform deste GameObject.")]
         [SerializeField] private Transform _visualRoot;
-        
+
         private IMovementInput _input;
         private PlayerLocomotion2D _locomotion;
 
+        [InspectorLine("Settings")]
         [Tooltip("Posição default.")]
         [SerializeField] private bool _facingRight = true;
 

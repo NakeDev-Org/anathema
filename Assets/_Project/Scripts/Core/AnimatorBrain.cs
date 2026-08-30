@@ -1,3 +1,4 @@
+using NakeDev.Attributes;
 using UnityEngine;
 
 namespace NakeDev.Core
@@ -9,6 +10,7 @@ namespace NakeDev.Core
     /// </summary>
     public class AnimatorBrain : MonoBehaviour
     {
+        [InspectorLine("References")]
         [SerializeField] private Animator[] _animators;
 
         public Animator[] Animators => _animators;

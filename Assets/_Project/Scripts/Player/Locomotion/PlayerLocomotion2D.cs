@@ -1,3 +1,4 @@
+using NakeDev.Attributes;
 using System;
 using UnityEngine;
 
@@ -13,10 +14,11 @@ namespace NakeDev.Player
     [RequireComponent(typeof(CapsuleCollider2D))]
     public partial class PlayerLocomotion2D : MonoBehaviour
     {
+        [InspectorLine("Config")]
         [Tooltip("Dados de tuning (velocidade, pulo, double jump, wall jump, coyote time...). Sem asset atribuído, usa os defaults do próprio LocomotionConfigSO.")]
         [SerializeField] private LocomotionConfigSO _config;
 
-        [Header("Ground Check")]
+        [InspectorLine("Ground Check")]
         [SerializeField] private Transform _groundCheckPoint;
 
         private Rigidbody2D _rb;

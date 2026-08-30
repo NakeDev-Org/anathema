@@ -1,3 +1,4 @@
+using NakeDev.Attributes;
 using UnityEngine;
 
 namespace NakeDev.Player
@@ -10,7 +11,7 @@ namespace NakeDev.Player
     [CreateAssetMenu(fileName = "LocomotionConfig", menuName = "NakeDev/Player/Locomotion Config")]
     public class LocomotionConfigSO : ScriptableObject
     {
-        [Header("Movement")]
+        [InspectorLine("Movement")]
         public float MoveSpeed = 6f;
         [Tooltip("Unidades/s² até atingir MoveSpeed.")]
         public float Acceleration = 60f;
@@ -20,16 +21,16 @@ namespace NakeDev.Player
         [Min(0f)]
         public float RunSpeedThreshold = 12f;
 
-        [Header("Jump")]
+        [InspectorLine("Jump")]
         public float JumpForce = 7f;
         public float FallGravityMultiplier = 2.5f;
 
-        [Header("Fall")]
+        [InspectorLine("Fall")]
         [Tooltip("Velocidade vertical máxima de queda, em unidades por segundo. Use um valor positivo.")]
         [Min(0.1f)]
         public float MaxFallSpeed = 20f;
 
-        [Header("Double Jump")]
+        [InspectorLine("Double Jump")]
         [Tooltip("Quantos pulos extras no ar, além do pulo do chão. 0 desliga o double jump.")]
         public int MaxExtraJumps = 1;
         [Tooltip("Força vertical do(s) pulo(s) extra(s) no ar. Pode ser diferente do pulo do chão.")]
@@ -38,13 +39,13 @@ namespace NakeDev.Player
         [Min(0f)]
         public float ExtraJumpCooldown = 0.15f;
 
-        [Header("Jump Assist (funcional, não estético — Regra 6)")]
+        [InspectorLine("Jump Assist (funcional, não estético — Regra 6)")]
         [Tooltip("Tempo (s) após sair da borda em que ainda é possível pular.")]
         public float CoyoteTime = 0.1f;
         [Tooltip("Tempo (s) antes de aterrissar em que um pulo pressionado antecipadamente ainda é aceito.")]
         public float JumpBufferTime = 0.1f;
 
-        [Header("Ground Slide")]
+        [InspectorLine("Ground Slide")]
         public bool GroundSlideEnabled = true;
         [Min(0f)]
         public float GroundSlideSpeed = 20f;
@@ -68,7 +69,7 @@ namespace NakeDev.Player
         [Min(0.1f)]
         public float GroundSlideColliderHeight = 2.1f;
 
-        [Header("Aerial Dash")]
+        [InspectorLine("Aerial Dash")]
         public bool AerialDashEnabled = true;
         [Tooltip("Quantidade de aerial dashes disponível antes de tocar o chão.")]
         [Min(0)]
@@ -78,13 +79,13 @@ namespace NakeDev.Player
         [Min(0.01f)]
         public float AerialDashDuration = 0.18f;
 
-        [Header("Ground Check")]
+        [InspectorLine("Ground Check")]
         [Tooltip("Raio do OverlapCircle usado para detectar o chão a partir do GroundCheckPoint.")]
         public float GroundCheckRadius = 0.15f;
         [Tooltip("NUNCA deixe em 'Everything': o ponto de checagem fica colado no próprio collider do Player, então uma mask ampla detecta o player nele mesmo e trava IsGrounded em true pra sempre. Restrinja a uma layer dedicada de chão/plataforma. Essa mesma layer também é usada para detectar paredes.")]
         public LayerMask GroundLayerMask;
 
-        [Header("Corner Correction")]
+        [InspectorLine("Corner Correction")]
         [Tooltip("Distância horizontal máxima usada para desviar o player de uma quina do teto durante a subida. 0 desliga a correção.")]
         [Min(0f)]
         public float CornerCorrectionDistance = 0.2f;
@@ -95,7 +96,7 @@ namespace NakeDev.Player
         [Min(0.001f)]
         public float CornerCheckDistance = 0.05f;
 
-        [Header("Wall Slide")]
+        [InspectorLine("Wall Slide")]
         [Tooltip("Permite que o personagem deslize lentamente enquanto segura o direcional contra uma parede.")]
         public bool WallSlideEnabled = true;
         [Tooltip("Distância do raycast horizontal (a partir da borda do collider) usado pra detectar parede.")]
@@ -115,7 +116,7 @@ namespace NakeDev.Player
         [Min(0f)]
         public float WallSlideAcceleration = 20f;
 
-        [Header("Wall Jump")]
+        [InspectorLine("Wall Jump")]
         [Tooltip("Permite executar wall jump ao tocar ou sair recentemente de uma parede.")]
         public bool WallJumpEnabled = true;
         [Tooltip("Força horizontal do impulso ao pular saindo da parede (na direção oposta a ela).")]
