@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NakeDev.Player.LocomotionConfigSO
   MoveSpeed: 15
   WalkSpeed: 6
-  Mode: 0
   Acceleration: 60
   Deceleration: 80
   RunSpeedThreshold: 12
   JumpForce: 13
   FallGravityMultiplier: 3.5
+  JumpCutMultiplier: 0.6
   MaxFallSpeed: 35
   MaxExtraJumps: 1
   ExtraJumpForce: 13
@@ -40,7 +40,7 @@ MonoBehaviour:
   MaxAerialDashes: 1
   AerialDashSpeed: 30
   AerialDashDuration: 0.18
-  GroundCheckRadius: 0.39
+  GroundCheckSize: {x: 1.4, y: 0.42}
   GroundLayerMask:
     serializedVersion: 2
     m_Bits: 64

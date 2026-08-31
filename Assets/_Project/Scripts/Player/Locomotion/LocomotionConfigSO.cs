@@ -93,8 +93,8 @@ namespace NakeDev.Player
         public float AerialDashDuration = 0.18f;
 
         [InspectorLine("Ground Check")]
-        [Tooltip("Raio do OverlapCircle usado para detectar o chão a partir do GroundCheckPoint.")]
-        public float GroundCheckRadius = 0.15f;
+        [Tooltip("Tamanho do OverlapBox usado para detectar o chão a partir do GroundCheckPoint. Um box (em vez de círculo) evita encostar numa parede ao lado quando o player está numa quina — a largura deve ficar menor que a largura do collider do player, pra nunca alcançar uma parede vizinha; a altura só precisa ser fina o bastante pra não furar o chão.")]
+        public Vector2 GroundCheckSize = new Vector2(1.4f, 0.2f);
         [Tooltip("NUNCA deixe em 'Everything': o ponto de checagem fica colado no próprio collider do Player, então uma mask ampla detecta o player nele mesmo e trava IsGrounded em true pra sempre. Restrinja a uma layer dedicada de chão/plataforma. Essa mesma layer também é usada para detectar paredes.")]
         public LayerMask GroundLayerMask;
 

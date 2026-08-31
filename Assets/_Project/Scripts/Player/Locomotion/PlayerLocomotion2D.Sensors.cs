@@ -57,9 +57,10 @@ namespace NakeDev.Player
                 ? (Vector2)_groundCheckPoint.position
                 : (Vector2)transform.position;
 
-            bool overlapsGround = Physics2D.OverlapCircle(
+            bool overlapsGround = Physics2D.OverlapBox(
                 origin,
-                _config.GroundCheckRadius,
+                _config.GroundCheckSize,
+                0f,
                 _config.GroundLayerMask);
 
             // Ignora o overlap enquanto o player ainda está subindo (ex.: no primeiro
@@ -166,7 +167,7 @@ namespace NakeDev.Player
             Vector3 origin = _groundCheckPoint != null
                 ? _groundCheckPoint.position
                 : transform.position;
-            Gizmos.DrawWireSphere(origin, _config.GroundCheckRadius);
+            Gizmos.DrawWireCube(origin, _config.GroundCheckSize);
 
             if (_collider == null) return;
             Bounds bounds = _collider.bounds;

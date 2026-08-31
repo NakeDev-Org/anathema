@@ -440,9 +440,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NakeDev.Player.PlayerAnimationController
   _animatorBrain: {fileID: 0}
   _locomotion: {fileID: 0}
-  _idleState: PlayerIdle
-  _walkState: PlayerWalk
-  _runState: PlayerRun
+  _locomotionState: Movements
+  _speedParameter: Speed
   _jumpState: PlayerJump
   _jumpLoopState: PlayerJumpLoop
   _doubleJumpState: PlayerDoubleJump
@@ -571,7 +570,7 @@ Transform:
   m_GameObject: {fileID: 3635786368433986217}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.94, z: 0}
+  m_LocalPosition: {x: -0.15, y: -1.94, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
