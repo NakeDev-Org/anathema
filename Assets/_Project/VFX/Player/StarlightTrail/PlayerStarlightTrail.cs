@@ -69,6 +69,14 @@ namespace NakeDev.VFX
             _particles.Emit(_burstRunBurstCount);
         }
 
+        public void ClearTrail()
+        {
+            if (_particles == null)
+                _particles = GetComponent<ParticleSystem>();
+
+            _particles.Clear(true);
+        }
+
         private void Reset()
         {
             _locomotion = GetComponentInParent<PlayerLocomotion2D>();
