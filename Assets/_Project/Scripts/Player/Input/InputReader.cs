@@ -25,7 +25,7 @@ namespace NakeDev.Player
         public event Action OnJumpPressed;
         public event Action OnJumpReleased;
         public event Action OnDashPressed;
-        public event Action OnRunPressed;
+        public event Action OnBurstRunPressed;
 
         private void OnEnable()
         {
@@ -85,7 +85,7 @@ namespace NakeDev.Player
                 OnDashPressed?.Invoke();
         }
 
-        public void OnRun(InputAction.CallbackContext context)
+        public void OnBurstRun(InputAction.CallbackContext context)
         {
             if (_gameState != null && !_gameState.IsPlaying())
             {
@@ -96,7 +96,7 @@ namespace NakeDev.Player
             IsRunHeld = context.ReadValueAsButton();
 
             if (context.started)
-                OnRunPressed?.Invoke();
+                OnBurstRunPressed?.Invoke();
         }
 
         public void OnPause(InputAction.CallbackContext context)

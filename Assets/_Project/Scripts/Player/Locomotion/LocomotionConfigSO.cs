@@ -16,12 +16,11 @@ namespace NakeDev.Player
         [InspectorLine("Movement")]
         [Tooltip("Velocidade máxima durante a corrida.")]
         public float MoveSpeed = 15f;
-
         [Tooltip("Velocidade máxima sem corrida.")]
         [Min(0f)]
         public float WalkSpeed = 6f;
-        // [Tooltip("Hold: corre enquanto segura. Toggle: cada toque ativa ou desativa a corrida.")]
-        // public InputMode Mode = InputMode.Hold;
+        [Tooltip("Hold: burst enquanto segura. Toggle: cada toque ativa ou desativa o burst.")]
+        public InputMode Mode = InputMode.Hold;
         [Tooltip("Unidades/s² até atingir MoveSpeed.")]
         public float Acceleration = 60f;
         [Tooltip("Unidades/s² até parar quando solta o input (ou troca de direção).")]
@@ -29,7 +28,10 @@ namespace NakeDev.Player
         [Tooltip("Velocidade horizontal mínima para considerar o player correndo.")]
         [Min(0f)]
         public float RunSpeedThreshold = 12f;
-
+        [InspectorLine("Burst Run")]
+        public bool BurstRunEnabled = true;
+        [Tooltip("Velocidade máxima durante o burst.")]
+        public float BurstRunSpeed = 20f;
         [InspectorLine("Jump")]
         public float JumpForce = 7f;
         public float FallGravityMultiplier = 2.5f;

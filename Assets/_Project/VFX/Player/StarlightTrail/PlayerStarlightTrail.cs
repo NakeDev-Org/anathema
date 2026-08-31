@@ -13,6 +13,7 @@ namespace NakeDev.VFX
         [SerializeField] private PlayerLocomotion2D _locomotion;
         [SerializeField, Min(1)] private int _extraJumpBurstCount = 4;
         [SerializeField, Min(1)] private int _wallJumpBurstCount = 3;
+        [SerializeField, Min(1)] private int _burstRunBurstCount = 3;
 
         private ParticleSystem _particles;
 
@@ -27,13 +28,19 @@ namespace NakeDev.VFX
         private void OnEnable()
         {
             if (_locomotion != null)
+            {
                 _locomotion.OnJumpPerformed += HandleJumpPerformed;
+                _locomotion.OnBurstRunStarted += HandleBurstRunStarted;
+            }
         }
 
         private void OnDisable()
         {
             if (_locomotion != null)
+            {
                 _locomotion.OnJumpPerformed -= HandleJumpPerformed;
+                _locomotion.OnBurstRunStarted -= HandleBurstRunStarted;
+            }
 
             if (_particles != null)
             {
@@ -55,6 +62,11 @@ namespace NakeDev.VFX
                     _particles.Emit(_wallJumpBurstCount);
                     break;
             }
+        }
+
+        private void HandleBurstRunStarted()
+        {
+            _particles.Emit(_burstRunBurstCount);
         }
 
         private void Reset()

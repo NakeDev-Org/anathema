@@ -40,6 +40,8 @@ MonoBehaviour:
   MaxAerialDashes: 1
   AerialDashSpeed: 30
   AerialDashDuration: 0.18
+  DashSlideColliderHeigth: 2.1
+  DashSlideColliderWidth: 2.1
   GroundCheckSize: {x: 1.4, y: 0.42}
   GroundLayerMask:
     serializedVersion: 2
@@ -51,7 +53,7 @@ MonoBehaviour:
   WallLayerMask:
     serializedVersion: 2
     m_Bits: 64
-  WallCheckDistance: 0.6
+  WallCheckDistance: 0.4
   WallCheckVerticalOffset: 0.5
   WallSlideContactGraceTime: 0.08
   WallSlideSpeed: 20

@@ -43,7 +43,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Run",
+                    "name": "BurstRun",
                     "type": "Button",
                     "id": "3ba2d0b6-acaf-4e78-94bb-c8eb77ec5c23",
                     "expectedControlType": "",
@@ -247,7 +247,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
-                    "action": "Run",
+                    "action": "BurstRun",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -258,7 +258,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard",
-                    "action": "Run",
+                    "action": "BurstRun",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

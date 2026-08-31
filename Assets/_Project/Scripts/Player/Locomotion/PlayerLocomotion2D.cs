@@ -36,7 +36,8 @@ namespace NakeDev.Player
         private int _lastWallDirection;
         private float _extraJumpCooldownTimer;
         private bool _groundStateInitialized;
-        // private bool _runToggled;
+        private bool _burstRunToggled;
+        private bool _wasBurstRunActive;
 
         public bool IsGrounded { get; private set; }
         public bool IsJumping { get; private set; }
@@ -45,12 +46,13 @@ namespace NakeDev.Player
             IsGrounded &&
             !IsSliding &&
             !IsAerialDashing &&
-            // WantsToRun &&
+            WantsToBurstRun &&
             Mathf.Abs(Velocity.x) >= _config.RunSpeedThreshold;
         public Vector2 Velocity => _rb.linearVelocity;
 
         public event Action<JumpType> OnJumpPerformed;
         public event Action<float> OnLanded;
+        public event Action OnBurstRunStarted;
 
         private void Awake()
         {
@@ -70,26 +72,26 @@ namespace NakeDev.Player
             InitializeDash();
         }
 
-        // private bool WantsToRun
-        // {
-        //     get
-        //     {
-        //         if (_input == null)
-        //             return false;
+        private bool WantsToBurstRun
+        {
+            get
+            {
+                if (_input == null)
+                    return false;
 
-        //         return _config.Mode == LocomotionConfigSO.InputMode.Toggle
-        //             ? _runToggled
-        //             : _input.IsRunHeld;
-        //     }
-        // }
+                return _config.Mode == LocomotionConfigSO.InputMode.Toggle
+                    ? _burstRunToggled
+                    : _input.IsRunHeld;
+            }
+        }
 
-        // private void HandleRunPressed()
-        // {
-        //     if (_config.Mode != LocomotionConfigSO.InputMode.Toggle)
-        //         return;
+        private void HandleBurstRunPressed()
+        {
+            if (_config.Mode != LocomotionConfigSO.InputMode.Toggle)
+                return;
 
-        //     _runToggled = !_runToggled;
-        // }
+            _burstRunToggled = !_burstRunToggled;
+        }
 
         private void OnEnable()
         {
@@ -97,18 +99,19 @@ namespace NakeDev.Player
             _input.OnJumpPressed += OnJumpPressed;
             _input.OnJumpReleased += HandleJumpReleased;
             _input.OnDashPressed += HandleDashPressed;
-            // _input.OnRunPressed += HandleRunPressed;
+            _input.OnBurstRunPressed += HandleBurstRunPressed;
         }
 
         private void OnDisable()
         {
-            // _runToggled = false;
+            _burstRunToggled = false;
+            _wasBurstRunActive = false;
 
             if (_input == null) return;
             _input.OnJumpPressed -= OnJumpPressed;
             _input.OnJumpReleased -= HandleJumpReleased;
             _input.OnDashPressed -= HandleDashPressed;
-            // _input.OnRunPressed -= HandleRunPressed;
+            _input.OnBurstRunPressed -= HandleBurstRunPressed;
         }
 
         private void FixedUpdate()

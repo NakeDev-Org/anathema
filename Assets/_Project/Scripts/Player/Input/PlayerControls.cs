@@ -131,7 +131,7 @@ namespace NakeDev.Player.GeneratedInput
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Run"",
+                    ""name"": ""BurstRun"",
                     ""type"": ""Button"",
                     ""id"": ""3ba2d0b6-acaf-4e78-94bb-c8eb77ec5c23"",
                     ""expectedControlType"": """",
@@ -335,7 +335,7 @@ namespace NakeDev.Player.GeneratedInput
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Gamepad"",
-                    ""action"": ""Run"",
+                    ""action"": ""BurstRun"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -346,7 +346,7 @@ namespace NakeDev.Player.GeneratedInput
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard"",
-                    ""action"": ""Run"",
+                    ""action"": ""BurstRun"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -372,7 +372,7 @@ namespace NakeDev.Player.GeneratedInput
             m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
             m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
             m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
-            m_Player_Run = m_Player.FindAction("Run", throwIfNotFound: true);
+            m_Player_BurstRun = m_Player.FindAction("BurstRun", throwIfNotFound: true);
         }
 
         ~@PlayerControls()
@@ -457,7 +457,7 @@ namespace NakeDev.Player.GeneratedInput
         private readonly InputAction m_Player_Jump;
         private readonly InputAction m_Player_Dash;
         private readonly InputAction m_Player_Pause;
-        private readonly InputAction m_Player_Run;
+        private readonly InputAction m_Player_BurstRun;
         /// <summary>
         /// Provides access to input actions defined in input action map "Player".
         /// </summary>
@@ -486,9 +486,9 @@ namespace NakeDev.Player.GeneratedInput
             /// </summary>
             public InputAction @Pause => m_Wrapper.m_Player_Pause;
             /// <summary>
-            /// Provides access to the underlying input action "Player/Run".
+            /// Provides access to the underlying input action "Player/BurstRun".
             /// </summary>
-            public InputAction @Run => m_Wrapper.m_Player_Run;
+            public InputAction @BurstRun => m_Wrapper.m_Player_BurstRun;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
@@ -527,9 +527,9 @@ namespace NakeDev.Player.GeneratedInput
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
-                @Run.started += instance.OnRun;
-                @Run.performed += instance.OnRun;
-                @Run.canceled += instance.OnRun;
+                @BurstRun.started += instance.OnBurstRun;
+                @BurstRun.performed += instance.OnBurstRun;
+                @BurstRun.canceled += instance.OnBurstRun;
             }
 
             /// <summary>
@@ -553,9 +553,9 @@ namespace NakeDev.Player.GeneratedInput
                 @Pause.started -= instance.OnPause;
                 @Pause.performed -= instance.OnPause;
                 @Pause.canceled -= instance.OnPause;
-                @Run.started -= instance.OnRun;
-                @Run.performed -= instance.OnRun;
-                @Run.canceled -= instance.OnRun;
+                @BurstRun.started -= instance.OnBurstRun;
+                @BurstRun.performed -= instance.OnBurstRun;
+                @BurstRun.canceled -= instance.OnBurstRun;
             }
 
             /// <summary>
@@ -651,12 +651,12 @@ namespace NakeDev.Player.GeneratedInput
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnPause(InputAction.CallbackContext context);
             /// <summary>
-            /// Method invoked when associated input action "Run" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// Method invoked when associated input action "BurstRun" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
             /// </summary>
             /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnRun(InputAction.CallbackContext context);
+            void OnBurstRun(InputAction.CallbackContext context);
         }
     }
 }

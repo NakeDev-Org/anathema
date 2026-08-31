@@ -4,6 +4,7 @@ namespace NakeDev.Player
 {
     public partial class PlayerLocomotion2D
     {
+        private float _groundedHorizontalMomentum;
         private void TickTimers()
         {
             if (!IsGrounded)
@@ -24,22 +25,71 @@ namespace NakeDev.Player
 
         private void ApplyHorizontalMovement()
         {
-            if (_wallJumpControlLockTimer > 0f) return;
-            if (ApplyDashHorizontalMovement()) return;
+            if (_wallJumpControlLockTimer > 0f)
+            {
+                UpdateBurstRunEvent(false);
+                return;
+            }
+
+            if (ApplyDashHorizontalMovement())
+            {
+                UpdateBurstRunEvent(false);
+                return;
+            }
 
             float x = _input != null ? _input.MoveInput.x : 0f;
-            // float maximumSpeed = WantsToRun ? _config.MoveSpeed : _config.WalkSpeed;
-            // float targetSpeed = x * maximumSpeed;
-            float targetSpeed = x * _config.MoveSpeed;
-            float currentSpeed = _rb.linearVelocity.x;
-            float rate = Mathf.Abs(targetSpeed) > 0.01f ? _config.Acceleration : _config.Deceleration;
+            bool isBurstRunActive =
+                IsGrounded &&
+                _config.BurstRunEnabled &&
+                WantsToBurstRun &&
+                Mathf.Abs(x) > 0.01f;
+            UpdateBurstRunEvent(isBurstRunActive);
 
-            // bool sameDirection = Mathf.Abs(currentSpeed) < 0.01f || Mathf.Sign(currentSpeed) == Mathf.Sign(targetSpeed);
-            // bool isAccelerating = sameDirection && Mathf.Abs(targetSpeed) > Mathf.Abs(currentSpeed);
-            // float rate = isAccelerating ? _config.Acceleration : _config.Deceleration;
+            float currentSpeed = _rb.linearVelocity.x;
+            float maximumSpeed;
+
+            if (IsGrounded)
+            {
+                bool canUseBurst = _config.BurstRunEnabled && WantsToBurstRun;
+
+                maximumSpeed = canUseBurst ? _config.BurstRunSpeed : _config.MoveSpeed;
+            }
+            else
+            {
+                bool groundMomentumWasBurst = Mathf.Abs(_groundedHorizontalMomentum) > _config.MoveSpeed;
+
+                bool stillHasBurstSpeed = Mathf.Abs(currentSpeed) > _config.MoveSpeed;
+
+                bool movingInMomentumDirection = Mathf.Sign(currentSpeed) == Mathf.Sign(_groundedHorizontalMomentum);
+
+                bool inputContinuesMomentum = Mathf.Abs(x) > 0.01f && Mathf.Sign(x) == Mathf.Sign(_groundedHorizontalMomentum);
+
+                bool canPreserveGroundMomentum = groundMomentumWasBurst && stillHasBurstSpeed && movingInMomentumDirection && inputContinuesMomentum;
+
+                maximumSpeed = canPreserveGroundMomentum ? Mathf.Min(Mathf.Abs(currentSpeed), Mathf.Abs(_groundedHorizontalMomentum)) : _config.MoveSpeed;
+            }
+
+            float targetSpeed = x * maximumSpeed;
+
+            bool sameDirection = Mathf.Abs(currentSpeed) < 0.01f || Mathf.Sign(currentSpeed) == Mathf.Sign(targetSpeed);
+            bool isAccelerating = sameDirection && Mathf.Abs(targetSpeed) > Mathf.Abs(currentSpeed);
+
+            float rate = isAccelerating ? _config.Acceleration : _config.Deceleration;
+
             float newSpeed = Mathf.MoveTowards(currentSpeed, targetSpeed, rate * Time.fixedDeltaTime);
 
             _rb.linearVelocity = new Vector2(newSpeed, _rb.linearVelocity.y);
+
+            if (IsGrounded)
+                _groundedHorizontalMomentum = newSpeed;
+        }
+
+        private void UpdateBurstRunEvent(bool isActive)
+        {
+            if (isActive && !_wasBurstRunActive)
+                OnBurstRunStarted?.Invoke();
+
+            _wasBurstRunActive = isActive;
         }
 
         private void ApplyFallGravity()
