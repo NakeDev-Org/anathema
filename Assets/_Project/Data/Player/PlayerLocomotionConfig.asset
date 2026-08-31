@@ -14,9 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NakeDev.Player.LocomotionConfigSO
   MoveSpeed: 15
   WalkSpeed: 6
+  Mode: 0
   Acceleration: 60
   Deceleration: 80
   RunSpeedThreshold: 12
+  BurstRunEnabled: 1
+  BurstRunSpeed: 25
   JumpForce: 13
   FallGravityMultiplier: 3.5
   JumpCutMultiplier: 0.6
@@ -41,7 +44,7 @@ MonoBehaviour:
   AerialDashSpeed: 30
   AerialDashDuration: 0.18
   DashSlideColliderHeigth: 2.1
-  DashSlideColliderWidth: 2.1
+  DashSlideColliderWidth: 4
   GroundCheckSize: {x: 1.4, y: 0.42}
   GroundLayerMask:
     serializedVersion: 2

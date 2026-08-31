@@ -46,7 +46,6 @@ namespace NakeDev.Player
             IsGrounded &&
             !IsSliding &&
             !IsAerialDashing &&
-            WantsToBurstRun &&
             Mathf.Abs(Velocity.x) >= _config.RunSpeedThreshold;
         public Vector2 Velocity => _rb.linearVelocity;
 
