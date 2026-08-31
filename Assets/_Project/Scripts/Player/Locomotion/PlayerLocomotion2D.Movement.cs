@@ -28,25 +28,16 @@ namespace NakeDev.Player
             if (ApplyDashHorizontalMovement()) return;
 
             float x = _input != null ? _input.MoveInput.x : 0f;
-            float maximumSpeed = WantsToRun
-                ? _config.MoveSpeed
-                : _config.WalkSpeed;
-            float targetSpeed = x * maximumSpeed;
+            // float maximumSpeed = WantsToRun ? _config.MoveSpeed : _config.WalkSpeed;
+            // float targetSpeed = x * maximumSpeed;
+            float targetSpeed = x * _config.MoveSpeed;
             float currentSpeed = _rb.linearVelocity.x;
+            float rate = Mathf.Abs(targetSpeed) > 0.01f ? _config.Acceleration : _config.Deceleration;
 
-            bool sameDirection =
-                Mathf.Abs(currentSpeed) < 0.01f ||
-                Mathf.Sign(currentSpeed) == Mathf.Sign(targetSpeed);
-            bool isAccelerating =
-                sameDirection &&
-                Mathf.Abs(targetSpeed) > Mathf.Abs(currentSpeed);
-            float rate = isAccelerating
-                ? _config.Acceleration
-                : _config.Deceleration;
-            float newSpeed = Mathf.MoveTowards(
-                currentSpeed,
-                targetSpeed,
-                rate * Time.fixedDeltaTime);
+            // bool sameDirection = Mathf.Abs(currentSpeed) < 0.01f || Mathf.Sign(currentSpeed) == Mathf.Sign(targetSpeed);
+            // bool isAccelerating = sameDirection && Mathf.Abs(targetSpeed) > Mathf.Abs(currentSpeed);
+            // float rate = isAccelerating ? _config.Acceleration : _config.Deceleration;
+            float newSpeed = Mathf.MoveTowards(currentSpeed, targetSpeed, rate * Time.fixedDeltaTime);
 
             _rb.linearVelocity = new Vector2(newSpeed, _rb.linearVelocity.y);
         }

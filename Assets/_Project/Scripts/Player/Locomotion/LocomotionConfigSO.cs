@@ -20,8 +20,8 @@ namespace NakeDev.Player
         [Tooltip("Velocidade máxima sem corrida.")]
         [Min(0f)]
         public float WalkSpeed = 6f;
-        [Tooltip("Hold: corre enquanto segura. Toggle: cada toque ativa ou desativa a corrida.")]
-        public InputMode Mode = InputMode.Hold;
+        // [Tooltip("Hold: corre enquanto segura. Toggle: cada toque ativa ou desativa a corrida.")]
+        // public InputMode Mode = InputMode.Hold;
         [Tooltip("Unidades/s² até atingir MoveSpeed.")]
         public float Acceleration = 60f;
         [Tooltip("Unidades/s² até parar quando solta o input (ou troca de direção).")]
