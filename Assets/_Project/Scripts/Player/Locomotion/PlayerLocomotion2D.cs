@@ -36,6 +36,7 @@ namespace NakeDev.Player
         private int _lastWallDirection;
         private float _extraJumpCooldownTimer;
         private bool _groundStateInitialized;
+        private bool _runToggled;
 
         public bool IsGrounded { get; private set; }
         public bool IsJumping { get; private set; }
@@ -44,6 +45,7 @@ namespace NakeDev.Player
             IsGrounded &&
             !IsSliding &&
             !IsAerialDashing &&
+            WantsToRun &&
             Mathf.Abs(Velocity.x) >= _config.RunSpeedThreshold;
         public Vector2 Velocity => _rb.linearVelocity;
 
@@ -68,18 +70,43 @@ namespace NakeDev.Player
             InitializeDash();
         }
 
+        private bool WantsToRun
+        {
+            get
+            {
+                if (_input == null)
+                    return false;
+
+                return _config.Mode == LocomotionConfigSO.InputMode.Toggle
+                    ? _runToggled
+                    : _input.IsRunHeld;
+            }
+        }
+
+        private void HandleRunPressed()
+        {
+            if (_config.Mode != LocomotionConfigSO.InputMode.Toggle)
+                return;
+
+            _runToggled = !_runToggled;
+        }
+
         private void OnEnable()
         {
             if (_input == null) return;
             _input.OnJumpPressed += OnJumpPressed;
             _input.OnDashPressed += HandleDashPressed;
+            _input.OnRunPressed += HandleRunPressed;
         }
 
         private void OnDisable()
         {
+            _runToggled = false;
+
             if (_input == null) return;
             _input.OnJumpPressed -= OnJumpPressed;
             _input.OnDashPressed -= HandleDashPressed;
+            _input.OnRunPressed -= HandleRunPressed;
         }
 
         private void FixedUpdate()

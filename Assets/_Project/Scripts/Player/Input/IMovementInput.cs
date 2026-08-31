@@ -10,8 +10,11 @@ namespace NakeDev.Player
     public interface IMovementInput
     {
         Vector2 MoveInput { get; }
+        bool IsRunHeld { get; }
+
         event Action OnJumpPressed;
         //event Action OnJumpReleased;
         event Action OnDashPressed;
+        event Action OnRunPressed;
     }
 }

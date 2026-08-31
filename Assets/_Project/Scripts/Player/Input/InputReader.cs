@@ -20,6 +20,7 @@ namespace NakeDev.Player
         private PlayerControls _controls;
 
         public Vector2 MoveInput { get; private set; }
+        public bool IsRunHeld { get; private set; }
 
         public event Action OnJumpPressed;
         public event Action OnDashPressed;
@@ -46,6 +47,7 @@ namespace NakeDev.Player
 
             _controls?.Disable();
             MoveInput = Vector2.zero;
+            IsRunHeld = false;
         }
 
         public void OnMove(InputAction.CallbackContext context)
@@ -83,7 +85,12 @@ namespace NakeDev.Player
         public void OnRun(InputAction.CallbackContext context)
         {
             if (_gameState != null && !_gameState.IsPlaying())
+            {
+                IsRunHeld = false;
                 return;
+            }
+
+            IsRunHeld = context.ReadValueAsButton();
 
             if (context.started)
                 OnRunPressed?.Invoke();
@@ -108,8 +115,11 @@ namespace NakeDev.Player
 
         private void HandleGameStateChanged(GameState state)
         {
-            if (state != GameState.Playing)
-                MoveInput = Vector2.zero;
+            if (state == GameState.Playing)
+                return;
+
+            MoveInput = Vector2.zero;
+            IsRunHeld = false;
         }
     }
 }
