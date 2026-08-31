@@ -11,8 +11,17 @@ namespace NakeDev.Player
     [CreateAssetMenu(fileName = "LocomotionConfig", menuName = "NakeDev/Player/Locomotion Config")]
     public class LocomotionConfigSO : ScriptableObject
     {
+        public enum InputMode { Hold, Toggle }
+
         [InspectorLine("Movement")]
-        public float MoveSpeed = 6f;
+        [Tooltip("Velocidade máxima durante a corrida.")]
+        public float MoveSpeed = 15f;
+
+        [Tooltip("Velocidade máxima sem corrida.")]
+        [Min(0f)]
+        public float WalkSpeed = 6f;
+        [Tooltip("Hold: corre enquanto segura. Toggle: cada toque ativa ou desativa a corrida.")]
+        public InputMode Mode = InputMode.Hold;
         [Tooltip("Unidades/s² até atingir MoveSpeed.")]
         public float Acceleration = 60f;
         [Tooltip("Unidades/s² até parar quando solta o input (ou troca de direção).")]

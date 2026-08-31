@@ -17,9 +17,8 @@ namespace NakeDev.Player
         [SerializeField] private PlayerLocomotion2D _locomotion;
 
         [InspectorLine("State Names (devem existir como states soltos no Animator Controller)")]
-        [SerializeField] private string _idleState = "Idle";
-        [SerializeField] private string _walkState = "Walk";
-        [SerializeField] private string _runState = "Run";
+        [SerializeField] private string _locomotionState = "Locomotion";
+        [SerializeField] private string _speedParameter = "Speed";
         [SerializeField] private string _jumpState = "Jump";
         [SerializeField] private string _jumpLoopState = "JumpLoop";
         [SerializeField] private string _doubleJumpState = "DoubleJump";
@@ -60,9 +59,8 @@ namespace NakeDev.Player
         private float _jumpIntroTimer;
         private float _fallIntroTimer;
 
-        private int _idleHash;
-        private int _walkHash;
-        private int _runHash;
+        private int _locomotionHash;
+        private int _speedHash;
         private int _jumpHash;
         private int _jumpLoopHash;
         private int _doubleJumpHash;
@@ -78,9 +76,7 @@ namespace NakeDev.Player
 
         private enum AnimState
         {
-            Idle,
-            Run,
-            Walk,
+            Locomotion,
             SlideStart,
             SlideLoop,
             SlideEnd,

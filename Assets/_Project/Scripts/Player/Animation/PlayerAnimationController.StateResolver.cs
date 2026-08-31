@@ -6,9 +6,8 @@ namespace NakeDev.Player
     {
         private void InitializeStateHashes()
         {
-            _idleHash = Animator.StringToHash(_idleState);
-            _runHash = Animator.StringToHash(_runState);
-            _walkHash = Animator.StringToHash(_walkState);
+            _locomotionHash = Animator.StringToHash(_locomotionState);
+            _speedHash = Animator.StringToHash(_speedParameter);
             _jumpHash = Animator.StringToHash(_jumpState);
             _jumpLoopHash = Animator.StringToHash(_jumpLoopState);
             _doubleJumpHash = Animator.StringToHash(_doubleJumpState);
@@ -71,21 +70,14 @@ namespace NakeDev.Player
                 }
             }
 
-            if (_locomotion.IsRunning)
-                return AnimState.Run;
-
-            return Mathf.Abs(_locomotion.Velocity.x) > 0f
-                ? AnimState.Walk
-                : AnimState.Idle;
+            return AnimState.Locomotion;
         }
 
         private int HashFor(AnimState state)
         {
             switch (state)
             {
-                case AnimState.Idle: return _idleHash;
-                case AnimState.Walk: return _walkHash;
-                case AnimState.Run: return _runHash;
+                case AnimState.Locomotion: return _locomotionHash;
                 case AnimState.SlideStart: return _slideStartHash;
                 case AnimState.SlideLoop: return _slideLoopHash;
                 case AnimState.SlideEnd: return _slideEndHash;
@@ -98,7 +90,7 @@ namespace NakeDev.Player
                 case AnimState.WallSlide: return _wallSlideHash;
                 case AnimState.WallJump: return _wallJumpHash;
                 case AnimState.Landing: return _landingHash;
-                default: return _idleHash;
+                default: return _locomotionHash;
             }
         }
     }

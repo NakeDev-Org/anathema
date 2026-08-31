@@ -9,6 +9,8 @@ namespace NakeDev.Player
             if (_animatorBrain == null || _locomotion == null)
                 return;
 
+            _animatorBrain.SetFloat(_speedHash, Mathf.Abs(_locomotion.Velocity.x));
+
             _jumpIntroTimer = Mathf.Max(0f, _jumpIntroTimer - Time.deltaTime);
             _fallIntroTimer = Mathf.Max(0f, _fallIntroTimer - Time.deltaTime);
 
