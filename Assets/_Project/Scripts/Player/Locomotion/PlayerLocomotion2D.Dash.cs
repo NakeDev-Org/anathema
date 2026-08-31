@@ -48,6 +48,7 @@ namespace NakeDev.Player
             StopWallSlide();
             _rb.gravityScale = 0f;
             _rb.linearVelocity = new Vector2(_aerialDashDirection * _config.AerialDashSpeed, 0f);
+            ApplyDashCollider();
         }
 
         private void UpdateDashState()
@@ -70,6 +71,7 @@ namespace NakeDev.Player
         {
             IsAerialDashing = false;
             _rb.gravityScale = _defaultGravityScale;
+            RestoreStandingCollider();
         }
 
         private void TickDashTimers()
@@ -77,6 +79,18 @@ namespace NakeDev.Player
             TickGroundSlideTimers();
             if (_aerialDashTimer > 0f)
                 _aerialDashTimer -= Time.fixedDeltaTime;
+        }
+
+        private void ApplyDashCollider()
+        {
+            float dashHeight = Mathf.Clamp(_config.DashSlideColliderHeigth, _standingColliderSize.x, _standingColliderSize.y); 
+            float dashWidth = _config.DashSlideColliderWidth;
+
+            float heightDifference = _standingColliderSize.y - dashHeight;
+            
+            _capsuleCollider.direction = CapsuleDirection2D.Horizontal;
+            _capsuleCollider.size = new Vector2(dashWidth, dashHeight);
+            _capsuleCollider.offset = new Vector2(_standingColliderOffset.x, _standingColliderOffset.y - heightDifference * 0.5f);
         }
     }
 }
