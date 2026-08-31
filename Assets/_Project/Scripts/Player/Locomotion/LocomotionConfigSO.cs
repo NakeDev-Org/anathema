@@ -112,11 +112,15 @@ namespace NakeDev.Player
         [InspectorLine("Wall Slide")]
         [Tooltip("Permite que o personagem deslize lentamente enquanto segura o direcional contra uma parede.")]
         public bool WallSlideEnabled = true;
+        public LayerMask WallLayerMask;
         [Tooltip("Distância do raycast horizontal (a partir da borda do collider) usado pra detectar parede.")]
         public float WallCheckDistance = 0.15f;
         [Tooltip("Posição vertical dos dois raycasts de parede, relativa à metade da altura do collider. 0 junta ambos no centro; 1 aproxima dos extremos.")]
         [Range(0.1f, 0.9f)]
         public float WallCheckVerticalOffset = 0.5f;
+        [Tooltip("Tempo que mantém o wall slide quando restarem apenas dois sensores adjacentes em contato.")]
+        [Min(0f)]
+        public float WallSlideContactGraceTime = 0.08f;
         [Tooltip("Velocidade máxima de queda (unidades/s, positivo) enquanto desliza na parede.")]
         public float WallSlideSpeed = 2f;
         [Tooltip("Tempo inicial do wall slide em que a queda usa WallSlideEntrySpeed.")]

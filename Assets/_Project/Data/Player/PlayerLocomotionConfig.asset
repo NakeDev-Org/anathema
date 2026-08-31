@@ -48,8 +48,12 @@ MonoBehaviour:
   CornerCorrectionStep: 0.02
   CornerCheckDistance: 0.05
   WallSlideEnabled: 1
-  WallCheckDistance: 0.15
+  WallLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  WallCheckDistance: 0.6
   WallCheckVerticalOffset: 0.5
+  WallSlideContactGraceTime: 0.08
   WallSlideSpeed: 20
   WallSlideEntryDuration: 0.08
   WallSlideEntrySpeed: 0.25

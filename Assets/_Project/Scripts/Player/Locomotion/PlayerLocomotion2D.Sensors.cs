@@ -4,7 +4,19 @@ namespace NakeDev.Player
 {
     public partial class PlayerLocomotion2D
     {
+        private const float WallProbeSkin = -0.1f;
         private float _wallSlideEntryTimer;
+        private float _wallSlideContactGraceTimer;
+
+        private struct WallProbeResult
+        {
+            public bool Upper;
+            public bool Middle;
+            public bool Lower;
+
+            public bool HasAll => Upper && Middle && Lower;
+            public bool HasAdjacentPair => (Upper && Middle) || (Middle && Lower);
+        }
 
         private void ApplyCornerCorrection()
         {
@@ -12,16 +24,15 @@ namespace NakeDev.Player
                 return;
 
             Bounds bounds = _collider.bounds;
-            float checkDistance = Mathf.Max(
-                _config.CornerCheckDistance,
-                _rb.linearVelocity.y * Time.fixedDeltaTime);
+            
+            float checkDistance = Mathf.Max(_config.CornerCheckDistance, _rb.linearVelocity.y * Time.fixedDeltaTime);
             const float skin = 0.01f;
+            
             Vector2 leftOrigin = new Vector2(bounds.min.x + skin, bounds.max.y + skin);
             Vector2 rightOrigin = new Vector2(bounds.max.x - skin, bounds.max.y + skin);
-            bool leftBlocked = Physics2D.Raycast(
-                leftOrigin, Vector2.up, checkDistance, _config.GroundLayerMask);
-            bool rightBlocked = Physics2D.Raycast(
-                rightOrigin, Vector2.up, checkDistance, _config.GroundLayerMask);
+
+            bool leftBlocked = Physics2D.Raycast(leftOrigin, Vector2.up, checkDistance, _config.WallLayerMask);
+            bool rightBlocked = Physics2D.Raycast(rightOrigin, Vector2.up, checkDistance, _config.WallLayerMask);
 
             if (leftBlocked == rightBlocked) return;
 
@@ -35,11 +46,7 @@ namespace NakeDev.Player
                 Vector2 offset = Vector2.right * direction * distance;
                 Vector2 blockedOrigin = leftBlocked ? leftOrigin : rightOrigin;
 
-                if (Physics2D.Raycast(
-                    blockedOrigin + offset,
-                    Vector2.up,
-                    checkDistance,
-                    _config.GroundLayerMask))
+                if (Physics2D.Raycast(blockedOrigin + offset, Vector2.up, checkDistance, _config.WallLayerMask))
                 {
                     continue;
                 }
@@ -53,15 +60,9 @@ namespace NakeDev.Player
         {
             bool wasGrounded = IsGrounded;
             float landingSpeed = Mathf.Max(0f, -_rb.linearVelocity.y);
-            Vector2 origin = _groundCheckPoint != null
-                ? (Vector2)_groundCheckPoint.position
-                : (Vector2)transform.position;
+            Vector2 origin = _groundCheckPoint != null ? (Vector2)_groundCheckPoint.position : (Vector2)transform.position;
 
-            bool overlapsGround = Physics2D.OverlapBox(
-                origin,
-                _config.GroundCheckSize,
-                0f,
-                _config.GroundLayerMask);
+            bool overlapsGround = Physics2D.OverlapBox(origin, _config.GroundCheckSize, 0f, _config.WallLayerMask);
 
             // Ignora o overlap enquanto o player ainda está subindo (ex.: no primeiro
             // passo físico após o salto, antes de sair do raio do ground check).
@@ -93,29 +94,46 @@ namespace NakeDev.Player
             }
 
             Bounds bounds = _collider.bounds;
-            const float skin = 0.01f;
-            float verticalOffset = bounds.extents.y * _config.WallCheckVerticalOffset;
-            float upperY = bounds.center.y + verticalOffset;
-            float lowerY = bounds.center.y - verticalOffset;
-            Vector2 upperRightOrigin = new Vector2(bounds.max.x + skin, upperY);
-            Vector2 lowerRightOrigin = new Vector2(bounds.max.x + skin, lowerY);
-            Vector2 upperLeftOrigin = new Vector2(bounds.min.x - skin, upperY);
-            Vector2 lowerLeftOrigin = new Vector2(bounds.min.x - skin, lowerY);
-
-            bool touchingRight =
-                Physics2D.Raycast(upperRightOrigin, Vector2.right, _config.WallCheckDistance, _config.GroundLayerMask) &&
-                Physics2D.Raycast(lowerRightOrigin, Vector2.right, _config.WallCheckDistance, _config.GroundLayerMask);
-            bool touchingLeft =
-                Physics2D.Raycast(upperLeftOrigin, Vector2.left, _config.WallCheckDistance, _config.GroundLayerMask) &&
-                Physics2D.Raycast(lowerLeftOrigin, Vector2.left, _config.WallCheckDistance, _config.GroundLayerMask);
+            WallProbeResult rightProbes = CheckWallProbes(bounds, Vector2.right);
+            WallProbeResult leftProbes = CheckWallProbes(bounds, Vector2.left);
 
             float x = _input != null ? _input.MoveInput.x : 0f;
-            bool wallOnRight = touchingRight && x > 0.1f;
-            bool wallOnLeft = touchingLeft && x < -0.1f;
+            int detectedWallDirection = 0;
 
-            if (wallOnRight || wallOnLeft)
+            if (wasWallSliding)
             {
-                _wallDirection = wallOnRight ? 1 : -1;
+                bool pressingTowardActiveWall =
+                    (_wallDirection > 0 && x > 0.1f) ||
+                    (_wallDirection < 0 && x < -0.1f);
+                WallProbeResult activeProbes = _wallDirection > 0 ? rightProbes : leftProbes;
+
+                if (pressingTowardActiveWall && activeProbes.HasAll)
+                {
+                    _wallSlideContactGraceTimer = _config.WallSlideContactGraceTime;
+                    detectedWallDirection = _wallDirection;
+                }
+                else if (pressingTowardActiveWall && activeProbes.HasAdjacentPair && _wallSlideContactGraceTimer > 0f)
+                {
+                    _wallSlideContactGraceTimer = Mathf.Max(0f, _wallSlideContactGraceTimer - Time.fixedDeltaTime);
+
+                    if (_wallSlideContactGraceTimer > 0f)
+                        detectedWallDirection = _wallDirection;
+                }
+            }
+            else
+            {
+                if (rightProbes.HasAll && x > 0.1f)
+                    detectedWallDirection = 1;
+                else if (leftProbes.HasAll && x < -0.1f)
+                    detectedWallDirection = -1;
+
+                if (detectedWallDirection != 0)
+                    _wallSlideContactGraceTimer = _config.WallSlideContactGraceTime;
+            }
+
+            if (detectedWallDirection != 0)
+            {
+                _wallDirection = detectedWallDirection;
                 IsWallSliding = _config.WallSlideEnabled;
 
                 if (IsWallSliding && !wasWallSliding)
@@ -152,11 +170,36 @@ namespace NakeDev.Player
             }
         }
 
+        private WallProbeResult CheckWallProbes(Bounds bounds, Vector2 direction)
+        {
+            GetWallProbeOrigins(bounds, direction, out Vector2 upperOrigin, out Vector2 middleOrigin, out Vector2 lowerOrigin);
+
+            float castDistance = _config.WallCheckDistance + WallProbeSkin;
+
+            return new WallProbeResult
+            {
+                Upper = Physics2D.Raycast(upperOrigin, direction, castDistance, _config.WallLayerMask),
+                Middle = Physics2D.Raycast(middleOrigin, direction, castDistance, _config.WallLayerMask),
+                Lower = Physics2D.Raycast(lowerOrigin, direction, castDistance, _config.WallLayerMask)
+            };
+        }
+
+        private void GetWallProbeOrigins(Bounds bounds, Vector2 direction, out Vector2 upperOrigin, out Vector2 middleOrigin, out Vector2 lowerOrigin)
+        {
+            float verticalOffset = bounds.extents.y * _config.WallCheckVerticalOffset;
+            float sideX = direction.x > 0f ? bounds.max.x + WallProbeSkin : bounds.min.x - WallProbeSkin;
+
+            upperOrigin = new Vector2(sideX, bounds.center.y + verticalOffset);
+            middleOrigin = new Vector2(sideX, bounds.center.y);
+            lowerOrigin = new Vector2(sideX, bounds.center.y - verticalOffset);
+        }
+
         private void StopWallSlide()
         {
             IsWallSliding = false;
             _wallDirection = 0;
             _wallSlideEntryTimer = 0f;
+            _wallSlideContactGraceTimer = 0f;
         }
 
         private void OnDrawGizmosSelected()
@@ -164,27 +207,34 @@ namespace NakeDev.Player
             if (_config == null) return;
 
             Gizmos.color = IsGrounded ? Color.green : Color.red;
-            Vector3 origin = _groundCheckPoint != null
-                ? _groundCheckPoint.position
-                : transform.position;
+            Vector3 origin = _groundCheckPoint != null ? _groundCheckPoint.position : transform.position;
             Gizmos.DrawWireCube(origin, _config.GroundCheckSize);
 
-            if (_collider == null) return;
-            Bounds bounds = _collider.bounds;
-            const float skin = 0.01f;
-            float verticalOffset = bounds.extents.y * _config.WallCheckVerticalOffset;
-            float upperY = bounds.center.y + verticalOffset;
-            float lowerY = bounds.center.y - verticalOffset;
-            Vector3 upperRightOrigin = new Vector3(bounds.max.x + skin, upperY, 0f);
-            Vector3 lowerRightOrigin = new Vector3(bounds.max.x + skin, lowerY, 0f);
-            Vector3 upperLeftOrigin = new Vector3(bounds.min.x - skin, upperY, 0f);
-            Vector3 lowerLeftOrigin = new Vector3(bounds.min.x - skin, lowerY, 0f);
+            Collider2D targetCollider = _collider != null ? _collider : GetComponent<Collider2D>();
 
-            Gizmos.color = IsWallSliding ? Color.cyan : Color.yellow;
-            Gizmos.DrawLine(upperRightOrigin, upperRightOrigin + Vector3.right * _config.WallCheckDistance);
-            Gizmos.DrawLine(lowerRightOrigin, lowerRightOrigin + Vector3.right * _config.WallCheckDistance);
-            Gizmos.DrawLine(upperLeftOrigin, upperLeftOrigin + Vector3.left * _config.WallCheckDistance);
-            Gizmos.DrawLine(lowerLeftOrigin, lowerLeftOrigin + Vector3.left * _config.WallCheckDistance);
+            if (targetCollider == null) return;
+
+            Bounds bounds = targetCollider.bounds;
+            DrawWallProbes(bounds, Vector2.right);
+            DrawWallProbes(bounds, Vector2.left);
+        }
+
+        private void DrawWallProbes(Bounds bounds, Vector2 direction)
+        {
+            GetWallProbeOrigins(bounds, direction, out Vector2 upperOrigin, out Vector2 middleOrigin, out Vector2 lowerOrigin);
+
+            WallProbeResult probes = CheckWallProbes(bounds, direction);
+
+            DrawWallProbe(upperOrigin, direction, probes.Upper);
+            DrawWallProbe(middleOrigin, direction, probes.Middle);
+            DrawWallProbe(lowerOrigin, direction, probes.Lower);
+        }
+
+        private void DrawWallProbe(Vector2 origin, Vector2 direction, bool isTouching)
+        {
+            Gizmos.color = isTouching ? Color.green : Color.red;
+            float castDistance = _config.WallCheckDistance + WallProbeSkin;
+            Gizmos.DrawLine(origin, origin + direction * castDistance);
         }
     }
 }
