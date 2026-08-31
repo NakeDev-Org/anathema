@@ -23,6 +23,7 @@ namespace NakeDev.Player
         public bool IsRunHeld { get; private set; }
 
         public event Action OnJumpPressed;
+        public event Action OnJumpReleased;
         public event Action OnDashPressed;
         public event Action OnRunPressed;
 
@@ -71,6 +72,8 @@ namespace NakeDev.Player
 
             if (context.performed)
                 OnJumpPressed?.Invoke();
+            else if (context.canceled)
+                OnJumpReleased?.Invoke();
         }
 
         public void OnDash(InputAction.CallbackContext context)

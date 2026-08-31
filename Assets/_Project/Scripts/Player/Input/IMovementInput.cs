@@ -13,7 +13,7 @@ namespace NakeDev.Player
         bool IsRunHeld { get; }
 
         event Action OnJumpPressed;
-        //event Action OnJumpReleased;
+        event Action OnJumpReleased;
         event Action OnDashPressed;
         event Action OnRunPressed;
     }

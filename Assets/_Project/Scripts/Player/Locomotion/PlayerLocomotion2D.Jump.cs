@@ -9,6 +9,15 @@ namespace NakeDev.Player
             _jumpBufferTimer = _config.JumpBufferTime;
         }
 
+        private void HandleJumpReleased()
+        {
+            if (!IsJumping || _rb.linearVelocity.y <= 0f) return;
+
+            _rb.linearVelocity = new Vector2(
+                _rb.linearVelocity.x,
+                _rb.linearVelocity.y * _config.JumpCutMultiplier);
+        }
+
         private void TryConsumeJump()
         {
             if (_jumpBufferTimer <= 0f) return;
