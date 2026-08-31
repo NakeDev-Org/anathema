@@ -331,7 +331,7 @@ namespace NakeDev.Player.GeneratedInput
                 {
                     ""name"": """",
                     ""id"": ""103d22bb-0525-40c4-9e35-18edf5739aaf"",
-                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Gamepad"",
