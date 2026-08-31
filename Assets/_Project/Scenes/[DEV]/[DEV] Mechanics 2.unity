@@ -687,7 +687,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 838413533}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.11631689, w: 0.99321216}
+  m_LocalRotation: {x: -0, y: -0, z: 0.2647927, w: 0.9643054}
   m_LocalPosition: {x: 61.49004, y: -27.140919, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -735,7 +735,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 186.47
   m_PointLightOuterAngle: 194.48
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 7.900146
+  m_PointLightOuterRadius: 5.261204
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -901,10 +901,10 @@ MonoBehaviour:
   m_LocalBounds:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 186.47
-  m_PointLightOuterAngle: 194.48
+  m_PointLightInnerAngle: 251.64001
+  m_PointLightOuterAngle: 259.65
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 28.130184
+  m_PointLightOuterRadius: 26.472187
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -923,7 +923,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1478890981}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.9997023, w: -0.024401216}
+  m_LocalRotation: {x: -0, y: -0, z: 0.94068635, w: -0.33927745}
   m_LocalPosition: {x: 61.49004, y: -27.140919, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
