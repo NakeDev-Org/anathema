@@ -33,7 +33,9 @@ namespace NakeDev.Player
         [InspectorLine("Jump")]
         public float JumpForce = 7f;
         public float FallGravityMultiplier = 2.5f;
-        //public float 
+        [Tooltip("Corta a velocidade vertical do pulo se o botão for solto cedo, ainda subindo — multiplica a velocidade atual por este valor. Dá altura variável: toque rápido = hop curto e leve, segurar = pulo completo.")]
+        [Range(0f, 1f)]
+        public float JumpCutMultiplier = 0.5f;
 
         [InspectorLine("Fall")]
         [Tooltip("Velocidade vertical máxima de queda, em unidades por segundo. Use um valor positivo.")]

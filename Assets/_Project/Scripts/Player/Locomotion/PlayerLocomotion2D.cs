@@ -95,6 +95,7 @@ namespace NakeDev.Player
         {
             if (_input == null) return;
             _input.OnJumpPressed += OnJumpPressed;
+            _input.OnJumpReleased += HandleJumpReleased;
             _input.OnDashPressed += HandleDashPressed;
             // _input.OnRunPressed += HandleRunPressed;
         }
@@ -105,6 +106,7 @@ namespace NakeDev.Player
 
             if (_input == null) return;
             _input.OnJumpPressed -= OnJumpPressed;
+            _input.OnJumpReleased -= HandleJumpReleased;
             _input.OnDashPressed -= HandleDashPressed;
             // _input.OnRunPressed -= HandleRunPressed;
         }
