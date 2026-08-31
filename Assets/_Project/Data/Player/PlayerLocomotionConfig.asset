@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: PlayerLocomotionConfig
   m_EditorClassIdentifier: Assembly-CSharp::NakeDev.Player.LocomotionConfigSO
   MoveSpeed: 15
+  WalkSpeed: 6
+  Mode: 0
   Acceleration: 60
   Deceleration: 80
   RunSpeedThreshold: 12
@@ -38,7 +40,7 @@ MonoBehaviour:
   MaxAerialDashes: 1
   AerialDashSpeed: 30
   AerialDashDuration: 0.18
-  GroundCheckRadius: 0.15
+  GroundCheckRadius: 0.39
   GroundLayerMask:
     serializedVersion: 2
     m_Bits: 64
