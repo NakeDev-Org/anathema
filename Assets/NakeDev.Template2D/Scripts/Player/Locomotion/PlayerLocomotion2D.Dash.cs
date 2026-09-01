@@ -7,14 +7,12 @@ namespace NakeDev.Player
         private float _aerialDashTimer;
         private float _aerialDashDirection;
         private int _aerialDashesRemaining;
-        private PlayerFacing2D _facing;
         public bool IsAerialDashing { get; private set; }
 
         private void InitializeDash()
         {
             InitializeGroundSlide();
             _aerialDashesRemaining = _config.MaxAerialDashes;
-            _facing = GetComponent<PlayerFacing2D>();
         }
 
         private void HandleDashPressed()
@@ -37,7 +35,7 @@ namespace NakeDev.Player
                 return;
 
             //float directionSource = Mathf.Abs(_input.MoveInput.x) > 0.1f ? _input.MoveInput.x : _rb.linearVelocity.x;
-            float directionSource = Mathf.Abs(_input.MoveInput.x) > 0.1f ? _input.MoveInput.x : _facing.IsFacingRight ? 1f : -1f;
+            float directionSource = Mathf.Abs(_input.MoveInput.x) > 0.1f ? _input.MoveInput.x : _lastMoveInputX;
             if (Mathf.Abs(directionSource) <= 0.1f) return;
 
             float dashDirection = Mathf.Sign(directionSource);

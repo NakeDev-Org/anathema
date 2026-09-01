@@ -25,6 +25,10 @@ namespace NakeDev.Player
 
         private void ApplyHorizontalMovement()
         {
+            float x = _input != null ? _input.MoveInput.x : 0f;
+
+            if (Mathf.Abs(x) > 0.1f) _lastMoveInputX = Mathf.Sign(x);
+            
             if (_wallJumpControlLockTimer > 0f)
             {
                 UpdateBurstRunEvent(false);
@@ -37,12 +41,7 @@ namespace NakeDev.Player
                 return;
             }
 
-            float x = _input != null ? _input.MoveInput.x : 0f;
-            bool isBurstRunActive =
-                IsGrounded &&
-                _config.BurstRunEnabled &&
-                WantsToBurstRun &&
-                Mathf.Abs(x) > 0.01f;
+            bool isBurstRunActive = IsGrounded && _config.BurstRunEnabled && WantsToBurstRun && Mathf.Abs(x) > 0.01f;
             UpdateBurstRunEvent(isBurstRunActive);
 
             float currentSpeed = _rb.linearVelocity.x;

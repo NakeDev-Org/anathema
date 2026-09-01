@@ -38,7 +38,7 @@ namespace NakeDev.Player
         private bool _groundStateInitialized;
         private bool _burstRunToggled;
         private bool _wasBurstRunActive;
-
+        private float _lastMoveInputX;
         public bool IsGrounded { get; private set; }
         public bool IsJumping { get; private set; }
         public bool IsWallSliding { get; private set; }
