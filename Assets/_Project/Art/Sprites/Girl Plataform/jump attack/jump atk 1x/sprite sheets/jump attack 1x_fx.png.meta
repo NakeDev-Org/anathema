@@ -85,7 +85,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -99,7 +99,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,7 +123,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -164,12 +164,12 @@ TextureImporter:
       name: jump attack 1x_fx_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 146
-        width: 27
-        height: 20
+        x: 0
+        y: 138
+        width: 124
+        height: 69
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -186,12 +186,12 @@ TextureImporter:
       name: jump attack 1x_fx_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 151
-        width: 27
-        height: 20
+        x: 124
+        y: 138
+        width: 124
+        height: 69
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -208,12 +208,12 @@ TextureImporter:
       name: jump attack 1x_fx_2
       rect:
         serializedVersion: 2
-        x: 25
-        y: 158
-        width: 22
-        height: 17
+        x: 248
+        y: 138
+        width: 124
+        height: 69
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -230,12 +230,12 @@ TextureImporter:
       name: jump attack 1x_fx_3
       rect:
         serializedVersion: 2
-        x: 130
-        y: 145
-        width: 31
-        height: 27
+        x: 372
+        y: 138
+        width: 124
+        height: 69
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -252,12 +252,12 @@ TextureImporter:
       name: jump attack 1x_fx_4
       rect:
         serializedVersion: 2
-        x: 138
-        y: 153
-        width: 26
-        height: 24
+        x: 0
+        y: 69
+        width: 124
+        height: 69
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -274,12 +274,12 @@ TextureImporter:
       name: jump attack 1x_fx_5
       rect:
         serializedVersion: 2
-        x: 147
-        y: 150
-        width: 31
-        height: 31
+        x: 124
+        y: 69
+        width: 124
+        height: 69
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -296,12 +296,12 @@ TextureImporter:
       name: jump attack 1x_fx_6
       rect:
         serializedVersion: 2
-        x: 249
-        y: 133
+        x: 248
+        y: 69
         width: 124
-        height: 74
+        height: 69
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -319,11 +319,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 372
-        y: 137
+        y: 69
         width: 124
-        height: 70
+        height: 69
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -341,11 +341,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 68
-        width: 125
-        height: 71
+        y: 0
+        width: 124
+        height: 69
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -358,187 +358,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: jump attack 1x_fx_9
-      rect:
-        serializedVersion: 2
-        x: 123
-        y: 68
-        width: 126
-        height: 71
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3952fb53768be4250800000000000000
-      internalID: 5930880512716383635
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jump attack 1x_fx_10
-      rect:
-        serializedVersion: 2
-        x: 248
-        y: 68
-        width: 125
-        height: 67
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0cb09b1f54ae865e0800000000000000
-      internalID: -1916024055317066816
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jump attack 1x_fx_11
-      rect:
-        serializedVersion: 2
-        x: 373
-        y: 68
-        width: 123
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f298dc951fdf527d0800000000000000
-      internalID: -2943667568381163217
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jump attack 1x_fx_12
-      rect:
-        serializedVersion: 2
-        x: 380
-        y: 72
-        width: 115
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cc4f7832a09aa7780800000000000000
-      internalID: -8684443070419700532
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jump attack 1x_fx_13
-      rect:
-        serializedVersion: 2
-        x: 389
-        y: 76
-        width: 103
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6ce313d1aa40b6340800000000000000
-      internalID: 4857981751729929926
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jump attack 1x_fx_14
-      rect:
-        serializedVersion: 2
-        x: 23
-        y: 0
-        width: 70
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f068637a126137570800000000000000
-      internalID: 8463132458554394127
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jump attack 1x_fx_15
-      rect:
-        serializedVersion: 2
-        x: 29
-        y: 3
-        width: 71
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1480116da47e20950800000000000000
-      internalID: 6413943127934044225
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jump attack 1x_fx_16
-      rect:
-        serializedVersion: 2
-        x: 37
-        y: 7
-        width: 70
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ad25e4856eeb29df0800000000000000
-      internalID: -174867538980744486
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 1129228c97fd3e745b34fd9e7d5c9bcc
     internalID: 0
     vertices: []
     indices: 
@@ -546,17 +370,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":124.0,"y":69.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       jump attack 1x_fx_0: -4777588240082726999
       jump attack 1x_fx_1: 387160050129306181
-      jump attack 1x_fx_10: -1916024055317066816
-      jump attack 1x_fx_11: -2943667568381163217
-      jump attack 1x_fx_12: -8684443070419700532
-      jump attack 1x_fx_13: 4857981751729929926
-      jump attack 1x_fx_14: 8463132458554394127
-      jump attack 1x_fx_15: 6413943127934044225
-      jump attack 1x_fx_16: -174867538980744486
       jump attack 1x_fx_2: 5362679437857395654
       jump attack 1x_fx_3: -2571122146371146153
       jump attack 1x_fx_4: 2997771899268628089
@@ -564,7 +383,6 @@ TextureImporter:
       jump attack 1x_fx_6: 2716940126725705195
       jump attack 1x_fx_7: 284263164855966436
       jump attack 1x_fx_8: -2383420131919547005
-      jump attack 1x_fx_9: 5930880512716383635
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

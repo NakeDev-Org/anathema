@@ -118,7 +118,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -132,7 +132,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -156,7 +156,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -197,12 +197,12 @@ TextureImporter:
       name: 2x atk_merged(long)_0
       rect:
         serializedVersion: 2
-        x: 102
+        x: 0
         y: 384
-        width: 55
-        height: 55
+        width: 192
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -219,12 +219,12 @@ TextureImporter:
       name: 2x atk_merged(long)_1
       rect:
         serializedVersion: 2
-        x: 296
+        x: 192
         y: 384
-        width: 52
-        height: 55
+        width: 192
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -241,12 +241,12 @@ TextureImporter:
       name: 2x atk_merged(long)_2
       rect:
         serializedVersion: 2
-        x: 464
+        x: 384
         y: 384
-        width: 83
-        height: 56
+        width: 192
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -263,12 +263,12 @@ TextureImporter:
       name: 2x atk_merged(long)_3
       rect:
         serializedVersion: 2
-        x: 597
+        x: 576
         y: 384
-        width: 142
-        height: 54
+        width: 192
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -285,12 +285,12 @@ TextureImporter:
       name: 2x atk_merged(long)_4
       rect:
         serializedVersion: 2
-        x: 7
+        x: 0
         y: 320
-        width: 152
-        height: 56
+        width: 192
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -307,12 +307,12 @@ TextureImporter:
       name: 2x atk_merged(long)_5
       rect:
         serializedVersion: 2
-        x: 198
+        x: 192
         y: 320
-        width: 153
-        height: 56
+        width: 192
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -329,12 +329,12 @@ TextureImporter:
       name: 2x atk_merged(long)_6
       rect:
         serializedVersion: 2
-        x: 387
+        x: 384
         y: 320
-        width: 156
-        height: 48
+        width: 192
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -351,12 +351,12 @@ TextureImporter:
       name: 2x atk_merged(long)_7
       rect:
         serializedVersion: 2
-        x: 578
+        x: 576
         y: 320
-        width: 141
-        height: 47
+        width: 192
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -373,12 +373,12 @@ TextureImporter:
       name: 2x atk_merged(long)_8
       rect:
         serializedVersion: 2
-        x: 2
+        x: 0
         y: 256
-        width: 141
-        height: 47
+        width: 192
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -395,12 +395,12 @@ TextureImporter:
       name: 2x atk_merged(long)_9
       rect:
         serializedVersion: 2
-        x: 195
+        x: 192
         y: 256
-        width: 140
-        height: 47
+        width: 192
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -417,12 +417,12 @@ TextureImporter:
       name: 2x atk_merged(long)_10
       rect:
         serializedVersion: 2
-        x: 388
+        x: 384
         y: 256
-        width: 139
-        height: 47
+        width: 192
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -439,12 +439,12 @@ TextureImporter:
       name: 2x atk_merged(long)_11
       rect:
         serializedVersion: 2
-        x: 580
-        y: 274
-        width: 82
-        height: 13
+        x: 576
+        y: 256
+        width: 192
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -461,12 +461,12 @@ TextureImporter:
       name: 2x atk_merged(long)_12
       rect:
         serializedVersion: 2
-        x: 673
-        y: 256
-        width: 44
-        height: 48
+        x: 0
+        y: 192
+        width: 192
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -483,12 +483,12 @@ TextureImporter:
       name: 2x atk_merged(long)_13
       rect:
         serializedVersion: 2
-        x: 4
-        y: 210
-        width: 69
-        height: 12
+        x: 192
+        y: 192
+        width: 192
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -505,12 +505,12 @@ TextureImporter:
       name: 2x atk_merged(long)_14
       rect:
         serializedVersion: 2
-        x: 97
+        x: 384
         y: 192
-        width: 41
-        height: 50
+        width: 192
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -527,12 +527,12 @@ TextureImporter:
       name: 2x atk_merged(long)_15
       rect:
         serializedVersion: 2
-        x: 196
-        y: 212
-        width: 45
-        height: 10
+        x: 576
+        y: 192
+        width: 192
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -549,12 +549,12 @@ TextureImporter:
       name: 2x atk_merged(long)_16
       rect:
         serializedVersion: 2
-        x: 290
-        y: 192
-        width: 39
-        height: 50
+        x: 0
+        y: 128
+        width: 192
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -571,12 +571,12 @@ TextureImporter:
       name: 2x atk_merged(long)_17
       rect:
         serializedVersion: 2
-        x: 486
-        y: 192
-        width: 45
-        height: 50
+        x: 192
+        y: 128
+        width: 192
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -593,12 +593,12 @@ TextureImporter:
       name: 2x atk_merged(long)_18
       rect:
         serializedVersion: 2
-        x: 679
-        y: 192
-        width: 46
-        height: 49
+        x: 384
+        y: 128
+        width: 192
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -615,12 +615,12 @@ TextureImporter:
       name: 2x atk_merged(long)_19
       rect:
         serializedVersion: 2
-        x: 97
+        x: 576
         y: 128
-        width: 86
-        height: 46
+        width: 192
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -637,12 +637,12 @@ TextureImporter:
       name: 2x atk_merged(long)_20
       rect:
         serializedVersion: 2
-        x: 291
-        y: 128
-        width: 84
-        height: 46
+        x: 0
+        y: 64
+        width: 192
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -659,12 +659,12 @@ TextureImporter:
       name: 2x atk_merged(long)_21
       rect:
         serializedVersion: 2
-        x: 495
-        y: 128
-        width: 72
-        height: 46
+        x: 192
+        y: 64
+        width: 192
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -681,12 +681,12 @@ TextureImporter:
       name: 2x atk_merged(long)_22
       rect:
         serializedVersion: 2
-        x: 687
-        y: 128
-        width: 72
-        height: 46
+        x: 384
+        y: 64
+        width: 192
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -703,12 +703,12 @@ TextureImporter:
       name: 2x atk_merged(long)_23
       rect:
         serializedVersion: 2
-        x: 112
+        x: 576
         y: 64
-        width: 71
-        height: 46
+        width: 192
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -725,12 +725,12 @@ TextureImporter:
       name: 2x atk_merged(long)_24
       rect:
         serializedVersion: 2
-        x: 306
-        y: 64
-        width: 69
-        height: 48
+        x: 0
+        y: 0
+        width: 192
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -743,77 +743,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: 2x atk_merged(long)_25
-      rect:
-        serializedVersion: 2
-        x: 500
-        y: 64
-        width: 67
-        height: 51
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a305ab52cf52cfe40800000000000000
-      internalID: 5691465793984417850
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 2x atk_merged(long)_26
-      rect:
-        serializedVersion: 2
-        x: 691
-        y: 64
-        width: 68
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ab61973a8fe02b250800000000000000
-      internalID: 5958841718021887674
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 2x atk_merged(long)_27
-      rect:
-        serializedVersion: 2
-        x: 115
-        y: 0
-        width: 42
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8c1e75e642eb13980800000000000000
-      internalID: -8560852352975248952
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 71c92f4c6cb819b4dbbb4450ae6fb989
     internalID: 0
     vertices: []
     indices: 
@@ -821,7 +755,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":192.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       2x atk_merged(long)_0: -3865343420530518039
       2x atk_merged(long)_1: 6589815783500204302
@@ -841,9 +777,6 @@ TextureImporter:
       2x atk_merged(long)_22: 1078949814996645706
       2x atk_merged(long)_23: -971682538578673960
       2x atk_merged(long)_24: 2920590757403627249
-      2x atk_merged(long)_25: 5691465793984417850
-      2x atk_merged(long)_26: 5958841718021887674
-      2x atk_merged(long)_27: -8560852352975248952
       2x atk_merged(long)_3: 7859881022471015505
       2x atk_merged(long)_4: -2115573278689153992
       2x atk_merged(long)_5: -2101256659396396205

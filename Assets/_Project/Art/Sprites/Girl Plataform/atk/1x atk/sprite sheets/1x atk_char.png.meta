@@ -91,7 +91,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -105,7 +105,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -129,7 +129,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -170,12 +170,12 @@ TextureImporter:
       name: 1x atk_char_0
       rect:
         serializedVersion: 2
-        x: 117
+        x: 0
         y: 256
-        width: 37
-        height: 56
+        width: 160
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -192,12 +192,12 @@ TextureImporter:
       name: 1x atk_char_1
       rect:
         serializedVersion: 2
-        x: 273
+        x: 160
         y: 256
-        width: 43
-        height: 54
+        width: 160
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -214,12 +214,12 @@ TextureImporter:
       name: 1x atk_char_2
       rect:
         serializedVersion: 2
-        x: 422
+        x: 320
         y: 256
-        width: 59
-        height: 55
+        width: 160
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -236,12 +236,12 @@ TextureImporter:
       name: 1x atk_char_3
       rect:
         serializedVersion: 2
-        x: 583
+        x: 480
         y: 256
-        width: 57
-        height: 54
+        width: 160
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -258,12 +258,12 @@ TextureImporter:
       name: 1x atk_char_4
       rect:
         serializedVersion: 2
-        x: 61
+        x: 0
         y: 192
-        width: 90
-        height: 50
+        width: 160
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -280,12 +280,12 @@ TextureImporter:
       name: 1x atk_char_5
       rect:
         serializedVersion: 2
-        x: 221
+        x: 160
         y: 192
-        width: 90
-        height: 50
+        width: 160
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -302,12 +302,12 @@ TextureImporter:
       name: 1x atk_char_6
       rect:
         serializedVersion: 2
-        x: 383
-        y: 211
-        width: 19
-        height: 20
+        x: 320
+        y: 192
+        width: 160
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -324,12 +324,12 @@ TextureImporter:
       name: 1x atk_char_7
       rect:
         serializedVersion: 2
-        x: 401
+        x: 480
         y: 192
-        width: 70
-        height: 49
+        width: 160
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -346,12 +346,12 @@ TextureImporter:
       name: 1x atk_char_8
       rect:
         serializedVersion: 2
-        x: 543
-        y: 211
-        width: 19
-        height: 20
+        x: 0
+        y: 128
+        width: 160
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -368,12 +368,12 @@ TextureImporter:
       name: 1x atk_char_9
       rect:
         serializedVersion: 2
-        x: 561
-        y: 192
-        width: 70
-        height: 50
+        x: 160
+        y: 128
+        width: 160
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -390,12 +390,12 @@ TextureImporter:
       name: 1x atk_char_10
       rect:
         serializedVersion: 2
-        x: 63
+        x: 320
         y: 128
-        width: 87
-        height: 50
+        width: 160
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -412,12 +412,12 @@ TextureImporter:
       name: 1x atk_char_11
       rect:
         serializedVersion: 2
-        x: 223
+        x: 480
         y: 128
-        width: 87
-        height: 50
+        width: 160
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -434,12 +434,12 @@ TextureImporter:
       name: 1x atk_char_12
       rect:
         serializedVersion: 2
-        x: 408
-        y: 128
-        width: 62
-        height: 50
+        x: 0
+        y: 64
+        width: 160
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -456,12 +456,12 @@ TextureImporter:
       name: 1x atk_char_13
       rect:
         serializedVersion: 2
-        x: 569
-        y: 128
-        width: 61
-        height: 50
+        x: 160
+        y: 64
+        width: 160
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -478,12 +478,12 @@ TextureImporter:
       name: 1x atk_char_14
       rect:
         serializedVersion: 2
-        x: 89
+        x: 320
         y: 64
-        width: 62
-        height: 49
+        width: 160
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -500,12 +500,12 @@ TextureImporter:
       name: 1x atk_char_15
       rect:
         serializedVersion: 2
-        x: 252
+        x: 480
         y: 64
-        width: 60
-        height: 50
+        width: 160
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -522,12 +522,12 @@ TextureImporter:
       name: 1x atk_char_16
       rect:
         serializedVersion: 2
-        x: 426
-        y: 64
-        width: 55
-        height: 55
+        x: 0
+        y: 0
+        width: 160
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -540,55 +540,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: 1x atk_char_17
-      rect:
-        serializedVersion: 2
-        x: 592
-        y: 64
-        width: 48
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 09ce08090b454a690800000000000000
-      internalID: -7591849954524468080
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1x atk_char_18
-      rect:
-        serializedVersion: 2
-        x: 115
-        y: 0
-        width: 39
-        height: 56
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9972354b993944180800000000000000
-      internalID: -9132011856035895399
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 4fd2668ae185d114fb917f3bd888c755
     internalID: 0
     vertices: []
     indices: 
@@ -596,7 +552,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":160.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       1x atk_char_0: -7444120305849260174
       1x atk_char_1: -9202848584311020693
@@ -607,8 +565,6 @@ TextureImporter:
       1x atk_char_14: 1602744854432612835
       1x atk_char_15: -3398633922187186638
       1x atk_char_16: -4670641036934133684
-      1x atk_char_17: -7591849954524468080
-      1x atk_char_18: -9132011856035895399
       1x atk_char_2: 2005260232017572480
       1x atk_char_3: -1175420282672367551
       1x atk_char_4: 736460800226455755

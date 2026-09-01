@@ -100,7 +100,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -114,7 +114,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -138,7 +138,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -180,11 +180,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 303
-        width: 71
-        height: 55
+        y: 300
+        width: 70
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -201,12 +201,12 @@ TextureImporter:
       name: normal hit_1
       rect:
         serializedVersion: 2
-        x: 69
-        y: 303
-        width: 72
-        height: 56
+        x: 70
+        y: 300
+        width: 70
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -223,12 +223,12 @@ TextureImporter:
       name: normal hit_2
       rect:
         serializedVersion: 2
-        x: 144
-        y: 303
-        width: 65
-        height: 57
+        x: 140
+        y: 300
+        width: 70
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -245,12 +245,12 @@ TextureImporter:
       name: normal hit_3
       rect:
         serializedVersion: 2
-        x: 215
-        y: 304
-        width: 57
-        height: 56
+        x: 210
+        y: 300
+        width: 70
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -267,12 +267,12 @@ TextureImporter:
       name: normal hit_4
       rect:
         serializedVersion: 2
-        x: 7
-        y: 246
-        width: 53
-        height: 48
+        x: 0
+        y: 240
+        width: 70
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -289,12 +289,12 @@ TextureImporter:
       name: normal hit_5
       rect:
         serializedVersion: 2
-        x: 79
-        y: 246
-        width: 51
-        height: 48
+        x: 70
+        y: 240
+        width: 70
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -311,12 +311,12 @@ TextureImporter:
       name: normal hit_6
       rect:
         serializedVersion: 2
-        x: 154
-        y: 246
-        width: 46
-        height: 48
+        x: 140
+        y: 240
+        width: 70
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -333,12 +333,12 @@ TextureImporter:
       name: normal hit_7
       rect:
         serializedVersion: 2
-        x: 224
-        y: 243
-        width: 47
-        height: 50
+        x: 210
+        y: 240
+        width: 70
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -355,12 +355,12 @@ TextureImporter:
       name: normal hit_8
       rect:
         serializedVersion: 2
-        x: 14
-        y: 181
-        width: 49
-        height: 54
+        x: 0
+        y: 180
+        width: 70
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -377,12 +377,12 @@ TextureImporter:
       name: normal hit_9
       rect:
         serializedVersion: 2
-        x: 84
-        y: 182
-        width: 49
-        height: 49
+        x: 70
+        y: 180
+        width: 70
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -399,12 +399,12 @@ TextureImporter:
       name: normal hit_10
       rect:
         serializedVersion: 2
-        x: 150
-        y: 179
-        width: 56
-        height: 49
+        x: 140
+        y: 180
+        width: 70
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -421,12 +421,12 @@ TextureImporter:
       name: normal hit_11
       rect:
         serializedVersion: 2
-        x: 228
-        y: 179
-        width: 48
-        height: 46
+        x: 210
+        y: 180
+        width: 70
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -443,12 +443,12 @@ TextureImporter:
       name: normal hit_12
       rect:
         serializedVersion: 2
-        x: 20
-        y: 119
-        width: 49
-        height: 38
+        x: 0
+        y: 120
+        width: 70
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -465,12 +465,12 @@ TextureImporter:
       name: normal hit_13
       rect:
         serializedVersion: 2
-        x: 91
-        y: 119
-        width: 48
-        height: 39
+        x: 70
+        y: 120
+        width: 70
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -487,12 +487,12 @@ TextureImporter:
       name: normal hit_14
       rect:
         serializedVersion: 2
-        x: 161
-        y: 119
-        width: 49
-        height: 40
+        x: 140
+        y: 120
+        width: 70
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -509,12 +509,12 @@ TextureImporter:
       name: normal hit_15
       rect:
         serializedVersion: 2
-        x: 231
-        y: 119
-        width: 49
-        height: 40
+        x: 210
+        y: 120
+        width: 70
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -531,12 +531,12 @@ TextureImporter:
       name: normal hit_16
       rect:
         serializedVersion: 2
-        x: 22
-        y: 59
-        width: 49
-        height: 40
+        x: 0
+        y: 60
+        width: 70
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -553,12 +553,12 @@ TextureImporter:
       name: normal hit_17
       rect:
         serializedVersion: 2
-        x: 92
-        y: 59
-        width: 49
-        height: 40
+        x: 70
+        y: 60
+        width: 70
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -575,12 +575,12 @@ TextureImporter:
       name: normal hit_18
       rect:
         serializedVersion: 2
-        x: 162
-        y: 59
-        width: 49
-        height: 40
+        x: 140
+        y: 60
+        width: 70
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -597,12 +597,12 @@ TextureImporter:
       name: normal hit_19
       rect:
         serializedVersion: 2
-        x: 232
-        y: 59
-        width: 48
-        height: 43
+        x: 210
+        y: 60
+        width: 70
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -619,12 +619,12 @@ TextureImporter:
       name: normal hit_20
       rect:
         serializedVersion: 2
-        x: 22
+        x: 0
         y: 0
-        width: 45
-        height: 50
+        width: 70
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -641,12 +641,12 @@ TextureImporter:
       name: normal hit_21
       rect:
         serializedVersion: 2
-        x: 92
+        x: 70
         y: 0
-        width: 45
-        height: 51
+        width: 70
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -663,7 +663,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: db5f128c87afbc2459a3fb939751a1fc
     internalID: 0
     vertices: []
     indices: 
@@ -671,7 +671,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":70.0,"y":60.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       normal hit_0: 7914953706476095084
       normal hit_1: 885728342189020705

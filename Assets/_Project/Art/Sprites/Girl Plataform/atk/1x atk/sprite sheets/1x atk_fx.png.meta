@@ -76,7 +76,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -90,7 +90,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -114,7 +114,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -155,12 +155,12 @@ TextureImporter:
       name: 1x atk_fx_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 141
-        width: 79
-        height: 30
+        x: 0
+        y: 129
+        width: 160
+        height: 63
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -177,12 +177,12 @@ TextureImporter:
       name: 1x atk_fx_1
       rect:
         serializedVersion: 2
-        x: 161
-        y: 135
-        width: 153
-        height: 47
+        x: 160
+        y: 129
+        width: 160
+        height: 63
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -199,12 +199,12 @@ TextureImporter:
       name: 1x atk_fx_2
       rect:
         serializedVersion: 2
-        x: 321
-        y: 135
-        width: 153
-        height: 47
+        x: 320
+        y: 129
+        width: 160
+        height: 63
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -221,12 +221,12 @@ TextureImporter:
       name: 1x atk_fx_3
       rect:
         serializedVersion: 2
-        x: 481
-        y: 135
-        width: 153
-        height: 47
+        x: 480
+        y: 129
+        width: 160
+        height: 63
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -243,12 +243,12 @@ TextureImporter:
       name: 1x atk_fx_4
       rect:
         serializedVersion: 2
-        x: 2
-        y: 75
-        width: 152
-        height: 43
+        x: 0
+        y: 66
+        width: 160
+        height: 63
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -265,12 +265,12 @@ TextureImporter:
       name: 1x atk_fx_5
       rect:
         serializedVersion: 2
-        x: 166
-        y: 109
-        width: 99
-        height: 9
+        x: 160
+        y: 66
+        width: 160
+        height: 63
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -287,12 +287,12 @@ TextureImporter:
       name: 1x atk_fx_6
       rect:
         serializedVersion: 2
-        x: 177
-        y: 103
-        width: 80
-        height: 8
+        x: 320
+        y: 66
+        width: 160
+        height: 63
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -309,12 +309,12 @@ TextureImporter:
       name: 1x atk_fx_7
       rect:
         serializedVersion: 2
-        x: 264
-        y: 90
-        width: 50
-        height: 24
+        x: 480
+        y: 66
+        width: 160
+        height: 63
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -331,12 +331,12 @@ TextureImporter:
       name: 1x atk_fx_8
       rect:
         serializedVersion: 2
-        x: 329
-        y: 110
-        width: 86
-        height: 8
+        x: 0
+        y: 3
+        width: 160
+        height: 63
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -349,121 +349,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: 1x atk_fx_9
-      rect:
-        serializedVersion: 2
-        x: 343
-        y: 105
-        width: 68
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 798d07539327be380800000000000000
-      internalID: -8940927045178697577
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1x atk_fx_10
-      rect:
-        serializedVersion: 2
-        x: 347
-        y: 90
-        width: 127
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b8e6f74b331b5d2d0800000000000000
-      internalID: -3254500320075616629
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1x atk_fx_11
-      rect:
-        serializedVersion: 2
-        x: 497
-        y: 91
-        width: 137
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e12877a2cdd692c50800000000000000
-      internalID: 6640959917907214878
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1x atk_fx_12
-      rect:
-        serializedVersion: 2
-        x: 182
-        y: 96
-        width: 74
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 72086c93216e85f90800000000000000
-      internalID: -6964563857775362009
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1x atk_fx_13
-      rect:
-        serializedVersion: 2
-        x: 22
-        y: 27
-        width: 132
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0e95b50aec5d27d30800000000000000
-      internalID: 4427836467088939488
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b4878e3c303a90745afb3de5d67d6d7c
     internalID: 0
     vertices: []
     indices: 
@@ -471,14 +361,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":160.0,"y":63.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       1x atk_fx_0: -252347079796980593
       1x atk_fx_1: -8297823249050164652
-      1x atk_fx_10: -3254500320075616629
-      1x atk_fx_11: 6640959917907214878
-      1x atk_fx_12: -6964563857775362009
-      1x atk_fx_13: 4427836467088939488
       1x atk_fx_2: -4457174642370839115
       1x atk_fx_3: -7104344451222135166
       1x atk_fx_4: 4314739236547556810
@@ -486,7 +374,6 @@ TextureImporter:
       1x atk_fx_6: -6694642341392372234
       1x atk_fx_7: 7600942005444748294
       1x atk_fx_8: 5147013512219353419
-      1x atk_fx_9: -8940927045178697577
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

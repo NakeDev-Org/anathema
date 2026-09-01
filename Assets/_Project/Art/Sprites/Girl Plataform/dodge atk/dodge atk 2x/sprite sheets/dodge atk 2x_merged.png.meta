@@ -100,7 +100,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -114,7 +114,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -138,7 +138,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -179,12 +179,12 @@ TextureImporter:
       name: dodge atk 2x_merged_0
       rect:
         serializedVersion: 2
-        x: 43
-        y: 411
-        width: 56
-        height: 55
+        x: 0
+        y: 384
+        width: 112
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -201,12 +201,12 @@ TextureImporter:
       name: dodge atk 2x_merged_1
       rect:
         serializedVersion: 2
-        x: 156
-        y: 411
-        width: 56
-        height: 55
+        x: 112
+        y: 384
+        width: 112
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -223,12 +223,12 @@ TextureImporter:
       name: dodge atk 2x_merged_2
       rect:
         serializedVersion: 2
-        x: 271
-        y: 411
-        width: 57
-        height: 59
+        x: 224
+        y: 384
+        width: 112
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -245,12 +245,12 @@ TextureImporter:
       name: dodge atk 2x_merged_3
       rect:
         serializedVersion: 2
-        x: 382
-        y: 411
-        width: 58
-        height: 56
+        x: 336
+        y: 384
+        width: 112
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -267,12 +267,12 @@ TextureImporter:
       name: dodge atk 2x_merged_4
       rect:
         serializedVersion: 2
-        x: 46
-        y: 283
-        width: 57
-        height: 57
+        x: 0
+        y: 256
+        width: 112
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -289,12 +289,12 @@ TextureImporter:
       name: dodge atk 2x_merged_5
       rect:
         serializedVersion: 2
-        x: 157
-        y: 283
-        width: 58
-        height: 53
+        x: 112
+        y: 256
+        width: 112
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -311,12 +311,12 @@ TextureImporter:
       name: dodge atk 2x_merged_6
       rect:
         serializedVersion: 2
-        x: 264
-        y: 283
-        width: 57
-        height: 50
+        x: 224
+        y: 256
+        width: 112
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -333,12 +333,12 @@ TextureImporter:
       name: dodge atk 2x_merged_7
       rect:
         serializedVersion: 2
-        x: 348
-        y: 257
-        width: 96
-        height: 79
+        x: 336
+        y: 256
+        width: 112
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -355,12 +355,12 @@ TextureImporter:
       name: dodge atk 2x_merged_8
       rect:
         serializedVersion: 2
-        x: 8
-        y: 143
-        width: 94
-        height: 100
+        x: 0
+        y: 128
+        width: 112
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -377,12 +377,12 @@ TextureImporter:
       name: dodge atk 2x_merged_9
       rect:
         serializedVersion: 2
-        x: 119
-        y: 142
-        width: 95
-        height: 101
+        x: 112
+        y: 128
+        width: 112
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -399,12 +399,12 @@ TextureImporter:
       name: dodge atk 2x_merged_10
       rect:
         serializedVersion: 2
-        x: 230
-        y: 142
-        width: 76
-        height: 101
+        x: 224
+        y: 128
+        width: 112
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -421,12 +421,12 @@ TextureImporter:
       name: dodge atk 2x_merged_11
       rect:
         serializedVersion: 2
-        x: 267
-        y: 157
-        width: 59
-        height: 74
+        x: 336
+        y: 128
+        width: 112
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -443,12 +443,12 @@ TextureImporter:
       name: dodge atk 2x_merged_12
       rect:
         serializedVersion: 2
-        x: 342
-        y: 143
-        width: 74
-        height: 100
+        x: 0
+        y: 0
+        width: 112
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -465,12 +465,12 @@ TextureImporter:
       name: dodge atk 2x_merged_13
       rect:
         serializedVersion: 2
-        x: 380
-        y: 158
-        width: 59
-        height: 73
+        x: 112
+        y: 0
+        width: 112
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -487,12 +487,12 @@ TextureImporter:
       name: dodge atk 2x_merged_14
       rect:
         serializedVersion: 2
-        x: 6
-        y: 22
-        width: 55
-        height: 93
+        x: 224
+        y: 0
+        width: 112
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -509,12 +509,12 @@ TextureImporter:
       name: dodge atk 2x_merged_15
       rect:
         serializedVersion: 2
-        x: 48
-        y: 30
-        width: 49
-        height: 74
+        x: 336
+        y: 0
+        width: 112
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -527,143 +527,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: dodge atk 2x_merged_16
-      rect:
-        serializedVersion: 2
-        x: 118
-        y: 30
-        width: 39
-        height: 85
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 797dae83f4af98ea0800000000000000
-      internalID: -5869885421136455785
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dodge atk 2x_merged_17
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 30
-        width: 49
-        height: 74
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 28a399f982a050630800000000000000
-      internalID: 3892528622524250754
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dodge atk 2x_merged_18
-      rect:
-        serializedVersion: 2
-        x: 231
-        y: 53
-        width: 19
-        height: 62
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 29dd6574c26d28110800000000000000
-      internalID: 1261806331280940434
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dodge atk 2x_merged_19
-      rect:
-        serializedVersion: 2
-        x: 277
-        y: 30
-        width: 52
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ece1aedfe869bbe60800000000000000
-      internalID: 7979136705706467022
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dodge atk 2x_merged_20
-      rect:
-        serializedVersion: 2
-        x: 343
-        y: 67
-        width: 10
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0b459ba0c44c5e390800000000000000
-      internalID: -7789604149590928208
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dodge atk 2x_merged_21
-      rect:
-        serializedVersion: 2
-        x: 389
-        y: 31
-        width: 52
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ab9558623a46d4fb0800000000000000
-      internalID: -4661959387369875014
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f1e8d191062776543b34fe444f7fed6d
     internalID: 0
     vertices: []
     indices: 
@@ -671,7 +539,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":112.0,"y":128.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       dodge atk 2x_merged_0: -1393826626071976396
       dodge atk 2x_merged_1: -7324767574956370496
@@ -681,13 +551,7 @@ TextureImporter:
       dodge atk 2x_merged_13: 7280410411213552163
       dodge atk 2x_merged_14: 5336739547508501382
       dodge atk 2x_merged_15: -8781828140212441509
-      dodge atk 2x_merged_16: -5869885421136455785
-      dodge atk 2x_merged_17: 3892528622524250754
-      dodge atk 2x_merged_18: 1261806331280940434
-      dodge atk 2x_merged_19: 7979136705706467022
       dodge atk 2x_merged_2: -4653026723435894505
-      dodge atk 2x_merged_20: -7789604149590928208
-      dodge atk 2x_merged_21: -4661959387369875014
       dodge atk 2x_merged_3: 618547195410104207
       dodge atk 2x_merged_4: 4726946448365354180
       dodge atk 2x_merged_5: -2449562709637093280

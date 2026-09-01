@@ -136,7 +136,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -150,7 +150,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -174,7 +174,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -216,11 +216,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 303
-        width: 71
-        height: 55
+        y: 300
+        width: 79
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -237,12 +237,12 @@ TextureImporter:
       name: hard hit_1
       rect:
         serializedVersion: 2
-        x: 78
-        y: 303
-        width: 72
-        height: 56
+        x: 79
+        y: 300
+        width: 79
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -259,12 +259,12 @@ TextureImporter:
       name: hard hit_2
       rect:
         serializedVersion: 2
-        x: 162
-        y: 303
-        width: 65
-        height: 57
+        x: 158
+        y: 300
+        width: 79
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -281,12 +281,12 @@ TextureImporter:
       name: hard hit_3
       rect:
         serializedVersion: 2
-        x: 242
-        y: 304
-        width: 57
-        height: 56
+        x: 237
+        y: 300
+        width: 79
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -303,12 +303,12 @@ TextureImporter:
       name: hard hit_4
       rect:
         serializedVersion: 2
-        x: 323
-        y: 306
-        width: 53
-        height: 48
+        x: 316
+        y: 300
+        width: 79
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -325,12 +325,12 @@ TextureImporter:
       name: hard hit_5
       rect:
         serializedVersion: 2
-        x: 404
-        y: 306
-        width: 51
-        height: 48
+        x: 395
+        y: 300
+        width: 79
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -347,12 +347,12 @@ TextureImporter:
       name: hard hit_6
       rect:
         serializedVersion: 2
-        x: 14
-        y: 246
-        width: 46
-        height: 48
+        x: 0
+        y: 240
+        width: 79
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -369,12 +369,12 @@ TextureImporter:
       name: hard hit_7
       rect:
         serializedVersion: 2
-        x: 93
-        y: 243
-        width: 47
-        height: 50
+        x: 79
+        y: 240
+        width: 79
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -391,12 +391,12 @@ TextureImporter:
       name: hard hit_8
       rect:
         serializedVersion: 2
-        x: 172
-        y: 241
-        width: 49
-        height: 54
+        x: 158
+        y: 240
+        width: 79
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -413,12 +413,12 @@ TextureImporter:
       name: hard hit_9
       rect:
         serializedVersion: 2
-        x: 251
-        y: 242
-        width: 49
-        height: 49
+        x: 237
+        y: 240
+        width: 79
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -435,12 +435,12 @@ TextureImporter:
       name: hard hit_10
       rect:
         serializedVersion: 2
-        x: 331
-        y: 242
-        width: 50
-        height: 44
+        x: 316
+        y: 240
+        width: 79
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -457,12 +457,12 @@ TextureImporter:
       name: hard hit_11
       rect:
         serializedVersion: 2
-        x: 408
-        y: 243
-        width: 51
-        height: 40
+        x: 395
+        y: 240
+        width: 79
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -479,12 +479,12 @@ TextureImporter:
       name: hard hit_12
       rect:
         serializedVersion: 2
-        x: 11
-        y: 179
-        width: 57
-        height: 35
+        x: 0
+        y: 180
+        width: 79
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -501,12 +501,12 @@ TextureImporter:
       name: hard hit_13
       rect:
         serializedVersion: 2
-        x: 89
-        y: 179
-        width: 56
-        height: 27
+        x: 79
+        y: 180
+        width: 79
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -523,12 +523,12 @@ TextureImporter:
       name: hard hit_14
       rect:
         serializedVersion: 2
-        x: 157
-        y: 179
-        width: 81
-        height: 19
+        x: 158
+        y: 180
+        width: 79
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -546,11 +546,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 237
-        y: 179
-        width: 80
-        height: 19
+        y: 180
+        width: 79
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -567,12 +567,12 @@ TextureImporter:
       name: hard hit_16
       rect:
         serializedVersion: 2
-        x: 317
-        y: 179
-        width: 78
-        height: 18
+        x: 316
+        y: 180
+        width: 79
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -589,12 +589,12 @@ TextureImporter:
       name: hard hit_17
       rect:
         serializedVersion: 2
-        x: 396
-        y: 179
-        width: 78
-        height: 18
+        x: 395
+        y: 180
+        width: 79
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -612,11 +612,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 119
-        width: 78
-        height: 19
+        y: 120
+        width: 79
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -634,11 +634,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 79
-        y: 119
-        width: 78
-        height: 19
+        y: 120
+        width: 79
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -656,11 +656,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 158
-        y: 119
-        width: 78
-        height: 19
+        y: 120
+        width: 79
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -678,11 +678,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 237
-        y: 119
-        width: 78
-        height: 19
+        y: 120
+        width: 79
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -700,11 +700,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 316
-        y: 119
-        width: 78
-        height: 19
+        y: 120
+        width: 79
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -722,11 +722,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 395
-        y: 119
-        width: 78
-        height: 19
+        y: 120
+        width: 79
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -744,11 +744,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 59
-        width: 78
-        height: 19
+        y: 60
+        width: 79
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -765,12 +765,12 @@ TextureImporter:
       name: hard hit_25
       rect:
         serializedVersion: 2
-        x: 83
-        y: 59
-        width: 60
-        height: 36
+        x: 79
+        y: 60
+        width: 79
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -787,12 +787,12 @@ TextureImporter:
       name: hard hit_26
       rect:
         serializedVersion: 2
-        x: 168
-        y: 59
-        width: 63
-        height: 39
+        x: 158
+        y: 60
+        width: 79
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -809,12 +809,12 @@ TextureImporter:
       name: hard hit_27
       rect:
         serializedVersion: 2
-        x: 248
-        y: 59
-        width: 59
-        height: 41
+        x: 237
+        y: 60
+        width: 79
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -831,12 +831,12 @@ TextureImporter:
       name: hard hit_28
       rect:
         serializedVersion: 2
-        x: 334
-        y: 59
-        width: 54
-        height: 42
+        x: 316
+        y: 60
+        width: 79
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -853,12 +853,12 @@ TextureImporter:
       name: hard hit_29
       rect:
         serializedVersion: 2
-        x: 413
-        y: 59
-        width: 54
-        height: 43
+        x: 395
+        y: 60
+        width: 79
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -875,12 +875,12 @@ TextureImporter:
       name: hard hit_30
       rect:
         serializedVersion: 2
-        x: 18
+        x: 0
         y: 0
-        width: 54
-        height: 43
+        width: 79
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -897,12 +897,12 @@ TextureImporter:
       name: hard hit_31
       rect:
         serializedVersion: 2
-        x: 98
+        x: 79
         y: 0
-        width: 53
-        height: 45
+        width: 79
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -919,12 +919,12 @@ TextureImporter:
       name: hard hit_32
       rect:
         serializedVersion: 2
-        x: 180
+        x: 158
         y: 0
-        width: 45
-        height: 51
+        width: 79
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -941,12 +941,12 @@ TextureImporter:
       name: hard hit_33
       rect:
         serializedVersion: 2
-        x: 259
+        x: 237
         y: 0
-        width: 45
-        height: 51
+        width: 79
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -963,7 +963,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8736f063bb623cd44bafef04f1eb222e
     internalID: 0
     vertices: []
     indices: 
@@ -971,7 +971,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":79.0,"y":60.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       hard hit_0: -1849860577593021450
       hard hit_1: -1853935672237130598

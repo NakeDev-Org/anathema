@@ -136,7 +136,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -150,7 +150,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -174,7 +174,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -215,12 +215,12 @@ TextureImporter:
       name: 3x atk_char_0
       rect:
         serializedVersion: 2
-        x: 50
+        x: 0
         y: 496
-        width: 45
-        height: 51
+        width: 126
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -237,12 +237,12 @@ TextureImporter:
       name: 3x atk_char_1
       rect:
         serializedVersion: 2
-        x: 175
+        x: 126
         y: 496
-        width: 46
-        height: 54
+        width: 126
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -259,12 +259,12 @@ TextureImporter:
       name: 3x atk_char_2
       rect:
         serializedVersion: 2
-        x: 290
-        y: 497
-        width: 45
-        height: 60
+        x: 252
+        y: 496
+        width: 126
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -281,12 +281,12 @@ TextureImporter:
       name: 3x atk_char_3
       rect:
         serializedVersion: 2
-        x: 404
-        y: 434
-        width: 54
-        height: 63
+        x: 378
+        y: 496
+        width: 126
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -303,12 +303,12 @@ TextureImporter:
       name: 3x atk_char_4
       rect:
         serializedVersion: 2
-        x: 414
-        y: 497
-        width: 46
-        height: 60
+        x: 0
+        y: 434
+        width: 126
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -325,12 +325,12 @@ TextureImporter:
       name: 3x atk_char_5
       rect:
         serializedVersion: 2
-        x: 34
-        y: 436
-        width: 49
-        height: 59
+        x: 126
+        y: 434
+        width: 126
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -347,12 +347,12 @@ TextureImporter:
       name: 3x atk_char_6
       rect:
         serializedVersion: 2
-        x: 157
-        y: 436
-        width: 52
-        height: 56
+        x: 252
+        y: 434
+        width: 126
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -369,12 +369,12 @@ TextureImporter:
       name: 3x atk_char_7
       rect:
         serializedVersion: 2
-        x: 281
-        y: 437
-        width: 52
-        height: 58
+        x: 378
+        y: 434
+        width: 126
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -391,12 +391,12 @@ TextureImporter:
       name: 3x atk_char_8
       rect:
         serializedVersion: 2
-        x: 8
+        x: 0
         y: 372
-        width: 75
-        height: 59
+        width: 126
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -413,12 +413,12 @@ TextureImporter:
       name: 3x atk_char_9
       rect:
         serializedVersion: 2
-        x: 133
+        x: 126
         y: 372
-        width: 76
-        height: 57
+        width: 126
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -437,10 +437,10 @@ TextureImporter:
         serializedVersion: 2
         x: 252
         y: 372
-        width: 81
-        height: 46
+        width: 126
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -457,12 +457,12 @@ TextureImporter:
       name: 3x atk_char_11
       rect:
         serializedVersion: 2
-        x: 377
+        x: 378
         y: 372
-        width: 82
-        height: 44
+        width: 126
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -479,12 +479,12 @@ TextureImporter:
       name: 3x atk_char_12
       rect:
         serializedVersion: 2
-        x: 6
+        x: 0
         y: 310
-        width: 75
-        height: 44
+        width: 126
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -501,12 +501,12 @@ TextureImporter:
       name: 3x atk_char_13
       rect:
         serializedVersion: 2
-        x: 132
+        x: 126
         y: 310
-        width: 75
-        height: 44
+        width: 126
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -523,12 +523,12 @@ TextureImporter:
       name: 3x atk_char_14
       rect:
         serializedVersion: 2
-        x: 251
+        x: 252
         y: 310
-        width: 81
-        height: 44
+        width: 126
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -545,12 +545,12 @@ TextureImporter:
       name: 3x atk_char_15
       rect:
         serializedVersion: 2
-        x: 381
+        x: 378
         y: 310
-        width: 77
-        height: 44
+        width: 126
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -567,12 +567,12 @@ TextureImporter:
       name: 3x atk_char_16
       rect:
         serializedVersion: 2
-        x: 6
+        x: 0
         y: 248
-        width: 74
-        height: 44
+        width: 126
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -589,12 +589,12 @@ TextureImporter:
       name: 3x atk_char_17
       rect:
         serializedVersion: 2
-        x: 132
+        x: 126
         y: 248
-        width: 74
-        height: 44
+        width: 126
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -611,12 +611,12 @@ TextureImporter:
       name: 3x atk_char_18
       rect:
         serializedVersion: 2
-        x: 258
+        x: 252
         y: 248
-        width: 74
-        height: 44
+        width: 126
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -633,12 +633,12 @@ TextureImporter:
       name: 3x atk_char_19
       rect:
         serializedVersion: 2
-        x: 386
+        x: 378
         y: 248
-        width: 72
-        height: 46
+        width: 126
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -655,12 +655,12 @@ TextureImporter:
       name: 3x atk_char_20
       rect:
         serializedVersion: 2
-        x: 14
+        x: 0
         y: 186
-        width: 67
-        height: 46
+        width: 126
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -677,12 +677,12 @@ TextureImporter:
       name: 3x atk_char_21
       rect:
         serializedVersion: 2
-        x: 141
+        x: 126
         y: 186
-        width: 66
-        height: 46
+        width: 126
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -699,12 +699,12 @@ TextureImporter:
       name: 3x atk_char_22
       rect:
         serializedVersion: 2
-        x: 268
-        y: 185
-        width: 60
-        height: 48
+        x: 252
+        y: 186
+        width: 126
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -721,12 +721,12 @@ TextureImporter:
       name: 3x atk_char_23
       rect:
         serializedVersion: 2
-        x: 406
-        y: 185
-        width: 53
-        height: 51
+        x: 378
+        y: 186
+        width: 126
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -743,12 +743,12 @@ TextureImporter:
       name: 3x atk_char_24
       rect:
         serializedVersion: 2
-        x: 48
+        x: 0
         y: 124
-        width: 62
-        height: 56
+        width: 126
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -765,12 +765,12 @@ TextureImporter:
       name: 3x atk_char_25
       rect:
         serializedVersion: 2
-        x: 176
-        y: 123
-        width: 62
-        height: 58
+        x: 126
+        y: 124
+        width: 126
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -787,12 +787,12 @@ TextureImporter:
       name: 3x atk_char_26
       rect:
         serializedVersion: 2
-        x: 313
+        x: 252
         y: 124
-        width: 66
-        height: 57
+        width: 126
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -809,12 +809,12 @@ TextureImporter:
       name: 3x atk_char_27
       rect:
         serializedVersion: 2
-        x: 442
+        x: 378
         y: 124
-        width: 62
-        height: 56
+        width: 126
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -831,12 +831,12 @@ TextureImporter:
       name: 3x atk_char_28
       rect:
         serializedVersion: 2
-        x: 68
+        x: 0
         y: 62
-        width: 54
-        height: 56
+        width: 126
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -853,12 +853,12 @@ TextureImporter:
       name: 3x atk_char_29
       rect:
         serializedVersion: 2
-        x: 197
+        x: 126
         y: 62
-        width: 47
-        height: 56
+        width: 126
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -875,12 +875,12 @@ TextureImporter:
       name: 3x atk_char_30
       rect:
         serializedVersion: 2
-        x: 327
+        x: 252
         y: 62
-        width: 44
-        height: 57
+        width: 126
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -897,12 +897,12 @@ TextureImporter:
       name: 3x atk_char_31
       rect:
         serializedVersion: 2
-        x: 453
+        x: 378
         y: 62
-        width: 44
-        height: 56
+        width: 126
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -919,12 +919,12 @@ TextureImporter:
       name: 3x atk_char_32
       rect:
         serializedVersion: 2
-        x: 75
+        x: 0
         y: 0
-        width: 48
-        height: 56
+        width: 126
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -941,12 +941,12 @@ TextureImporter:
       name: 3x atk_char_33
       rect:
         serializedVersion: 2
-        x: 202
+        x: 126
         y: 0
-        width: 48
-        height: 56
+        width: 126
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -963,7 +963,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 68c34caee09f781418748bac54c647df
     internalID: 0
     vertices: []
     indices: 
@@ -971,7 +971,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":126.0,"y":62.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       3x atk_char_0: -305646100881971335
       3x atk_char_1: 6469514302718635653

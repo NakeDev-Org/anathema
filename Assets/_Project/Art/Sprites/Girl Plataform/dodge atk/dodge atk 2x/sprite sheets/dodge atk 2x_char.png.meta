@@ -94,7 +94,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -108,7 +108,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -132,7 +132,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -173,12 +173,12 @@ TextureImporter:
       name: dodge atk 2x_char_0
       rect:
         serializedVersion: 2
-        x: 43
-        y: 411
-        width: 56
-        height: 55
+        x: 0
+        y: 384
+        width: 112
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -195,12 +195,12 @@ TextureImporter:
       name: dodge atk 2x_char_1
       rect:
         serializedVersion: 2
-        x: 156
-        y: 411
-        width: 56
-        height: 55
+        x: 112
+        y: 384
+        width: 112
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -217,12 +217,12 @@ TextureImporter:
       name: dodge atk 2x_char_2
       rect:
         serializedVersion: 2
-        x: 271
-        y: 411
-        width: 57
-        height: 59
+        x: 224
+        y: 384
+        width: 112
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -239,12 +239,12 @@ TextureImporter:
       name: dodge atk 2x_char_3
       rect:
         serializedVersion: 2
-        x: 382
-        y: 411
-        width: 58
-        height: 56
+        x: 336
+        y: 384
+        width: 112
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -261,12 +261,12 @@ TextureImporter:
       name: dodge atk 2x_char_4
       rect:
         serializedVersion: 2
-        x: 46
-        y: 283
-        width: 57
-        height: 57
+        x: 0
+        y: 256
+        width: 112
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -283,12 +283,12 @@ TextureImporter:
       name: dodge atk 2x_char_5
       rect:
         serializedVersion: 2
-        x: 157
-        y: 283
-        width: 58
-        height: 53
+        x: 112
+        y: 256
+        width: 112
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -305,12 +305,12 @@ TextureImporter:
       name: dodge atk 2x_char_6
       rect:
         serializedVersion: 2
-        x: 264
-        y: 283
-        width: 57
-        height: 50
+        x: 224
+        y: 256
+        width: 112
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -327,12 +327,12 @@ TextureImporter:
       name: dodge atk 2x_char_7
       rect:
         serializedVersion: 2
-        x: 375
-        y: 283
-        width: 58
-        height: 52
+        x: 336
+        y: 256
+        width: 112
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -349,12 +349,12 @@ TextureImporter:
       name: dodge atk 2x_char_8
       rect:
         serializedVersion: 2
-        x: 26
-        y: 157
-        width: 76
-        height: 73
+        x: 0
+        y: 128
+        width: 112
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -371,12 +371,12 @@ TextureImporter:
       name: dodge atk 2x_char_9
       rect:
         serializedVersion: 2
-        x: 139
-        y: 157
-        width: 75
-        height: 73
+        x: 112
+        y: 128
+        width: 112
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -393,12 +393,12 @@ TextureImporter:
       name: dodge atk 2x_char_10
       rect:
         serializedVersion: 2
-        x: 252
-        y: 166
-        width: 25
-        height: 63
+        x: 224
+        y: 128
+        width: 112
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -415,12 +415,12 @@ TextureImporter:
       name: dodge atk 2x_char_11
       rect:
         serializedVersion: 2
-        x: 267
-        y: 157
-        width: 59
-        height: 74
+        x: 336
+        y: 128
+        width: 112
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -437,12 +437,12 @@ TextureImporter:
       name: dodge atk 2x_char_12
       rect:
         serializedVersion: 2
-        x: 365
-        y: 169
-        width: 14
-        height: 60
+        x: 0
+        y: 0
+        width: 112
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -459,12 +459,12 @@ TextureImporter:
       name: dodge atk 2x_char_13
       rect:
         serializedVersion: 2
-        x: 380
-        y: 158
-        width: 59
-        height: 73
+        x: 112
+        y: 0
+        width: 112
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -481,12 +481,12 @@ TextureImporter:
       name: dodge atk 2x_char_14
       rect:
         serializedVersion: 2
-        x: 29
-        y: 62
-        width: 14
-        height: 37
+        x: 224
+        y: 0
+        width: 112
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -503,12 +503,12 @@ TextureImporter:
       name: dodge atk 2x_char_15
       rect:
         serializedVersion: 2
-        x: 48
-        y: 30
-        width: 49
-        height: 74
+        x: 336
+        y: 0
+        width: 112
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -521,99 +521,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: dodge atk 2x_char_16
-      rect:
-        serializedVersion: 2
-        x: 143
-        y: 77
-        width: 13
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4a8b3bd6de1cb73c0800000000000000
-      internalID: -4360678588686288732
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dodge atk 2x_char_17
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 30
-        width: 49
-        height: 74
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6d4f019947ee71380800000000000000
-      internalID: -9000463145725004586
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dodge atk 2x_char_18
-      rect:
-        serializedVersion: 2
-        x: 277
-        y: 30
-        width: 52
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 37c5089b09b0b6730800000000000000
-      internalID: 3993298210809470067
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dodge atk 2x_char_19
-      rect:
-        serializedVersion: 2
-        x: 389
-        y: 31
-        width: 52
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f9398c5787b33d3f0800000000000000
-      internalID: -877292113848921185
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8b70193d20d5b474da9061efc71aa102
     internalID: 0
     vertices: []
     indices: 
@@ -621,7 +533,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":112.0,"y":128.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       dodge atk 2x_char_0: -6272241949977485034
       dodge atk 2x_char_1: 9116489364080427713
@@ -631,10 +545,6 @@ TextureImporter:
       dodge atk 2x_char_13: -6275769947726796993
       dodge atk 2x_char_14: 5763312648117967362
       dodge atk 2x_char_15: -3013616948521687622
-      dodge atk 2x_char_16: -4360678588686288732
-      dodge atk 2x_char_17: -9000463145725004586
-      dodge atk 2x_char_18: 3993298210809470067
-      dodge atk 2x_char_19: -877292113848921185
       dodge atk 2x_char_2: -4860674046891894916
       dodge atk 2x_char_3: 5556608313343488088
       dodge atk 2x_char_4: 2385584826016660276

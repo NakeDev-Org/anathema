@@ -52,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -66,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -90,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -131,12 +131,12 @@ TextureImporter:
       name: 02_ladder climb up_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 61
-        width: 40
-        height: 63
+        x: 0
+        y: 62
+        width: 47
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -153,12 +153,12 @@ TextureImporter:
       name: 02_ladder climb up_1
       rect:
         serializedVersion: 2
-        x: 2
-        y: 0
-        width: 41
+        x: 47
+        y: 62
+        width: 47
         height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -175,12 +175,12 @@ TextureImporter:
       name: 02_ladder climb up_2
       rect:
         serializedVersion: 2
-        x: 46
-        y: 61
-        width: 43
-        height: 63
+        x: 94
+        y: 62
+        width: 47
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -197,19 +197,19 @@ TextureImporter:
       name: 02_ladder climb up_3
       rect:
         serializedVersion: 2
-        x: 49
+        x: 0
         y: 0
-        width: 44
-        height: 63
+        width: 47
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1a9c1ec998e108c60800000000000000
+      spriteID: 755d1f11b04ec434880fab6ff89fb6f8
       internalID: 7818282529506576801
       vertices: []
       indices: 
@@ -219,19 +219,19 @@ TextureImporter:
       name: 02_ladder climb up_4
       rect:
         serializedVersion: 2
-        x: 96
-        y: 61
-        width: 41
-        height: 63
+        x: 47
+        y: 0
+        width: 47
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f7855bac8f269d540800000000000000
+      spriteID: 36f904fc9a9d5954998b1200f56072fb
       internalID: 5033162879255533695
       vertices: []
       indices: 
@@ -241,19 +241,19 @@ TextureImporter:
       name: 02_ladder climb up_5
       rect:
         serializedVersion: 2
-        x: 96
+        x: 94
         y: 0
-        width: 45
-        height: 63
+        width: 47
+        height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ca7063448caad3c70800000000000000
+      spriteID: fe0b71c4b3647344c869593b1d92246b
       internalID: 8952499411396986796
       vertices: []
       indices: 
@@ -263,7 +263,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6785573eafed7d44e958bc067c11468a
     internalID: 0
     vertices: []
     indices: 
@@ -271,7 +271,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":47.0,"y":62.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       02_ladder climb up_0: 5944518504408707566
       02_ladder climb up_1: 2606487969143575360

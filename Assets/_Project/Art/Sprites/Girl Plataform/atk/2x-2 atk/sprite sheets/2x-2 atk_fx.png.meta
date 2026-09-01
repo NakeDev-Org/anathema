@@ -55,7 +55,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -69,7 +69,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -93,7 +93,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -134,12 +134,12 @@ TextureImporter:
       name: 2x-2 atk_fx_0
       rect:
         serializedVersion: 2
-        x: 33
-        y: 78
-        width: 96
-        height: 39
+        x: 0
+        y: 61
+        width: 128
+        height: 61
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -156,12 +156,12 @@ TextureImporter:
       name: 2x-2 atk_fx_1
       rect:
         serializedVersion: 2
-        x: 119
-        y: 51
-        width: 137
-        height: 66
+        x: 128
+        y: 61
+        width: 128
+        height: 61
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -178,12 +178,12 @@ TextureImporter:
       name: 2x-2 atk_fx_2
       rect:
         serializedVersion: 2
-        x: 255
-        y: 60
-        width: 129
-        height: 57
+        x: 256
+        y: 61
+        width: 128
+        height: 61
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -202,10 +202,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 109
-        height: 49
+        width: 128
+        height: 61
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -222,12 +222,12 @@ TextureImporter:
       name: 2x-2 atk_fx_4
       rect:
         serializedVersion: 2
-        x: 108
-        y: 47
-        width: 11
-        height: 6
+        x: 128
+        y: 0
+        width: 128
+        height: 61
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -244,12 +244,12 @@ TextureImporter:
       name: 2x-2 atk_fx_5
       rect:
         serializedVersion: 2
-        x: 127
+        x: 256
         y: 0
-        width: 106
-        height: 48
+        width: 128
+        height: 61
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -262,33 +262,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: 2x-2 atk_fx_6
-      rect:
-        serializedVersion: 2
-        x: 255
-        y: 0
-        width: 48
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d4df56b4d728038e0800000000000000
-      internalID: -1715727983380660915
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: fc331e3fe1672424cadbf259bade86ca
     internalID: 0
     vertices: []
     indices: 
@@ -296,7 +274,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":128.0,"y":61.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       2x-2 atk_fx_0: 3719078952413698049
       2x-2 atk_fx_1: -7284945726604202452
@@ -304,7 +284,6 @@ TextureImporter:
       2x-2 atk_fx_3: -7611936875196666618
       2x-2 atk_fx_4: -448619010720543249
       2x-2 atk_fx_5: 1781022300723597825
-      2x-2 atk_fx_6: -1715727983380660915
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -106,7 +106,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -120,7 +120,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -144,7 +144,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -185,12 +185,12 @@ TextureImporter:
       name: back dodge(fx included)_0
       rect:
         serializedVersion: 2
-        x: 86
-        y: 304
-        width: 53
-        height: 55
+        x: 0
+        y: 305
+        width: 142
+        height: 61
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -207,12 +207,12 @@ TextureImporter:
       name: back dodge(fx included)_1
       rect:
         serializedVersion: 2
-        x: 230
-        y: 304
-        width: 52
-        height: 54
+        x: 142
+        y: 305
+        width: 142
+        height: 61
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -229,12 +229,12 @@ TextureImporter:
       name: back dodge(fx included)_2
       rect:
         serializedVersion: 2
-        x: 373
-        y: 304
-        width: 54
-        height: 52
+        x: 284
+        y: 305
+        width: 142
+        height: 61
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -251,12 +251,12 @@ TextureImporter:
       name: back dodge(fx included)_3
       rect:
         serializedVersion: 2
-        x: 502
-        y: 312
-        width: 59
-        height: 45
+        x: 426
+        y: 305
+        width: 142
+        height: 61
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -273,12 +273,12 @@ TextureImporter:
       name: back dodge(fx included)_4
       rect:
         serializedVersion: 2
-        x: 80
-        y: 252
-        width: 57
-        height: 44
+        x: 0
+        y: 244
+        width: 142
+        height: 61
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -295,12 +295,12 @@ TextureImporter:
       name: back dodge(fx included)_5
       rect:
         serializedVersion: 2
-        x: 215
-        y: 246
-        width: 64
-        height: 50
+        x: 142
+        y: 244
+        width: 142
+        height: 61
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -317,12 +317,12 @@ TextureImporter:
       name: back dodge(fx included)_6
       rect:
         serializedVersion: 2
-        x: 351
+        x: 284
         y: 244
-        width: 66
-        height: 53
+        width: 142
+        height: 61
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -339,12 +339,12 @@ TextureImporter:
       name: back dodge(fx included)_7
       rect:
         serializedVersion: 2
-        x: 478
-        y: 243
-        width: 82
+        x: 426
+        y: 244
+        width: 142
         height: 61
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -361,12 +361,12 @@ TextureImporter:
       name: back dodge(fx included)_8
       rect:
         serializedVersion: 2
-        x: 22
-        y: 121
-        width: 121
+        x: 0
+        y: 183
+        width: 142
         height: 61
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -383,12 +383,12 @@ TextureImporter:
       name: back dodge(fx included)_9
       rect:
         serializedVersion: 2
-        x: 52
-        y: 182
-        width: 84
+        x: 142
+        y: 183
+        width: 142
         height: 61
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -405,12 +405,12 @@ TextureImporter:
       name: back dodge(fx included)_10
       rect:
         serializedVersion: 2
-        x: 166
-        y: 121
-        width: 116
+        x: 284
+        y: 183
+        width: 142
         height: 61
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -427,12 +427,12 @@ TextureImporter:
       name: back dodge(fx included)_11
       rect:
         serializedVersion: 2
-        x: 191
-        y: 182
-        width: 85
+        x: 426
+        y: 183
+        width: 142
         height: 61
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -449,12 +449,12 @@ TextureImporter:
       name: back dodge(fx included)_12
       rect:
         serializedVersion: 2
-        x: 304
-        y: 121
-        width: 122
+        x: 0
+        y: 122
+        width: 142
         height: 61
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -471,12 +471,12 @@ TextureImporter:
       name: back dodge(fx included)_13
       rect:
         serializedVersion: 2
-        x: 331
-        y: 182
-        width: 92
-        height: 63
+        x: 142
+        y: 122
+        width: 142
+        height: 61
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -493,12 +493,12 @@ TextureImporter:
       name: back dodge(fx included)_14
       rect:
         serializedVersion: 2
-        x: 452
-        y: 182
-        width: 116
+        x: 284
+        y: 122
+        width: 142
         height: 61
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -516,11 +516,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 426
-        y: 121
-        width: 134
-        height: 59
+        y: 122
+        width: 142
+        height: 61
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -538,11 +538,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 60
-        width: 134
-        height: 59
+        y: 61
+        width: 142
+        height: 61
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -559,12 +559,12 @@ TextureImporter:
       name: back dodge(fx included)_17
       rect:
         serializedVersion: 2
-        x: 221
-        y: 60
-        width: 57
-        height: 45
+        x: 142
+        y: 61
+        width: 142
+        height: 61
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -581,12 +581,12 @@ TextureImporter:
       name: back dodge(fx included)_18
       rect:
         serializedVersion: 2
-        x: 363
-        y: 60
-        width: 57
-        height: 45
+        x: 284
+        y: 61
+        width: 142
+        height: 61
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -603,12 +603,12 @@ TextureImporter:
       name: back dodge(fx included)_19
       rect:
         serializedVersion: 2
-        x: 505
-        y: 60
-        width: 57
-        height: 46
+        x: 426
+        y: 61
+        width: 142
+        height: 61
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -625,12 +625,12 @@ TextureImporter:
       name: back dodge(fx included)_20
       rect:
         serializedVersion: 2
-        x: 80
+        x: 0
         y: 0
-        width: 57
-        height: 45
+        width: 142
+        height: 61
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -647,12 +647,12 @@ TextureImporter:
       name: back dodge(fx included)_21
       rect:
         serializedVersion: 2
-        x: 224
+        x: 142
         y: 0
-        width: 54
-        height: 49
+        width: 142
+        height: 61
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -669,12 +669,12 @@ TextureImporter:
       name: back dodge(fx included)_22
       rect:
         serializedVersion: 2
-        x: 367
+        x: 284
         y: 0
-        width: 52
-        height: 50
+        width: 142
+        height: 61
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -691,12 +691,12 @@ TextureImporter:
       name: back dodge(fx included)_23
       rect:
         serializedVersion: 2
-        x: 512
+        x: 426
         y: 0
-        width: 45
-        height: 51
+        width: 142
+        height: 61
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -713,7 +713,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6d4ef43fb3a277145842e2a3fb24b07c
     internalID: 0
     vertices: []
     indices: 
@@ -721,7 +721,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":142.0,"y":61.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       back dodge(fx included)_0: -4552070457452030958
       back dodge(fx included)_1: -2484419544892249879
