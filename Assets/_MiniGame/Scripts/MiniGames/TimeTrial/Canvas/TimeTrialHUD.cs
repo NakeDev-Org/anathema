@@ -41,7 +41,7 @@ namespace NakeDev.Game.MiniGames.TimeTrial
         private void HandleTimeChanged(float currentTime)
         {
             if (_currentTimeText != null)
-                _currentTimeText.text = $"TEMPO\n{FormatTime(currentTime)}";
+                _currentTimeText.text = $"TIME\n{FormatTime(currentTime)}";
         }
 
         private void HandleTrialFinished(float _, bool __)
@@ -60,7 +60,7 @@ namespace NakeDev.Game.MiniGames.TimeTrial
                 ? FormatTime(_controller.BestTime)
                 : "--:--.---";
 
-            _bestTimeText.text = $"MELHOR\n{bestTime}";
+            _bestTimeText.text = $"BEST\n{bestTime}";
         }
 
         private static string FormatTime(float time)

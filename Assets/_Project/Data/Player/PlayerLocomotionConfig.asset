@@ -43,7 +43,7 @@ MonoBehaviour:
   MaxAerialDashes: 1
   AerialDashSpeed: 30
   AerialDashDuration: 0.18
-  DashSlideColliderHeigth: 2.1
+  DashSlideColliderHeigth: 3
   DashSlideColliderWidth: 4
   GroundCheckSize: {x: 1.4, y: 0.42}
   GroundLayerMask:

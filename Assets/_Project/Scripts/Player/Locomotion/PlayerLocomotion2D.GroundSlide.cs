@@ -27,7 +27,7 @@ namespace NakeDev.Player
 
         private void TryStartGroundSlide()
         {
-            if (!_config.GroundSlideEnabled || _slideCooldownTimer > 0f)
+            if (!_config.GroundSlideEnabled || _slideCooldownTimer > 0f || !IsGrounded || IsSliding)
                 return;
 
             float directionSource = Mathf.Abs(_rb.linearVelocity.x) > 0.1f ? _rb.linearVelocity.x : _input.MoveInput.x;
