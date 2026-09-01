@@ -41,11 +41,11 @@ Tudo entre esses dois cliques (subir pro Crowdin, notificar tradutor, baixar tra
 | Peça | Onde | Status |
 |---|---|---|
 | Package `com.unity.localization` | `Packages/manifest.json` | ✅ instalado (1.5.12) |
-| Locale de origem (pt) | [Assets/Localization/Locales/Locale-pt-BR.asset](../Assets/Localization/Locales/Locale-pt-BR.asset) | ✅ criado |
-| Locale alvo (en) | [Assets/Localization/Locales/Locale-en.asset](../Assets/Localization/Locales/Locale-en.asset) | ✅ criado |
-| String Table Collection | [Assets/Localization/Tables/UI.asset](../Assets/Localization/Tables/UI.asset) (+ `UI Shared Data`, `UI_en`, `UI_pt`) | ✅ criada, com 1 entrada de exemplo (`UI_SAMPLE_HELLO`) |
-| CSV multilíngue (ponte com Crowdin) | [Assets/Localization/Tables/UI.csv](../Assets/Localization/Tables/UI.csv) | ✅ exportado e testado (round-trip export→import validado) |
-| Ferramenta de sync (Editor) | [Assets/_Project/Editor/Localization/LocalizationCsvSync.cs](../Assets/_Project/Editor/Localization/LocalizationCsvSync.cs) | ✅ menus `NakeDev/Localization/Export...` e `Import...` |
+| Locale de origem (pt) | [Assets/Game/Localization/Locales/Locale-pt-BR.asset](../Assets/Game/Localization/Locales/Locale-pt-BR.asset) | ✅ criado |
+| Locale alvo (en) | [Assets/Game/Localization/Locales/Locale-en.asset](../Assets/Game/Localization/Locales/Locale-en.asset) | ✅ criado |
+| String Table Collection | [Assets/Game/Localization/Tables/UI.asset](../Assets/Game/Localization/Tables/UI.asset) (+ `UI Shared Data`, `UI_en`, `UI_pt`) | ✅ criada, com 1 entrada de exemplo (`UI_SAMPLE_HELLO`) |
+| CSV multilíngue (ponte com Crowdin) | [Assets/Game/Localization/Tables/UI.csv](../Assets/Game/Localization/Tables/UI.csv) | ✅ exportado e testado (round-trip export→import validado) |
+| Ferramenta de sync (Editor) | [Assets/Game/Scripts/Editor/Localization/LocalizationCsvSync.cs](../Assets/Game/Scripts/Editor/Localization/LocalizationCsvSync.cs) | ✅ menus `NakeDev/Localization/Export...` e `Import...` |
 | Config do Crowdin CLI/Action | [crowdin.yml](../crowdin.yml) (raiz do repo) | ✅ criado |
 | Automação de upload | [.github/workflows/crowdin-upload.yml](../.github/workflows/crowdin-upload.yml) | ✅ criado — dispara em push na `main` tocando `*.csv` |
 | Automação de download + PR | [.github/workflows/crowdin-download.yml](../.github/workflows/crowdin-download.yml) | ✅ criado — cron diário (12:00 UTC) |
@@ -58,7 +58,7 @@ Tudo entre esses dois cliques (subir pro Crowdin, notificar tradutor, baixar tra
 
 ## 3. Anatomia do CSV — por que cada coluna existe
 
-Arquivo real gerado ([UI.csv](../Assets/Localization/Tables/UI.csv)):
+Arquivo real gerado ([UI.csv](../Assets/Game/Localization/Tables/UI.csv)):
 
 ```csv
 Key,Id,Shared Comments,English(en),English(en) Comments,Portuguese(pt),Portuguese(pt) Comments
@@ -103,7 +103,7 @@ Passos 4 e 6 não exigem nada de você. Passos 2 e 8 são os únicos cliques man
    - `CROWDIN_PROJECT_ID` — no Crowdin, em Project Settings → API → "Project ID".
    - `CROWDIN_PERSONAL_TOKEN` — em Account Settings → API → "New Token" (escopo mínimo: `Project`, com acesso ao projeto certo).
 2. **Confirmar idiomas no projeto Crowdin**: o projeto já existe mas está vazio — confirme que o idioma de origem lá está como Português (Brasil) e que Inglês está na lista de idiomas alvo, senão o upload do CSV vai falhar silenciosamente por mismatch de idioma.
-3. **Commitar os arquivos já criados**: `Assets/Localization/`, `Assets/_Project/Editor/Localization/`, `crowdin.yml`, `.github/workflows/crowdin-*.yml` estão todos como untracked no Git ainda — nada foi commitado, de propósito, pra você revisar antes.
+3. **Commitar os arquivos já criados**: `Assets/Game/Localization/`, `Assets/Game/Scripts/Editor/Localization/`, `crowdin.yml`, `.github/workflows/crowdin-*.yml` estão todos como untracked no Git ainda — nada foi commitado, de propósito, pra você revisar antes.
 4. Depois do primeiro push com os secrets configurados, rode manualmente o workflow **Crowdin - Upload sources** uma vez (aba Actions → "Run workflow") pra validar a conexão antes de esperar o cron.
 
 ---
