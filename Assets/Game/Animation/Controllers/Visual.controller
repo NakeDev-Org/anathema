@@ -1,13 +1,13 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1102 &-3718955182834058720
+--- !u!1102 &-5701414764590543063
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerAerielDash
+  m_Name: KnightWallJump
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -20,20 +20,20 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 12498a7196312934a8da2e0576c75fa4, type: 2}
+  m_Motion: {fileID: 7400000, guid: eb8e3792cffa3b14e99fe3817e1a1c65, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &-2085434950904058263
+--- !u!1102 &-5570802705941572285
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerSlideEnd
+  m_Name: KnightSlideStart
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -46,20 +46,20 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: e95441042dbd849408f47320e61be39e, type: 2}
+  m_Motion: {fileID: 7400000, guid: 9e4ba2018284f274ab3800cb892eec75, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &-1556080645163239201
+--- !u!1102 &-4647327787743899532
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerWallJump
+  m_Name: KnightLanding
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -72,7 +72,59 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 699308950a757b44aa6dd719bff837f4, type: 2}
+  m_Motion: {fileID: 7400000, guid: 154dce92ec4f5444a94d34018bb0cc64, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &-3120898324635096357
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: KnightAerielDash
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: b9e5610f7afff574395e1942bb502c9a, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &-813456888856793221
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: KnightJump
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: e3b54d5ebe721564887593687e87e958, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -87,7 +139,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 6a132cd9c645711469d47d2cd851cd57, type: 2}
+    m_Motion: {fileID: 7400000, guid: 2d7873c362eeec146b0f09fe17d071f5, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -95,7 +147,7 @@ BlendTree:
     m_DirectBlendParameter: VelocityX
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: fa1b5fa17e5896349938fac1c2d708d3, type: 2}
+    m_Motion: {fileID: 7400000, guid: 60c6b9235f7da7e499cb9ba6c11f1f16, type: 2}
     m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -103,7 +155,7 @@ BlendTree:
     m_DirectBlendParameter: VelocityX
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: a44d6eaa542d49c48bcf35910dcfede9, type: 2}
+    m_Motion: {fileID: 7400000, guid: 6e7d90eef0d46914086d9a516cd0944c, type: 2}
     m_Threshold: 12
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -111,7 +163,7 @@ BlendTree:
     m_DirectBlendParameter: VelocityX
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: a44d6eaa542d49c48bcf35910dcfede9, type: 2}
+    m_Motion: {fileID: 7400000, guid: 6e7d90eef0d46914086d9a516cd0944c, type: 2}
     m_Threshold: 18
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -153,14 +205,14 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1102 &492321173595932642
+--- !u!1102 &142818505612308434
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerJumpLoop
+  m_Name: KnightFall
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -173,20 +225,20 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 1be890f9b31178f43b541112932def75, type: 2}
+  m_Motion: {fileID: 7400000, guid: c6f2779f872c14e44a983c768899ab05, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &649991288578035102
+--- !u!1102 &1893079297447806291
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerFall
+  m_Name: KnightFall
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -199,20 +251,20 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 1e52bdfe733cdf84e90d8f434ea36d8c, type: 2}
+  m_Motion: {fileID: 7400000, guid: c6f2779f872c14e44a983c768899ab05, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &1780265653554106609
+--- !u!1102 &3235407020024551826
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerSlide
+  m_Name: KnightSlide
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -225,20 +277,20 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: d0207457b2b53af4cbec8a86ee3ce185, type: 2}
+  m_Motion: {fileID: 7400000, guid: 9eccb69c61c284448b26f8ec57c648d9, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &3325833025245621670
+--- !u!1102 &3984310600544434002
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerWallSlide
+  m_Name: KnightJumpLoop
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -251,20 +303,20 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 5106180a17d62994c8cf77c313b3e684, type: 2}
+  m_Motion: {fileID: 7400000, guid: 45c33692cf29a3f419bc41bfb6431a45, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &4489391606377833388
+--- !u!1102 &4601111621224170163
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerSlideStart
+  m_Name: KnightWallSlide
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -277,20 +329,20 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: fff4427af25ca274b92c84f656d68739, type: 2}
+  m_Motion: {fileID: 7400000, guid: eef5e7ebb3c538b4b89ab679ed56acf3, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &5042835280678475475
+--- !u!1102 &5063789115296821216
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerDoubleJump
+  m_Name: KnightFallLoop
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -303,59 +355,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 5c05ba934619cae4e9c671f567394d7c, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
---- !u!1102 &5676717441683198679
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerFallLoop
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 5bb263ac392a89546845530e3b3dcfaa, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
---- !u!1102 &6194425771667686162
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerJump
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: dbc6552c074396e49bdd2654afa43341, type: 2}
+  m_Motion: {fileID: 7400000, guid: 18effef5c1235194ea0139644454c297, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -380,14 +380,14 @@ AnimatorStateMachine:
   m_ExitPosition: {x: 800, y: 100, z: 0}
   m_ParentStateMachinePosition: {x: 780, y: 20, z: 0}
   m_DefaultState: {fileID: 0}
---- !u!1102 &6768814141137620160
+--- !u!1102 &7154221276703210766
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerLanding
+  m_Name: KnightDoubleJump
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -400,7 +400,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 37f42994888c7ef4993d8a341715f747, type: 2}
+  m_Motion: {fileID: 7400000, guid: 518391cd148ec0446b05b3547cba7232, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -442,35 +442,32 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: 7926710935045646357}
-    m_Position: {x: -180, y: 320, z: 0}
+    m_State: {fileID: 1893079297447806291}
+    m_Position: {x: -390, y: 320, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 5042835280678475475}
-    m_Position: {x: 240, y: 290, z: 0}
+    m_State: {fileID: -4647327787743899532}
+    m_Position: {x: -390, y: 370, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -1556080645163239201}
-    m_Position: {x: 240, y: 340, z: 0}
+    m_State: {fileID: 3235407020024551826}
+    m_Position: {x: 300, y: 170, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 3325833025245621670}
-    m_Position: {x: 240, y: 140, z: 0}
+    m_State: {fileID: 8411159852880697957}
+    m_Position: {x: 300, y: 120, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 6768814141137620160}
-    m_Position: {x: -180, y: 370, z: 0}
+    m_State: {fileID: -5570802705941572285}
+    m_Position: {x: 300, y: 70, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 9219235302865775456}
-    m_Position: {x: 240, y: 90, z: 0}
+    m_State: {fileID: 4601111621224170163}
+    m_Position: {x: 300, y: 220, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -3718955182834058720}
-    m_Position: {x: 240, y: 240, z: 0}
+    m_State: {fileID: -5701414764590543063}
+    m_Position: {x: 300, y: 270, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 1780265653554106609}
-    m_Position: {x: 240, y: 40, z: 0}
+    m_State: {fileID: -3120898324635096357}
+    m_Position: {x: 300, y: 320, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -2085434950904058263}
-    m_Position: {x: 240, y: -10, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 4489391606377833388}
-    m_Position: {x: 240, y: 190, z: 0}
+    m_State: {fileID: 7154221276703210766}
+    m_Position: {x: 300, y: 370, z: 0}
   m_ChildStateMachines:
   - serializedVersion: 1
     m_StateMachine: {fileID: 8158163648530254429}
@@ -487,32 +484,6 @@ AnimatorStateMachine:
   m_ExitPosition: {x: -380, y: 200, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 7164221096622435661}
---- !u!1102 &7926710935045646357
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerFall
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 1e52bdfe733cdf84e90d8f434ea36d8c, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!1107 &8158163648530254429
 AnimatorStateMachine:
   serializedVersion: 6
@@ -526,17 +497,17 @@ AnimatorStateMachine:
     m_State: {fileID: 7164221096622435661}
     m_Position: {x: 220, y: 110, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 6194425771667686162}
-    m_Position: {x: -10, y: 180, z: 0}
+    m_State: {fileID: -813456888856793221}
+    m_Position: {x: 0, y: 190, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 492321173595932642}
-    m_Position: {x: -10, y: 230, z: 0}
+    m_State: {fileID: 3984310600544434002}
+    m_Position: {x: 0, y: 240, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 649991288578035102}
-    m_Position: {x: -10, y: 280, z: 0}
+    m_State: {fileID: 142818505612308434}
+    m_Position: {x: 0, y: 290, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 5676717441683198679}
-    m_Position: {x: -10, y: 330, z: 0}
+    m_State: {fileID: 5063789115296821216}
+    m_Position: {x: 0, y: 340, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -547,14 +518,14 @@ AnimatorStateMachine:
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 780, y: 60, z: 0}
   m_DefaultState: {fileID: 7164221096622435661}
---- !u!1102 &9219235302865775456
+--- !u!1102 &8411159852880697957
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerCrouching
+  m_Name: KnightSlideEnd
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -567,7 +538,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: ee6f35bb9a0207248a0f29b7999a4ad0, type: 2}
+  m_Motion: {fileID: 7400000, guid: 0ba932fd0ee9bb34a85ed796007a5460, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
