@@ -31,7 +31,7 @@ namespace NakeDev.Player
 
         private void TryStartAerialDash()
         {
-            if (!_config.AerialDashEnabled || _aerialDashesRemaining <= 0)
+            if (!_config.AerialDashEnabled || _aerialDashesRemaining <= 0 || IsGrounded || IsAerialDashing)
                 return;
 
             //float directionSource = Mathf.Abs(_input.MoveInput.x) > 0.1f ? _input.MoveInput.x : _rb.linearVelocity.x;
@@ -48,7 +48,7 @@ namespace NakeDev.Player
             StopWallSlide();
             _rb.gravityScale = 0f;
             _rb.linearVelocity = new Vector2(_aerialDashDirection * _config.AerialDashSpeed, 0f);
-            ApplyDashCollider();
+            //ApplyDashCollider();
         }
 
         private void UpdateDashState()
@@ -81,16 +81,22 @@ namespace NakeDev.Player
                 _aerialDashTimer -= Time.fixedDeltaTime;
         }
 
+        //Vou manter o ApplyDashCollider comentado por enquanto, pois ele está causando bug com passagens baixas
+        //e acho que acabou funcionando como uma correção para o sprite e não da mecânica do game em si.
+        //Faz sentido termos uma mudança no collider quando é o ground slide, mas no dash acho que não deveria ter.
+        /*
         private void ApplyDashCollider()
         {
-            float dashHeight = Mathf.Clamp(_config.DashSlideColliderHeigth, _standingColliderSize.x, _standingColliderSize.y); 
+            //float dashHeight = Mathf.Clamp(_config.DashSlideColliderHeigth, _standingColliderSize.x, _standingColliderSize.y); 
+            float dashHeight = _config.DashSlideColliderHeigth; 
             float dashWidth = _config.DashSlideColliderWidth;
 
             float heightDifference = _standingColliderSize.y - dashHeight;
             
-            _capsuleCollider.direction = CapsuleDirection2D.Horizontal;
+            //_capsuleCollider.direction = CapsuleDirection2D.Horizontal;
             _capsuleCollider.size = new Vector2(dashWidth, dashHeight);
             _capsuleCollider.offset = new Vector2(_standingColliderOffset.x, _standingColliderOffset.y - heightDifference * 0.5f);
         }
+        */
     }
 }

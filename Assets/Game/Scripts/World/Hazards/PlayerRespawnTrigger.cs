@@ -13,13 +13,16 @@ namespace NakeDev.World
                 return;
 
             Rigidbody2D playerRigidbody = other.attachedRigidbody;
+            Collider2D playerCollider = other.GetComponent<Collider2D>();
 
             if (playerRigidbody == null)
                 return;
 
             playerRigidbody.linearVelocity = Vector2.zero;
             playerRigidbody.angularVelocity = 0f;
+            playerCollider.enabled = false;
             playerRigidbody.position = _destination.position;
+            playerCollider.enabled = true;
         }
 
     }

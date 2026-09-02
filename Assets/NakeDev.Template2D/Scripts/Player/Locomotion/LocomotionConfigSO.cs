@@ -93,8 +93,8 @@ namespace NakeDev.Player
         public float AerialDashSpeed = 22f;
         [Min(0.01f)]
         public float AerialDashDuration = 0.18f;
-        public float DashSlideColliderHeigth = 2.1f;
-        public float DashSlideColliderWidth = 2.1f;
+        //public float DashSlideColliderHeigth = 2.1f;
+        //public float DashSlideColliderWidth = 2.1f;
 
         [InspectorLine("Ground Check")]
         [Tooltip("Tamanho do OverlapBox usado para detectar o chão a partir do GroundCheckPoint. Um box (em vez de círculo) evita encostar numa parede ao lado quando o player está numa quina — a largura deve ficar menor que a largura do collider do player, pra nunca alcançar uma parede vizinha; a altura só precisa ser fina o bastante pra não furar o chão.")]
