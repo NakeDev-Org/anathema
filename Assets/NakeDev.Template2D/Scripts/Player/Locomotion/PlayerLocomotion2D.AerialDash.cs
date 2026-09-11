@@ -8,8 +8,9 @@ namespace NakeDev.Player
         private float _aerialDashDirection;
         private int _aerialDashesRemaining;
         public bool IsAerialDashing { get; private set; }
+        public float AerialDashDirection => _aerialDashDirection;
 
-        private void InitializeDash()
+        private void InitializeAerialDash()
         {
             InitializeGroundSlide();
             _aerialDashesRemaining = _config.MaxAerialDashes;
@@ -17,16 +18,12 @@ namespace NakeDev.Player
 
         private void HandleDashPressed()
         {
-            if (IsSliding || IsAerialDashing) return;
+            if (IsSliding || IsAerialDashing || IsGroundDashing) return;
 
             if (IsGrounded)
-            {
-                if (IsRunning)
-                    TryStartGroundSlide();
-                return;
-            }
-
-            TryStartAerialDash();
+                TryStartGroundDash();
+            else
+                TryStartAerialDash();
         }
 
         private void TryStartAerialDash()
@@ -51,7 +48,7 @@ namespace NakeDev.Player
             //ApplyDashCollider();
         }
 
-        private void UpdateDashState()
+        private void UpdateAerialDashState()
         {
             UpdateGroundSlideState();
 
@@ -74,9 +71,8 @@ namespace NakeDev.Player
             RestoreStandingCollider();
         }
 
-        private void TickDashTimers()
+        private void TickAerialDashTimers()
         {
-            TickGroundSlideTimers();
             if (_aerialDashTimer > 0f)
                 _aerialDashTimer -= Time.fixedDeltaTime;
         }

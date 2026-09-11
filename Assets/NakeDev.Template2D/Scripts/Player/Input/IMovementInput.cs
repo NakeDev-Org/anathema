@@ -16,5 +16,6 @@ namespace NakeDev.Player
         event Action OnJumpReleased;
         event Action OnDashPressed;
         event Action OnBurstRunPressed;
+        event Action OnSlidePressed;
     }
 }

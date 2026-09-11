@@ -14,6 +14,8 @@ namespace NakeDev.Player
             _jumpIntroTimer = Mathf.Max(0f, _jumpIntroTimer - Time.deltaTime);
             _fallIntroTimer = Mathf.Max(0f, _fallIntroTimer - Time.deltaTime);
 
+            if (_locomotion.IsGroundDashing) _landingAnimationTimer = 0f;
+
             if (_landingAnimationTimer > 0f)
             {
                 _landingAnimationTimer -= Time.deltaTime;

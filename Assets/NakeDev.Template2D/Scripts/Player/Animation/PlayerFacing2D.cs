@@ -33,13 +33,42 @@ namespace NakeDev.Player
 
         private void Update()
         {
+            if (_locomotion != null && _locomotion.IsGroundDashing)
+            {
+                FaceDirection(_locomotion.GroundDashDirection);
+                return;
+            }
+            
+            if (_locomotion != null &&_locomotion.IsAerialDashing) 
+            {
+                FaceDirection(_locomotion.AerialDashDirection);
+                return;
+            }
+
+            if (_locomotion != null && _locomotion.IsSliding) 
+            {
+                FaceDirection(_locomotion.SlidingDirection);
+                return;
+            }
+
             if (_input == null) return;
-            if (_locomotion != null && (_locomotion.IsSliding || _locomotion.IsAerialDashing)) return;
 
             float x = _input.MoveInput.x;
             if (x > 0.01f && !_facingRight)
                 Flip();
             else if (x < -0.01f && _facingRight)
+                Flip();
+        }
+
+        //deixei genérico para usar em outras animações, como ground slide
+        private void FaceDirection(float _direction)
+        {
+            if (Mathf.Abs(_direction) < 0.01f) return;
+
+            bool shouldFaceRight = _direction > 0.1f;
+            if (shouldFaceRight && !_facingRight) 
+                Flip();
+            else if (!shouldFaceRight && _facingRight) 
                 Flip();
         }
 

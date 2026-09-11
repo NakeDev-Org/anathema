@@ -99,6 +99,7 @@ namespace NakeDev.Player
             _input.OnJumpReleased += HandleJumpReleased;
             _input.OnDashPressed += HandleDashPressed;
             _input.OnBurstRunPressed += HandleBurstRunPressed;
+            _input.OnSlidePressed += HandleSlidePressed;
         }
 
         private void OnDisable()
@@ -111,13 +112,18 @@ namespace NakeDev.Player
             _input.OnJumpReleased -= HandleJumpReleased;
             _input.OnDashPressed -= HandleDashPressed;
             _input.OnBurstRunPressed -= HandleBurstRunPressed;
+            _input.OnSlidePressed -= HandleSlidePressed;
         }
 
         private void FixedUpdate()
         {
             TickTimers();
             GroundCheck();
-            UpdateDashState();
+
+            UpdateGroundSlideState();
+            UpdateAerialDashState();
+            UpdateGroundDashState();
+            
             WallCheck();
             ApplyCornerCorrection();
             ApplyHorizontalMovement();

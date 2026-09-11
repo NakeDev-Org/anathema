@@ -17,6 +17,15 @@ namespace NakeDev.Player
 
         public GroundSlidePhase SlidePhase { get; private set; }
         public bool IsSliding => SlidePhase != GroundSlidePhase.None;
+        public float SlidingDirection => _slideDirection;
+
+        private void HandleSlidePressed()
+        {
+            if (!IsRunning || IsSliding || IsAerialDashing || IsGroundDashing)
+                return;
+
+            TryStartGroundSlide();
+        }
 
         private void InitializeGroundSlide()
         {
@@ -31,9 +40,13 @@ namespace NakeDev.Player
                 return;
 
             float directionSource = Mathf.Abs(_rb.linearVelocity.x) > 0.1f ? _rb.linearVelocity.x : _input.MoveInput.x;
+            //float directionSource = Mathf.Abs(_input.MoveInput.x) > 0.1f ? _input.MoveInput.x : _lastMoveInputX;
+            //if (Mathf.Abs(directionSource) <= 0.1f) return;
             if (Mathf.Abs(directionSource) <= 0.1f) return;
 
-            _slideDirection = Mathf.Sign(directionSource);
+            float SlidingDirection = Mathf.Sign(directionSource);
+
+            _slideDirection = Mathf.Sign(SlidingDirection);
             _slideCurrentSpeed = _config.GroundSlideSpeed;
             _slidePhaseTimer = _config.GroundSlideStartDuration;
             _slideMinimumTimer = _config.GroundSlideMinimumDuration;
@@ -107,9 +120,13 @@ namespace NakeDev.Player
         {
             if (IsAerialDashing)
             {
-                _rb.linearVelocity = new Vector2(
-                    _aerialDashDirection * _config.AerialDashSpeed,
-                    0f);
+                _rb.linearVelocity = new Vector2(_aerialDashDirection * _config.AerialDashSpeed, 0f);
+                return true;
+            }
+
+            if (IsGroundDashing)
+            {
+                _rb.linearVelocity = new Vector2(_groundDashDirection * _config.GroundDashSpeed, 0f);
                 return true;
             }
 

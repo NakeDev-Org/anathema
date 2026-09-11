@@ -20,10 +20,14 @@ namespace NakeDev.Player
             _slideLoopHash = Animator.StringToHash(_slideLoopState);
             _slideEndHash = Animator.StringToHash(_slideEndState);
             _aerialDashHash = Animator.StringToHash(_aerialDashState);
+            _groundDashHash = Animator.StringToHash(_groundDashState);
         }
 
         private AnimState DetermineState()
         {
+            if (_locomotion.IsGroundDashing)
+                return AnimState.GroundDash;
+
             if (!_locomotion.IsGrounded)
             {
                 if (_locomotion.IsAerialDashing)
@@ -82,6 +86,7 @@ namespace NakeDev.Player
                 case AnimState.SlideLoop: return _slideLoopHash;
                 case AnimState.SlideEnd: return _slideEndHash;
                 case AnimState.AerialDash: return _aerialDashHash;
+                case AnimState.GroundDash: return _groundDashHash;
                 case AnimState.Jump: return _jumpHash;
                 case AnimState.JumpLoop: return _jumpLoopHash;
                 case AnimState.DoubleJump: return _doubleJumpHash;

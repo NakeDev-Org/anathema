@@ -84,6 +84,16 @@ namespace NakeDev.Player
         public float GroundSlideColliderHeight = 2.1f;
         public float GroundSlideColliderWidth = 2.1f;
 
+        [InspectorLine("Ground Dash")]
+        public bool GroundDashEnabled = true;
+        [Min(0f)]
+        public float GroundDashSpeed = 22f;
+        [Min(0.01f)]
+        public float GroundDashDuration = 0.18f;
+        [Tooltip("Tempo em segundos após terminar o ground dash até permitir outro.")]
+        [Min(0f)]
+        public float GroundDashCooldown = 0.4f;
+
         [InspectorLine("Aerial Dash")]
         public bool AerialDashEnabled = true;
         [Tooltip("Quantidade de aerial dashes disponível antes de tocar o chão.")]

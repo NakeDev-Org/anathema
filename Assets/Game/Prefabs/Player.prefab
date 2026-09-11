@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 336536663791088200}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.89, y: 0, z: -10}
+  m_LocalPosition: {x: -3.8899994, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -197,7 +197,7 @@ Transform:
   m_GameObject: {fileID: 1074967987096357056}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.89, y: 0, z: -10}
+  m_LocalPosition: {x: -3.8899994, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -373,7 +373,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 4
   m_Material: {fileID: 6200000, guid: d7a4d1590f5947ef96e49c686bf34cf5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -454,6 +454,7 @@ MonoBehaviour:
   _slideLoopState: KnightSlide
   _slideEndState: KnightSlideEnd
   _aerialDashState: KnightAerialDash
+  _groundDashState: KnightDash
   _crossfadeTime: 0.1
   _jumpIntroDuration: 0.24
   _fallIntroDuration: 0.52
@@ -5839,7 +5840,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 8793639957104055765, guid: a1e9c32d7721f864a8cc1f9c7d3406d1, type: 3}
+  m_Sprite: {fileID: 3204480812468917802, guid: 679a2dc18c093774ebcade85ad00b8c6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

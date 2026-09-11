@@ -21,7 +21,9 @@ namespace NakeDev.Player
         private void TryConsumeJump()
         {
             if (_jumpBufferTimer <= 0f) return;
-            if (IsAerialDashing) return;
+            if (IsAerialDashing 
+            //|| IsGroundDashing
+            ) return;
             if (IsSliding && !TryExitSlideForJump()) return;
 
             bool canWallJump =
@@ -31,6 +33,8 @@ namespace NakeDev.Player
 
             if (canWallJump)
             {
+                if (IsGroundDashing) EndGroundDash();
+
                 int jumpWallDirection = _wallDirection != 0
                     ? _wallDirection
                     : _lastWallDirection;
@@ -61,6 +65,8 @@ namespace NakeDev.Player
 
             if (_coyoteTimer > 0f)
             {
+                if (IsGroundDashing) EndGroundDash();
+
                 _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, _config.JumpForce);
                 OnJumpPerformed?.Invoke(JumpType.Ground);
                 _extraJumpCooldownTimer = _config.ExtraJumpCooldown;
@@ -70,6 +76,8 @@ namespace NakeDev.Player
             }
             else if (_extraJumpsRemaining > 0 && _extraJumpCooldownTimer <= 0f && !IsWallSliding)
             {
+                if (IsGroundDashing) EndGroundDash();
+                
                 _extraJumpsRemaining--;
                 _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, _config.ExtraJumpForce);
                 OnJumpPerformed?.Invoke(JumpType.Extra);

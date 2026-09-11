@@ -33,6 +33,7 @@ namespace NakeDev.Player
         [SerializeField] private string _slideLoopState = "Slide";
         [SerializeField] private string _slideEndState = "SlideEnd";
         [SerializeField] private string _aerialDashState = "AerialDash";
+        [SerializeField] private string _groundDashState = "GroundDash";
         [SerializeField] private float _crossfadeTime = 0.1f;
 
         [InspectorLine("Air Animation Phases")]
@@ -75,6 +76,7 @@ namespace NakeDev.Player
         private int _slideLoopHash;
         private int _slideEndHash;
         private int _aerialDashHash;
+        private int _groundDashHash;
 
         private enum AnimState
         {
@@ -83,6 +85,7 @@ namespace NakeDev.Player
             SlideLoop,
             SlideEnd,
             AerialDash,
+            GroundDash,
             Jump,
             JumpLoop,
             DoubleJump,

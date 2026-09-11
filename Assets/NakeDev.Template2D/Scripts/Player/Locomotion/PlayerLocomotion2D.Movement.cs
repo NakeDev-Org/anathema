@@ -20,7 +20,9 @@ namespace NakeDev.Player
             if (IsWallSliding && _rb.linearVelocity.y <= 0f && _wallSlideEntryTimer > 0f)
                 _wallSlideEntryTimer -= Time.fixedDeltaTime;
 
-            TickDashTimers();
+            TickGroundSlideTimers();
+            TickGroundDashTimers();
+            TickAerialDashTimers();
         }
 
         private void ApplyHorizontalMovement()
@@ -93,7 +95,7 @@ namespace NakeDev.Player
 
         private void ApplyFallGravity()
         {
-            if (IsAerialDashing)
+            if (IsAerialDashing || IsGroundDashing)
             {
                 _rb.gravityScale = 0f;
                 _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, 0f);
@@ -102,8 +104,15 @@ namespace NakeDev.Player
 
             float verticalSpeed = Mathf.Max(_rb.linearVelocity.y, -_config.MaxFallSpeed);
             float x = _input != null ? _input.MoveInput.x : 0f;
-            bool idleOnGround = IsGrounded && !IsWallSliding && !IsSliding && !IsJumping &&
-                Mathf.Abs(x) < 0.01f && Mathf.Abs(verticalSpeed) < 1f && _wallJumpControlLockTimer <= 0f;
+            bool idleOnGround = 
+                IsGrounded && 
+                !IsWallSliding && 
+                !IsSliding && 
+                !IsJumping &&
+                !IsGroundDashing &&
+                Mathf.Abs(x) < 0.01f 
+                && Mathf.Abs(verticalSpeed) < 1f 
+                && _wallJumpControlLockTimer <= 0f;
 
             if (IsWallSliding && verticalSpeed <= 0f)
             {

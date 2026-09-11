@@ -138,6 +138,15 @@ namespace NakeDev.Player.GeneratedInput
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Slide"",
+                    ""type"": ""Button"",
+                    ""id"": ""03bfcba2-66ff-4ffa-a007-5992e3211717"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -287,7 +296,7 @@ namespace NakeDev.Player.GeneratedInput
                 {
                     ""name"": """",
                     ""id"": ""a9485148-3646-4c4c-8279-3cf09e35678b"",
-                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Gamepad"",
@@ -298,7 +307,7 @@ namespace NakeDev.Player.GeneratedInput
                 {
                     ""name"": """",
                     ""id"": ""e8e654b7-a080-4226-8eb6-b1b7da70844f"",
-                    ""path"": ""<Keyboard>/leftCtrl"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard"",
@@ -349,6 +358,28 @@ namespace NakeDev.Player.GeneratedInput
                     ""action"": ""BurstRun"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2040cbc6-43ed-42a2-b7f7-96a6b8cd3199"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Slide"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""132c8049-7d9c-45cf-a756-9f82860ef949"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Slide"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -373,6 +404,7 @@ namespace NakeDev.Player.GeneratedInput
             m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
             m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
             m_Player_BurstRun = m_Player.FindAction("BurstRun", throwIfNotFound: true);
+            m_Player_Slide = m_Player.FindAction("Slide", throwIfNotFound: true);
         }
 
         ~@PlayerControls()
@@ -458,6 +490,7 @@ namespace NakeDev.Player.GeneratedInput
         private readonly InputAction m_Player_Dash;
         private readonly InputAction m_Player_Pause;
         private readonly InputAction m_Player_BurstRun;
+        private readonly InputAction m_Player_Slide;
         /// <summary>
         /// Provides access to input actions defined in input action map "Player".
         /// </summary>
@@ -489,6 +522,10 @@ namespace NakeDev.Player.GeneratedInput
             /// Provides access to the underlying input action "Player/BurstRun".
             /// </summary>
             public InputAction @BurstRun => m_Wrapper.m_Player_BurstRun;
+            /// <summary>
+            /// Provides access to the underlying input action "Player/Slide".
+            /// </summary>
+            public InputAction @Slide => m_Wrapper.m_Player_Slide;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
@@ -530,6 +567,9 @@ namespace NakeDev.Player.GeneratedInput
                 @BurstRun.started += instance.OnBurstRun;
                 @BurstRun.performed += instance.OnBurstRun;
                 @BurstRun.canceled += instance.OnBurstRun;
+                @Slide.started += instance.OnSlide;
+                @Slide.performed += instance.OnSlide;
+                @Slide.canceled += instance.OnSlide;
             }
 
             /// <summary>
@@ -556,6 +596,9 @@ namespace NakeDev.Player.GeneratedInput
                 @BurstRun.started -= instance.OnBurstRun;
                 @BurstRun.performed -= instance.OnBurstRun;
                 @BurstRun.canceled -= instance.OnBurstRun;
+                @Slide.started -= instance.OnSlide;
+                @Slide.performed -= instance.OnSlide;
+                @Slide.canceled -= instance.OnSlide;
             }
 
             /// <summary>
@@ -657,6 +700,13 @@ namespace NakeDev.Player.GeneratedInput
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnBurstRun(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "Slide" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnSlide(InputAction.CallbackContext context);
         }
     }
 }

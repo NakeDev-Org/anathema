@@ -26,6 +26,7 @@ namespace NakeDev.Player
         public event Action OnJumpReleased;
         public event Action OnDashPressed;
         public event Action OnBurstRunPressed;
+        public event Action OnSlidePressed;
 
         private void OnEnable()
         {
@@ -83,6 +84,15 @@ namespace NakeDev.Player
 
             if (context.started)
                 OnDashPressed?.Invoke();
+        }
+
+        public void OnSlide(InputAction.CallbackContext context)
+        {
+            if (_gameState != null && !_gameState.IsPlaying())
+                return;
+
+            if (context.started)
+                OnSlidePressed?.Invoke();
         }
 
         public void OnBurstRun(InputAction.CallbackContext context)
